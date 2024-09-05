@@ -52,5 +52,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
 
 Route::fallback(function () {
-    return '404 Not Found';
+    return view('user.404');
 });

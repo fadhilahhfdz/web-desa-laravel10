@@ -11,6 +11,8 @@
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Berita</li>
                             <li><i class="icofont-simple-right"></i></li>
+                            <li class="active">Kategori</li>
+                            <li><i class="icofont-simple-right"></i></li>
                             <li class="active">{{ $kategori->nama }}</li>
                         </ul>
                     </div>

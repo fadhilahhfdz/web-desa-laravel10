@@ -54,8 +54,9 @@ class BeritaController extends Controller
     {
         $berita = Berita::findOrFail($id);
         $kategori = KategoriBerita::all();
+        $recent = Berita::latest()->paginate(5);
         
-        return view('user.berita', compact('berita', 'kategori'));
+        return view('user.berita', compact('berita', 'kategori', 'recent'));
     }
 
     /**

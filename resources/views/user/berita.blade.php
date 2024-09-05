@@ -112,46 +112,6 @@
                                         </div>
                                     </div>
                                     <!--/ End Single Comments -->
-                                    <!-- Single Comments -->
-                                    <div class="single-comments left">
-                                        <div class="main">
-                                            <div class="head">
-                                                <img src="img/author2.jpg" alt="#" />
-                                            </div>
-                                            <div class="body">
-                                                <h4>Naimur Rahman</h4>
-                                                <div class="comment-meta"><span class="meta"><i
-                                                            class="fa fa-calendar"></i>March 05, 2019</span><span
-                                                        class="meta"><i class="fa fa-clock-o"></i>03:38 AM</span></div>
-                                                <p>Lorem Ipsum available, but the majority have suffered alteration in some
-                                                    form, by injected humour, or randomised words Mirum est notare quam
-                                                    littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                                                    formas</p>
-                                                <a href="#"><i class="fa fa-reply"></i>replay</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Comments -->
-                                    <!-- Single Comments -->
-                                    <div class="single-comments">
-                                        <div class="main">
-                                            <div class="head">
-                                                <img src="img/author3.jpg" alt="#" />
-                                            </div>
-                                            <div class="body">
-                                                <h4>Suriya Molharta</h4>
-                                                <div class="comment-meta"><span class="meta"><i
-                                                            class="fa fa-calendar"></i>March 05, 2019</span><span
-                                                        class="meta"><i class="fa fa-clock-o"></i>03:38 AM</span></div>
-                                                <p>Lorem Ipsum available, but the majority have suffered alteration in some
-                                                    form, by injected humour, or randomised words Mirum est notare quam
-                                                    littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                                                    formas</p>
-                                                <a href="#"><i class="fa fa-reply"></i>replay</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Comments -->
                                 </div>
                             </div>
                         </div>
@@ -225,50 +185,27 @@
                         <div class="single-widget recent-post">
                             <h3 class="title">Recent Post</h3>
                             <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="img/blog-sidebar1.jpg" alt="#">
+                            @foreach ($recent as $item)
+                            @php
+                                preg_match('/<img[^>]+src="([^">]+)"/i', $item->konten, $matches);
+                                $item->img = isset($matches[1]) ? $matches[1] : asset('assets/img/profile.png');
+                            @endphp
+                                <div class="single-post">
+                                    <div class="image">
+                                        <img src="{{ $item->img }}" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h5><a href="/detail-berita/{{ $item->id }}">{{ $item->judul }}</a></h5>
+                                        <ul class="comment">
+                                            <li><i class="fa fa-calendar"
+                                                    aria-hidden="true"></i>{{ $item->updated_at->format('d F Y') }}</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h5><a href="#">We have annnocuced our new product.</a></h5>
-                                    <ul class="comment">
-                                        <li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-                                        <li><i class="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End Single Post -->
-                            <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="img/blog-sidebar2.jpg" alt="#">
-                                </div>
-                                <div class="content">
-                                    <h5><a href="#">Top five way for solving teeth problems.</a></h5>
-                                    <ul class="comment">
-                                        <li><i class="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-                                        <li><i class="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End Single Post -->
-                            <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="img/blog-sidebar3.jpg" alt="#">
-                                </div>
-                                <div class="content">
-                                    <h5><a href="#">We provide highly business soliutions.</a></h5>
-                                    <ul class="comment">
-                                        <li><i class="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-                                        <li><i class="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
+
                             <!-- End Single Post -->
                         </div>
-                        <!--/ End Single Widget -->
-                        <!-- Single Widget -->
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         {{-- <div class="single-widget side-tags">
