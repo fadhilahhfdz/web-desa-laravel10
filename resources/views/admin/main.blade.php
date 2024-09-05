@@ -88,21 +88,34 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/kategori" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Kategori berita
-                                </p>
+                            <a href="#" class="nav-link">
+                              <i class="nav-icon far fa-newspaper"></i>
+                              <p>
+                                Berita
+                                <i class="right fas fa-angle-left"></i>
+                              </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/berita" class="nav-link">
-                                <i class="nav-icon far fa-newspaper"></i>
-                                <p>
-                                    Berita
-                                </p>
-                            </a>
-                        </li>
+                            <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                <a href="/admin/kategori" class="nav-link">
+                                  <i class="fas fa-th nav-icon"></i>
+                                  <p>Kategori Berita</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="/admin/berita" class="nav-link">
+                                  <i class="fas fa-plus nav-icon"></i>
+                                  <p>Tambah Berita</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="/admin/berita/komentar" class="nav-link">
+                                  <i class="fas fa-comments nav-icon"></i>
+                                  <p>Komentar Berita</p>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

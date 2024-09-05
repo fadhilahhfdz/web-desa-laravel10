@@ -56,8 +56,8 @@
                                                     <a href="/admin/kategori/edit/{{ $k->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
                                                             class="fas fa-edit"></i> Edit</a>
-                                                    {{-- <a href="/admin/kategori/delete/{{ $k->id }}"
-                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a> --}}
+                                                    <a href="/admin/kategori/delete/{{ $k->id }}"
+                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         @endforeach

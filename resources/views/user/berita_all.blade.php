@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="row">
-                        @foreach ($berita as $berita)
+                        @forelse ($berita as $berita)
                             @php
                                 // Ekstrak semua tag heading (h1, h2, h3, h4, h5, h6)
                                 preg_match_all('/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $berita->konten, $headingMatches);
@@ -53,13 +53,13 @@
                                         <div class="meta-left">
                                             <span class="author"><img src="{{ asset('assets/img/profile.png') }}"
                                                     alt="#">{{ $berita->author }}</span>
-                                            <span class="date"><i
-                                                    class="fa fa-clock-o"></i>{{ $berita->updated_at->format('d F Y') }}</span>
                                         </div>
-                                        {{-- <div class="meta-right">
-                                    <span class="comments"><a href="#"><i class="fa fa-comments"></i>05 Comments</a></span>
-                                    <span class="views"><i class="fa fa-eye"></i>33K Views</span>
-                                </div> --}}
+                                        <div class="meta-right">
+                                            <span class="date ml-5"><i
+                                                    class="fa fa-calendar"></i>{{ $berita->updated_at->format('d F Y') }}</span>
+                                            <span class="date"><i
+                                                    class="fa fa-clock-o"></i>{{ $berita->updated_at->format('H:i') }}</span>
+                                        </div>
                                     </div>
                                     <!-- News Text -->
                                     <div class="news-text">
@@ -79,7 +79,15 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="col-12">
+                                <div class="single-main">
+                                    <div class="alert alert-danger">
+                                        <p class="text-center">Berita belum tersedia</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
@@ -95,11 +103,15 @@
                         <!-- Single Widget -->
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
-                            @foreach ($kategori as $kategori)
+                            @forelse ($kategori as $kategori)
                                 <ul class="categor-list">
                                     <li><a href="/berita-by-kategori/{{ $kategori->id }}">{{ $kategori->nama }}</a></li>
                                 </ul>
-                            @endforeach
+                            @empty
+                                <div class="alert alert-danger">
+                                    <p class="text-center">Belum ada kategori</p>
+                                </div>
+                            @endforelse
                         </div>
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->

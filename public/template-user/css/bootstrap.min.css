@@ -3155,6 +3155,36 @@ tbody.collapse.show {
     white-space: nowrap
 }
 
+.dropdown-scrollbar
+{
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%; /* Agar submenu muncul di samping kanan */
+    margin-left: .125rem;
+    margin-top: -0.5rem; /* Sesuaikan agar submenu tidak bergeser terlalu jauh */
+}
+
+/* Hover untuk menampilkan submenu */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-scrollbar
+{
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .btn-group,
 .btn-group-vertical {
     position: relative;

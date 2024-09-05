@@ -10,11 +10,14 @@ class Komentar extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
+        'first_name',
+        'last_name',
+        'email',
         'komentar',
+        'id_berita',
     ];
 
-    // public function berita() {
-    //     return $this->belongsTo(BeritaController::class);
-    // }
+    public function berita() {
+        return $this->belongsTo(Berita::class, 'id_berita', 'id');
+    }
 }

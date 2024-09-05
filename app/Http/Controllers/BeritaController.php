@@ -118,7 +118,7 @@ class BeritaController extends Controller
     public function berita_by_kategori($id) {
         $kategori = KategoriBerita::find($id);
 
-        $berita = Berita::where('id_kategori', $id)->paginate(6);
+        $berita = Berita::where('id_kategori', $id)->latest()->paginate(6);
 
         $all = KategoriBerita::all();
 

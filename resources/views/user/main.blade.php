@@ -49,38 +49,6 @@
 
 <body>
 
-    <!-- Preloader -->
-    {{-- <div class="preloader">
-            <div class="loader">
-                <div class="loader-outter"></div>
-                <div class="loader-inner"></div>
-
-                <div class="indicator"> 
-                    <svg width="16px" height="12px">
-                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                    </svg>
-                </div>
-            </div>
-        </div> --}}
-    <!-- End Preloader -->
-
-    <!-- Get Pro Button -->
-    {{-- <ul class="pro-features">
-			<a class="get-pro" href="#">Get Pro</a>
-			<li class="big-title">Pro Version Available on Themeforest</li>
-			<li class="title">Pro Version Features</li>
-			<li>2+ premade home pages</li>
-			<li>20+ html pages</li>
-			<li>Color Plate With 12+ Colors</li>
-			<li>Sticky Header / Sticky Filters</li>
-			<li>Working Contact Form With Google Map</li>
-			<div class="button">
-				<a href="http://preview.themeforest.net/item/mediplus-medical-and-doctor-html-template/full_screen_preview/26665910?_ga=2.145092285.888558928.1591971968-344530658.1588061879" target="_blank" class="btn">Pro Version Demo</a>
-				<a href="https://themeforest.net/item/mediplus-medical-and-doctor-html-template/26665910" target="_blank" class="btn">Buy Pro Version</a>
-			</div>
-		</ul> --}}
-
     <!-- Header Area -->
     <header class="header">
         <!-- Topbar -->
@@ -90,13 +58,13 @@
                     <div class="col-lg-6 col-md-5 col-12">
                         <!-- Contact -->
                         <div class="logo">
-                            <a href="#"><img src="{{ asset('') }}" alt="LOGO"></a>
+                            <a href="#"><img src="{{ asset('assets/img/logo.png') }}" alt="LOGO"></a>
                         </div>
                         <!-- End Contact -->
                     </div>
                     <div class="col-lg-6 col-md-7 col-12">
                         <!-- Top Contact -->
-                        <ul class="top-contact">
+                        <ul class="top-contact mt-5">
                             <li><i class="fa fa-phone"></i>+62 XXX</li>
                             <li><i class="fa fa-envelope"></i><a href="mailto:XXX">XXX@gmail.com</a></li>
                         </ul>
@@ -110,10 +78,10 @@
         <div class="header-inner sticky-top">
             <div class="container">
                 <div class="inner">
-                    <div class="row">
+                    <div class="row justify-content-end">
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Mobile Nav -->
-                            <div class="mobile-nav"></div>
+                            <div class="mobile-nav d-flex"></div>
                             <!-- End Mobile Nav -->
                         </div>
                         <div class="col-lg-12 col-md-9 col-12">
@@ -121,29 +89,60 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="/">BERANDA</a>
+                                        <li><a href="/">BERANDA</a>
                                         </li>
-                                        <li><a href="#">PROFIL DESA </a><i class="icofont-rounded-down"></i></a>
+                                        <li><a href="#">PROFIL </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="#">STRUKTUR ORGANISASI</a></li>
-                                                <li><a href="#">PERANGKAT DESA</a></li>
+                                                <li><a href="/struktur">STRUKTUR ORGANISASI</a></li>
+                                                <li><a href="/perangkat">PERANGKAT DESA</a></li>
+                                                <li><a href="/tugas">TUGAS DAN FUNGSI</a></li>
+                                                <li><a href="/visi">VISI DAN MISI</a></li>
+                                                <li><a href="/demografi">DEMOGRAFI</a></li>
+                                                <li><a href="/peta">PETA DESA TANGKIL</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">PELAYANAN </a></li>
-                                        <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
+                                        <li><a href="#">PELAYANAN </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="404.html">404 Error</a></li>
+                                                <li><a href="/sop">SOP PELAYANAN ADMINISTRASI MASYARAKAT</a></li>
+                                                <li><a href="/maklumat">MAKLUMAT PELAYANAN</a></li>
+                                                <li><a href="/layanan">LAYANAN PENGADUAN</a></li>
+                                                <li><a href="/survay">SURVEY KEPUASAN MASYARAKAT</a></li>
+                                                <li><a href="/survai">SURVEI PERSEPSI ANTIKORUPSI (SPAK)</a></li>
+                                                <li><a href="/indeks">INDEKS KEPUASAN MASYARAKAT (IKM)</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">PRODUK HUKUM <i class="icofont-rounded-down"></i></a>
+                                        <li><a href="#" >PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="blog-single.html">Blog Details</a></li>
+                                            <li><a href="/profil">PROFIL PPID</a></li>
+                                                <li><a href="/stppid">STRUKTUR PPID</a></li>
+                                                <li><a href="/tugas ppid">TUGAS DAN FUNGSI PPID DESA TANGKIL</a></li>
+                                                <li><a href="/visi ppid">VISI & MISI PPID DESA TANGKIL</a></li>
+                                                <li><a href="/hukum">DASAR HUKUM</a></li>
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item" href="/daftar">DAFTAR INFORMASI <i style="padding:15px;"class="icofont-rounded-right"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="/daftar-informasi/berkala">INFORMASI BERKALA</a></li>
+                                                        <li><a class="dropdown-item" href="/daftar-informasi/setiap">INFORMASI SETIAP SAAT</a></li>
+                                                        <li><a class="dropdown-item" href="/daftar-informasi/serta">INFORMASI SERTA MERTA</a></li>
+                                                        <li><a class="dropdown-item" href="/daftar-informasi/dikecualikan">INFORMASI DIKECUALIKAN</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="/alur">ALUR PELAYANAN INFORMASI PUBLIK</a></li>
+                                                <li><a href="/informasi">TATA CARA PERMOHONAN INFORMASI PUBLIK</a></li>
+                                                <li><a href="/keberatan">TATA CARA PERMOHONAN KEBERATAN</a></li>
+                                                <li><a href="/penyalahgunaan">TATA CARA PENGADUAN PENYALAHGUNAAN WEWENANG PEJABAT BADAN PUBLIK</a></li>
+                                                <li><a href="/sengketa">TATA CARA PENYELESAIAN SENGKETA MELALUI KOMISI INFORMASI</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">APBDESA</a></li>
-                                        <li><a href="#">DESA ANTIKORUPSI</a></li>
+                                        <li><a href="/produk-hukum">PRODUK HUKUM</a></li>
+                                        <li><a href="/apb">APB DESA</a></li>
+                                        <li><a href="/anti">DESA ANTIKORUPSI</a></li>
                                         <li><a href="/berita">BERITA</a></li>
-                                        <li><a href="#">PERPUSTAKAAN</a></li>
+                                        <li><a href="/perpus">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="/katalog">KATALOG BUKU</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -170,11 +169,10 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-3 col-md-6 col-12 mx-5">
                         <div class="single-footer">
-                            <h2>About Us</h2>
-                            <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut
-                                labore dolore magna.</p>
+                            <h2>Tentang Kami</h2>
+                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur , amanah, dan bermartabat.</p>
                             <!-- Social -->
                             <ul class="social">
                                 <li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -187,52 +185,17 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer f-link">
-                            <h2>Quick Links</h2>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Home</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Services</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
-                                                Cases</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Other Links</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Consuling</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Finance</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Testimonials</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>FAQ</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
-                            <h2>Open Hours</h2>
-                            <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+                            <h2>Waktu Pelayanan</h2>
                             <ul class="time-sidual">
-                                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                                <li class="day">Saturday <span>9.00-18.30</span></li>
-                                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                                <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
+                                <li class="day">Istirahat <span>12.00-13.00</span></li>
+                                <li class="day">jumat <span>07.15-14.30</span></li>
+                                <li class="day">Istirahat <span>11.30-14.30</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-3 col-md-6 col-12 mx-5">
                         <div class="single-footer">
                             <h2>Newsletter</h2>
                             <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
@@ -255,8 +218,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content">
-                            <p>© Copyright 2018 | All Rights Reserved by <a href="https://www.wpthemesgrid.com"
-                                    target="_blank">wpthemesgrid.com</a> </p>
+                            <p>© Copyright 2024 | All Rights Reserved</p>
                         </div>
                     </div>
                 </div>

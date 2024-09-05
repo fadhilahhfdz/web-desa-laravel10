@@ -52,10 +52,12 @@
                                 <!-- Meta -->
                                 <div class="meta">
                                     <div class="meta-left">
-                                        <span class="author"><img src="{{ asset('assets/img/profile.png') }}"
+                                        <span class="author mr-5"><img src="{{ asset('assets/img/profile.png') }}"
                                                 alt="#">{{ $berita->author }}</span>
+                                        <span class="date ml-5"><i
+                                                class="fa fa-calendar"></i>{{ $berita->updated_at->format('d F Y') }}</span>
                                         <span class="date"><i
-                                                class="fa fa-clock-o"></i>{{ $berita->updated_at->format('d F Y') }}</span>
+                                                class="fa fa-clock-o"></i>{{ $berita->updated_at->format('H:i') }}</span>
                                     </div>
                                     {{-- <div class="meta-right">
                                     <span class="comments"><a href="#"><i class="fa fa-comments"></i>05 Comments</a></span>
@@ -73,9 +75,7 @@
                                                     class="fa fa-facebook"></i><span>Facebook</span></a></li>
                                         <li class="twitter"><a href="#"><i
                                                     class="fa fa-twitter"></i><span>Twitter</span></a></li>
-                                        <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                         <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                     </ul>
                                     <!-- Next Prev -->
                                     {{-- <ul class="prev-next">
@@ -90,68 +90,76 @@
                         </div>
                         <div class="col-12">
                             <div class="blog-comments">
-                                <h2>All Comments</h2>
+                                <h2>Komentar</h2>
+                                <hr>
                                 <div class="comments-body">
-                                    <!-- Single Comments -->
-                                    <div class="single-comments">
-                                        <div class="main">
-                                            <div class="head">
-                                                <img src="img/author1.jpg" alt="#" />
-                                            </div>
-                                            <div class="body">
-                                                <h4>Afsana Mimi</h4>
-                                                <div class="comment-meta"><span class="meta"><i
-                                                            class="fa fa-calendar"></i>March 05, 2019</span><span
-                                                        class="meta"><i class="fa fa-clock-o"></i>03:38 AM</span></div>
-                                                <p>Lorem Ipsum available, but the majority have suffered alteration in some
-                                                    form, by injected humour, or randomised words Mirum est notare quam
-                                                    littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                                                    formas</p>
-                                                <a href="#"><i class="fa fa-reply"></i>replay</a>
+                                        @forelse ($berita->komentar()->orderBy('updated_at', 'desc')->get() as $komen)
+                                        <!-- Single Comments -->
+                                        <div class="single-comments">
+                                            <div class="main">
+                                                <div class="head">
+                                                    <img src="{{ asset('assets/img/profile.png') }}" alt="profil" />
+                                                </div>
+                                                <div class="body">
+                                                    <h4>{{ $komen->first_name }} {{ $komen->last_name }}</h4>
+                                                    <div class="comment-meta"><span class="meta"><i
+                                                                class="fa fa-calendar text-primary"></i>{{ $komen->updated_at->format('d F Y') }}</span><span
+                                                            class="meta"><i class="fa fa-clock-o text-primary"></i>{{ $komen->updated_at->format('H:i') }}</span>
+                                                    </div>
+                                                    <p>{{ $komen->komentar }}</p>
+                                                    {{-- <a href="#"><i class="fa fa-reply"></i>Balas</a> --}}
+                                                </div>
                                             </div>
                                         </div>
+                                        <!--/ End Single Comments -->
+                                        @empty
+                                            <p class="text-center">Belum ada komentar</p>
+                                        @endforelse
                                     </div>
-                                    <!--/ End Single Comments -->
-                                </div>
+                                   
+
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="comments-form">
-                                <h2>Leave Comments</h2>
+                                <h2>Tinggalkan Komentar</h2>
                                 <!-- Contact Form -->
-                                <form class="form" method="post" action="mail/mail.php">
+                                <form class="form" method="post" action="/detail-berita/{{$berita->id}}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <i class="fa fa-user"></i>
-                                                <input type="text" name="first-name" placeholder="First name"
+                                                <input type="hidden" name="id_berita" value="{{ $berita}}">
+                                                <i class="fa fa-user"></i>
+                                                <input type="text" name="first_name" placeholder="First Name"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <i class="fa fa-user"></i>
+                                                <input type="text" name="last_name" placeholder="Last Name"
                                                     required="required">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <i class="fa fa-envelope"></i>
-                                                <input type="text" name="last-name" placeholder="Last name"
-                                                    required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <div class="form-group">
-                                                <i class="fa fa-envelope"></i>
-                                                <input type="email" name="email" placeholder="Your Email"
+                                                <input type="email" name="email" placeholder="Email"
                                                     required="required">
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group message">
                                                 <i class="fa fa-pencil"></i>
-                                                <textarea name="message" rows="7" placeholder="Type Your Message Here"></textarea>
+                                                <textarea name="komentar" rows="7" placeholder="Ketik komentar disini..."></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group button">
-                                                <button type="submit" class="btn primary"><i
-                                                        class="fa fa-send"></i>Submit Comment</button>
+                                                <button type="submit" class="btn primary"><i class="fa fa-send"></i>Submit
+                                                    Komentar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -183,13 +191,13 @@
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         <div class="single-widget recent-post">
-                            <h3 class="title">Recent Post</h3>
+                            <h3 class="title">Berita Terbaru</h3>
                             <!-- Single Post -->
                             @foreach ($recent as $item)
-                            @php
-                                preg_match('/<img[^>]+src="([^">]+)"/i', $item->konten, $matches);
-                                $item->img = isset($matches[1]) ? $matches[1] : asset('assets/img/profile.png');
-                            @endphp
+                                @php
+                                    preg_match('/<img[^>]+src="([^">]+)"/i', $item->konten, $matches);
+                                    $item->img = isset($matches[1]) ? $matches[1] : asset('assets/img/profile.png');
+                                @endphp
                                 <div class="single-post">
                                     <div class="image">
                                         <img src="{{ $item->img }}" alt="">

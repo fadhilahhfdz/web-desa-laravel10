@@ -154,10 +154,6 @@
                                                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                                                         @endforeach
                                                     </select>
-                                                    <button type="button" class="btn btn-primary ml-2" data-toggle="modal"
-                                                        data-target="#tambah-kategori">
-                                                        Tambah kategori
-                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12">
