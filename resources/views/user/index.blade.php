@@ -592,7 +592,7 @@
                             </div>
                             <div class="news-body">
                                 <div class="news-content">
-                                    <div class="date">{{ $berita->created_at->format('d-m-Y') }}</div>
+                                    <div class="date">{{ $berita->updated_at->format('d F Y') }}</div>
                                     <h2><a href="/detail-berita/{{ $berita->id }}">{{ $berita->judul }}</a></h2>
                                     <p class="text">{!! $teks !!}</p>
                                 </div>
