@@ -170,7 +170,6 @@
             </section>
             <!-- /.content -->
         </div>
-        @include('admin.kategori.create')
     @endsection
 
     @push('script')

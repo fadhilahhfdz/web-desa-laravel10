@@ -41,11 +41,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/admin/berita/edit/{id}', [BeritaController::class, 'update']);
     Route::get('/admin/berita/delete/{id}', [BeritaController::class, 'destroy']);
 
-    Route::get('/admin/kategori', [KategoriBeritaController::class, 'index']);
-    Route::post('/admin/kategori/create', [KategoriBeritaController::class, 'store']);
-    Route::get('/admin/kategori/edit/{id}', [KategoriBeritaController::class, 'edit']);
-    Route::put('/admin/kategori/edit/{id}', [KategoriBeritaController::class, 'update']);
-    Route::get('/admin/kategori/delete/{id}', [KategoriBeritaController::class, 'destroy']);
+    Route::get('/admin/berita/kategori', [KategoriBeritaController::class, 'index']);
+    Route::post('/admin/berita/kategori/create', [KategoriBeritaController::class, 'store']);
+    Route::get('/admin/berita/kategori/edit/{id}', [KategoriBeritaController::class, 'edit']);
+    Route::put('/admin/berita/kategori/edit/{id}', [KategoriBeritaController::class, 'update']);
+    Route::get('/admin/berita/kategori/delete/{id}', [KategoriBeritaController::class, 'destroy']);
 
     Route::get('/admin/berita/komentar', [KomentarBeritaController::class, 'index']);
 });

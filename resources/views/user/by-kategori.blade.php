@@ -9,7 +9,7 @@
                         <ul class="bread-list">
                             <li><a href="/">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Berita</li>
+                            <li><a href="/berita">Berita</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Kategori</li>
                             <li><i class="icofont-simple-right"></i></li>

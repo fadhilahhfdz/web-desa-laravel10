@@ -13,7 +13,7 @@ class KategoriBeritaController extends Controller
     public function index()
     {
         $kategori = KategoriBerita::all();
-        return view('admin.kategori.index', compact('kategori'));
+        return view('admin.berita.kategori.index', compact('kategori'));
     }
 
     /**
@@ -36,9 +36,9 @@ class KategoriBeritaController extends Controller
 
             KategoriBerita::create($request->all());
 
-            return redirect('/admin/kategori')->with('sukses'. 'Data berhasil disimpan');
+            return redirect('/admin/berita/kategori')->with('sukses'. 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/kategori/create')->with('gagal', 'Data gagal disimpan' . $e->getMessage());
+            return redirect('/admin/berita/kategori/create')->with('gagal', 'Data gagal disimpan' . $e->getMessage());
         }
     }
 
@@ -57,7 +57,7 @@ class KategoriBeritaController extends Controller
     {
         $kategori = KategoriBerita::find($id);
 
-        return view('admin.kategori.edit', compact('kategori'));
+        return view('admin.berita.kategori.edit', compact('kategori'));
     }
 
     /**
@@ -74,9 +74,9 @@ class KategoriBeritaController extends Controller
 
             $kategori->update($request->all());
 
-            return redirect('/admin/kategori')->with('sukses', 'Data berhasil diubah');
+            return redirect('/admin/berita/kategori')->with('sukses', 'Data berhasil diubah');
         } catch(\Exception $e) {
-            return redirect(`/admin/kategori/edit/{id}`)->with('gagal', 'Data gagal diubah' . $e->getMessage());
+            return redirect(`/admin/berita/kategori/edit/{id}`)->with('gagal', 'Data gagal diubah' . $e->getMessage());
         }
     }
 
@@ -88,6 +88,6 @@ class KategoriBeritaController extends Controller
         $kategori = KategoriBerita::find($id);
         $kategori->delete();
 
-        return redirect('/admin/kategori')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admin/berita/kategori')->with('sukses', 'Data berhasil dihapus');
     }
 }

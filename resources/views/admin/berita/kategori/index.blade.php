@@ -53,10 +53,10 @@
                                                 <td style="width: 75px">{{ $loop->iteration }}</td>
                                                 <td style="width: 950px">{{ $k->nama }}</td>
                                                 <td>
-                                                    <a href="/admin/kategori/edit/{{ $k->id }}"
+                                                    <a href="/admin/berita/kategori/edit/{{ $k->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
                                                             class="fas fa-edit"></i> Edit</a>
-                                                    <a href="/admin/kategori/delete/{{ $k->id }}"
+                                                    <a href="/admin/berita/kategori/delete/{{ $k->id }}"
                                                         class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
@@ -73,7 +73,7 @@
         </section>
         <!-- /.content -->
     </div>
-    @include('admin.kategori.create')
+    @include('admin.berita.kategori.create')
 @endsection
 @push('script')
     <script>

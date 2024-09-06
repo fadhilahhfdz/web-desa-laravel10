@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="{{ asset('template-user/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template-user/css/responsive.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
 </head>
 
 <body>

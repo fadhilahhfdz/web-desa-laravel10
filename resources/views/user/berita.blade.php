@@ -54,15 +54,13 @@
                                     <div class="meta-left">
                                         <span class="author mr-5"><img src="{{ asset('assets/img/profile.png') }}"
                                                 alt="#">{{ $berita->author }}</span>
+                                    </div>
+                                    <div class="meta-right">
                                         <span class="date ml-5"><i
                                                 class="fa fa-calendar"></i>{{ $berita->updated_at->format('d F Y') }}</span>
                                         <span class="date"><i
                                                 class="fa fa-clock-o"></i>{{ $berita->updated_at->format('H:i') }}</span>
                                     </div>
-                                    {{-- <div class="meta-right">
-                                    <span class="comments"><a href="#"><i class="fa fa-comments"></i>05 Comments</a></span>
-                                    <span class="views"><i class="fa fa-eye"></i>33K Views</span>
-                                </div> --}}
                                 </div>
                                 <!-- News Text -->
                                 <div class="news-text">
@@ -93,7 +91,7 @@
                                 <h2>Komentar</h2>
                                 <hr>
                                 <div class="comments-body">
-                                        @forelse ($berita->komentar()->orderBy('updated_at', 'desc')->get() as $komen)
+                                    @forelse ($berita->komentar()->orderBy('updated_at', 'desc')->get() as $komen)
                                         <!-- Single Comments -->
                                         <div class="single-comments">
                                             <div class="main">
@@ -104,7 +102,8 @@
                                                     <h4>{{ $komen->first_name }} {{ $komen->last_name }}</h4>
                                                     <div class="comment-meta"><span class="meta"><i
                                                                 class="fa fa-calendar text-primary"></i>{{ $komen->updated_at->format('d F Y') }}</span><span
-                                                            class="meta"><i class="fa fa-clock-o text-primary"></i>{{ $komen->updated_at->format('H:i') }}</span>
+                                                            class="meta"><i
+                                                                class="fa fa-clock-o text-primary"></i>{{ $komen->updated_at->format('H:i') }}</span>
                                                     </div>
                                                     <p>{{ $komen->komentar }}</p>
                                                     {{-- <a href="#"><i class="fa fa-reply"></i>Balas</a> --}}
@@ -112,11 +111,11 @@
                                             </div>
                                         </div>
                                         <!--/ End Single Comments -->
-                                        @empty
-                                            <p class="text-center">Belum ada komentar</p>
-                                        @endforelse
-                                    </div>
-                                   
+                                    @empty
+                                        <p class="text-center">Belum ada komentar</p>
+                                    @endforelse
+                                </div>
+
 
                             </div>
                         </div>
@@ -124,13 +123,13 @@
                             <div class="comments-form">
                                 <h2>Tinggalkan Komentar</h2>
                                 <!-- Contact Form -->
-                                <form class="form" method="post" action="/detail-berita/{{$berita->id}}">
+                                <form class="form" method="post" action="/detail-berita/{{ $berita->id }}">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <i class="fa fa-user"></i>
-                                                <input type="hidden" name="id_berita" value="{{ $berita}}">
+                                                <input type="hidden" name="id_berita" value="{{ $berita }}">
                                                 <i class="fa fa-user"></i>
                                                 <input type="text" name="first_name" placeholder="First Name"
                                                     required="required">

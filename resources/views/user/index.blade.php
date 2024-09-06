@@ -4,7 +4,7 @@
     <section class="slider">
         <div class="hero-slider">
             <!-- Start Single Slider -->
-            <div class="single-slider" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+            <div class="single-slider" id="hero" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
@@ -23,7 +23,7 @@
             </div>
             <!-- End Single Slider -->
             <!-- Start Single Slider -->
-            <div class="single-slider" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+            <div class="single-slider" id="hero" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
@@ -44,7 +44,7 @@
             </div>
             <!-- Start End Slider -->
             <!-- Start Single Slider -->
-            <div class="single-slider" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+            <div class="single-slider" id="hero" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">

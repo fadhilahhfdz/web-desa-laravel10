@@ -27,7 +27,7 @@
                         <div class="card card-outline card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Edit kategori
+                                    Edit Kategori Berita
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -42,7 +42,7 @@
                                     </div>
                                 @endif
 
-                                <form action="/admin/kategori/edit/{{ $kategori->id }}" method="POST">
+                                <form action="/admin/berita/kategori/edit/{{ $kategori->id }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
@@ -51,7 +51,7 @@
                                             <input type="text" id="nama" name="nama" class="form-control" value="{{ $kategori->nama }}">
                                         </div>
                                         <div class="d-flex justify-content-start">
-                                            <a href="/admin/kategori" class="btn btn-sm btn-outline-secondary mx-2"><i
+                                            <a href="/admin/berita/kategori" class="btn btn-sm btn-outline-secondary mx-2"><i
                                                     class="fas fa-caret-left"></i> Kembali</a>
                                             <button type="submit" class="btn btn-sm btn-primary"><i
                                                     class="fab fa-telegram-plane"></i> Submit</button>

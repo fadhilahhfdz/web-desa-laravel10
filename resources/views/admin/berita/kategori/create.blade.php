@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admin/kategori/create" method="POST">
+                <form action="/admin/berita/kategori/create" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
