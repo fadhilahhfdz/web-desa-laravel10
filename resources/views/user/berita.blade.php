@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <h2>Berita</h2>
                         <ul class="bread-list">
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/">Beranda</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="text-white"><a href="/berita">Berita</a></li>
                             <li><i class="icofont-simple-right"></i></li>

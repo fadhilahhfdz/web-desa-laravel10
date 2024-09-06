@@ -756,7 +756,7 @@ body{
 	z-index:-1;
 	visibility:visible;
 	opacity:0.2;
-	right: -25px;
+	right: 5px;
 	bottom: -30px;
 }
 .schedule .single-schedule span{

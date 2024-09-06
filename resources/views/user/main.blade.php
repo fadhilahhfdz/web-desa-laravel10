@@ -83,7 +83,7 @@
                     <div class="row justify-content-end">
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Mobile Nav -->
-                            <div class="mobile-nav d-flex"></div>
+                            <div class="mobile-nav d-flex justify-content-end"></div>
                             <!-- End Mobile Nav -->
                         </div>
                         <div class="col-lg-12 col-md-9 col-12">
@@ -149,8 +149,8 @@
                                 </nav>
                             </div>
                             <!--/ End Main Menu -->
-                            {{-- </div>
-                        <div class="col-lg-2 col-12">
+                        </div>
+                        {{-- <div class="col-lg-2 col-12">
                             <div class="get-quote">
                                 <a href="appointment.html" class="btn">Book Appointment</a>
                             </div>
@@ -166,12 +166,12 @@
     @yield('content')
 
     <!-- Footer Area -->
-    <footer id="footer" class="footer ">
+    <footer id="footer" class="footer">
         <!-- Footer Top -->
         <div class="footer-top">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12 mx-5">
+                <div class="row justify-content-between">
+                    {{-- <div class="col-lg-3 col-md-6 col-12 mx-5">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
                             <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur , amanah, dan bermartabat.</p>
@@ -185,6 +185,27 @@
                             </ul>
                             <!-- End Social -->
                         </div>
+                    </div> --}}
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-footer">
+                            <h2>Tentang Kami</h2>
+                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur , amanah, dan bermartabat.</p>
+                            {{-- <ul class="time-sidual">
+                                <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
+                                <li class="day">Istirahat <span>12.00-13.00</span></li>
+                                <li class="day">jumat <span>07.15-14.30</span></li>
+                                <li class="day">Istirahat <span>11.30-14.30</span></li>
+                            </ul> --}}
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-footer">
+                            <h2>Hotline</h2>
+                            <ul class="time-sidual">
+                                <li class="">+62xxxxxxxxxx</li>
+                                <li><a href="#" class="btn">Hubungi Kami</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
@@ -195,19 +216,6 @@
                                 <li class="day">jumat <span>07.15-14.30</span></li>
                                 <li class="day">Istirahat <span>11.30-14.30</span></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12 mx-5">
-                        <div class="single-footer">
-                            <h2>Newsletter</h2>
-                            <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit,</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="email" placeholder="Email Address" class="common-input"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                    required="" type="email">
-                                <button class="button"><i class="icofont icofont-paper-plane"></i></button>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -3197,7 +3197,7 @@ tbody.collapse.show {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
-    max-height: 100px;
+    max-height: 200px;
     overflow-y: auto;
 }
 
@@ -3231,7 +3231,7 @@ tbody.collapse.show {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .dropdown-menu {
         position: static;
         float: none;
@@ -3243,13 +3243,32 @@ tbody.collapse.show {
         top: 100%;
         position: relative;
         margin-left: 0;
-        border: 0;
+	    border: 0;
         font-size: small;
     }
-
-
 }
 
+
+
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%; /* Agar submenu muncul di samping kanan */
+    margin-left: .125rem;
+    margin-top: -0.5rem; /* Sesuaikan agar submenu tidak bergeser terlalu jauh */
+}
+
+/* Hover untuk menampilkan submenu */
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-scrollbar
+{
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 
 .btn-group,
 .btn-group-vertical {

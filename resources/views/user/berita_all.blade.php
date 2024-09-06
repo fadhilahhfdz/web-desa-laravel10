@@ -8,7 +8,7 @@
                     <div class="col-12">
                         <h2>Berita</h2>
                         <ul class="bread-list">
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/">Beranda</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Berita</li>
                         </ul>
@@ -41,7 +41,7 @@
                                 $img = implode('', $images);
                             @endphp
                             <div class="col-12">
-                                <div class="single-main">
+                                <div class="single-main mb-3">
                                     <!-- News Head -->
                                     <div class="news-head">
                                         {!! $img !!}
