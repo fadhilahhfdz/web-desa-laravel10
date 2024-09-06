@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,5 +51,12 @@ class AuthController extends Controller
     public function logout() {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function dashboard() {
+        $berita = Berita::all();
+        $date = Carbon::now();
+        
+        return view('admin.auth.dashboard', compact('berita', 'date'));
     }
 }

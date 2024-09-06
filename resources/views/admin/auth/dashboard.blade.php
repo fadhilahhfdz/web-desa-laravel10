@@ -23,8 +23,20 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="alert alert-success" role="alert">
-                    Hallo <strong>{{ auth()->user()->nama }}</strong>, Selamat Datang   
+                <div class="alert alert-success d-flex justify-content-between" role="alert">
+                    <p class="m-0">Hallo <strong>{{ auth()->user()->nama }}</strong>, Selamat Datang</p>
+                    <p class="m-0">{{ $date->format('d F Y') }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-secondary"><i class="far fa-newspaper"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Berita</span>
+                                <span class="info-box-number">{{ $berita->count() }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>

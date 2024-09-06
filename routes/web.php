@@ -26,13 +26,15 @@ Route::post('/register', [AuthController::class, 'store']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/login', function() {
-    return Auth::check() ? redirect('/dashboard') : view('admin.auth.login');
+    return Auth::check() ? redirect('/admin/dashboard') : view('admin.auth.login');
 })->middleware('guest')->name('login');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/dashboard', function() {
         return view('admin.auth.dashboard');
     });
+
+    Route::get('/admin/dashboard', [AuthController::class, 'dashboard']);
 
     Route::get('/admin/berita', [BeritaController::class, 'index']);
     Route::get('/admin/berita/create', [BeritaController::class, 'create']);
