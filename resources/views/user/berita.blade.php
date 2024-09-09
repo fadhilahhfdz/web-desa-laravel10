@@ -115,8 +115,6 @@
                                         <p class="text-center">Belum ada komentar</p>
                                     @endforelse
                                 </div>
-
-
                             </div>
                         </div>
                         <div class="col-12">

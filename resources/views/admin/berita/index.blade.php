@@ -1,5 +1,4 @@
 @extends('admin.main')
-@section('title', ' - Berita')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -37,7 +36,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-2">
-                                <table class=" table table-hover text-nowrap" id="table">
+                                <table class="table table-hover text-nowrap" id="table">
                                     <thead>
                                         <tr>
                                             <th>No.</th>

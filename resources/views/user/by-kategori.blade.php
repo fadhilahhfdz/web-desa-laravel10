@@ -26,19 +26,19 @@
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="row">
-                        @forelse ($berita as $berita)
+                        @forelse ($berita as $item)
                             @php
                                 // Ekstrak semua tag heading (h1, h2, h3, h4, h5, h6)
-                                preg_match_all('/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $berita->konten, $headingMatches);
+                                preg_match_all('/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', $item->konten, $headingMatches);
 
                                 // Ekstrak semua tag <img>
-                                preg_match_all('/<img[^>]+>/i', $berita->konten, $imgMatches);
+                                preg_match_all('/<img[^>]+>/i', $item->konten, $imgMatches);
 
                                 $headings = $headingMatches[0]; // Array dari semua tag heading
                                 $images = $imgMatches[0]; // Array dari semua tag <img>
 
                                 // Hapus tag heading dan gambar dari konten untuk mendapatkan sisa teks
-                                $hapus_heading = preg_replace('/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', '', $berita->konten);
+                                $hapus_heading = preg_replace('/<h[1-6][^>]*>(.*?)<\/h[1-6]>/is', '', $item->konten);
                                 $hapus_image = preg_replace('/<img[^>]+>/i', '', $hapus_heading);
                                 $teks = \Illuminate\Support\Str::limit($hapus_image, 350);
                                 $img = implode('', $images);
@@ -50,18 +50,18 @@
                                         {!! $img !!}
                                     </div>
                                     <!-- News Title -->
-                                    <h1 class="news-title">{{ $berita->judul }}</h1>
+                                    <h1 class="news-title">{{ $item->judul }}</h1>
                                     <!-- Meta -->
                                     <div class="meta">
                                         <div class="meta-left">
                                             <span class="author"><img src="{{ asset('assets/img/profile.png') }}"
-                                                    alt="#">{{ $berita->author }}</span>
+                                                    alt="#">{{ $item->author }}</span>
                                         </div>
                                         <div class="meta-right">
                                             <span class="date"><i
-                                                class="fa fa-calendar"></i>{{ $berita->updated_at->format('d F Y') }}</span>
+                                                class="fa fa-calendar"></i>{{ $item->updated_at->format('d F Y') }}</span>
                                             <span class="date"><i
-                                                class="fa fa-clock-o"></i>{{ $berita->updated_at->format('H:i') }}</span>
+                                                class="fa fa-clock-o"></i>{{ $item->updated_at->format('H:i') }}</span>
                                         </div>
                                     </div>
                                     <!-- News Text -->
@@ -69,16 +69,8 @@
                                         {!! $teks !!}
                                     </div>
                                     <div class="blog-bottom">
-                                        <a href="/detail-berita/{{ $berita->id }}" class="btn btn-sm text-white">Baca
+                                        <a href="/detail-berita/{{ $item->id }}" class="btn btn-sm text-white">Baca
                                             Selengkapnya</a>
-                                        <!-- Next Prev -->
-                                        {{-- <ul class="prev-next">
-                                    <li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a>
-                                    </li>
-                                    <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a>
-                                    </li>
-                                </ul> --}}
-                                        <!--/ End Next Prev -->
                                     </div>
                                 </div>
                             </div>
@@ -91,6 +83,9 @@
                                 </div>
                             </div>
                         @endforelse
+                    </div>
+                    <div class="col-lg-12 col-12 d-flex justify-content-end">
+                        {{ $berita->links('vendor.pagination.custom') }}
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">

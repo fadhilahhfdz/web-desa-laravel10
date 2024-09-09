@@ -109,7 +109,7 @@ class BeritaController extends Controller
     }
 
     public function berita_all() {
-        $berita = Berita::latest()->paginate(6);
+        $berita = Berita::latest()->paginate(5);
         $kategori = KategoriBerita::all();
 
         return view('user.berita_all', compact('berita', 'kategori'));
@@ -118,7 +118,7 @@ class BeritaController extends Controller
     public function berita_by_kategori($id) {
         $kategori = KategoriBerita::find($id);
 
-        $berita = Berita::where('id_kategori', $id)->latest()->paginate(6);
+        $berita = Berita::where('id_kategori', $id)->latest()->paginate(5);
 
         $all = KategoriBerita::all();
 

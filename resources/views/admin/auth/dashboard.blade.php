@@ -37,6 +37,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-secondary"><i class="fas fa-user"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total User</span>
+                                <span class="info-box-number">{{ $user->count() }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>

@@ -24,7 +24,7 @@ class AuthController extends Controller
             $request->validate([
                 'nama' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email',
-                'password' => 'required|string',
+                'password' => 'required|string|min:8',
             ]);
     
             $user = new User;
@@ -35,7 +35,7 @@ class AuthController extends Controller
     
             return redirect('/login')->with('sukses', 'Registrasi berhasil');
         } catch (\Exception $e) {
-            return redirect('/register')->with('status', 'Registrasi gagal' . $e->getMessage());
+            return redirect('/register')->with('gagal', 'Registrasi gagal ' . $e->getMessage());
         }
     }
 
@@ -56,7 +56,8 @@ class AuthController extends Controller
     public function dashboard() {
         $berita = Berita::all();
         $date = Carbon::now();
+        $user = User::all();
         
-        return view('admin.auth.dashboard', compact('berita', 'date'));
+        return view('admin.auth.dashboard', compact('berita', 'date', 'user'));
     }
 }

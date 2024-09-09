@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Desa Tengkil - Admin</title>
+    <title>Web Desa Tangkil - Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -29,9 +29,14 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('template-admin/plugins/summernote/summernote-bs4.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('template-admin/plugins/datatables/datatables.css') }}">
     <link rel="stylesheet" href="{{ asset('template-admin/plugins/datatables/datatables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template-admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
-    <link rel="stylesheet" href="{{ asset('template-admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template-admin/plugins/datatables/new/css/dataTables.bootstrap4.min.css') }}">
+
+    {{-- izitoast --}}
+    <link rel="stylesheet" href="{{ asset('assets/modules/izitoast/css/iziToast.min.css') }}">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -59,7 +64,7 @@
             <p class="brand-link">
                 <img src="{{ asset('template-admin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Desa Tengkil</span>
+                <span class="brand-text font-weight-light">Desa Tangkil</span>
             </p>
 
             <!-- Sidebar -->
@@ -89,33 +94,33 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                              <i class="nav-icon far fa-newspaper"></i>
-                              <p>
-                                Berita
-                                <i class="right fas fa-angle-left"></i>
-                              </p>
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Berita
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                <a href="/admin/berita/kategori" class="nav-link">
-                                  <i class="fas fa-th nav-icon"></i>
-                                  <p>Kategori Berita</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/admin/berita" class="nav-link">
-                                  <i class="fas fa-plus nav-icon"></i>
-                                  <p>Tambah Berita</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/admin/berita/komentar" class="nav-link">
-                                  <i class="fas fa-comments nav-icon"></i>
-                                  <p>Komentar Berita</p>
-                                </a>
-                              </li>
+                                <li class="nav-item">
+                                    <a href="/admin/berita/kategori" class="nav-link">
+                                        <i class="fas fa-th nav-icon"></i>
+                                        <p>Kategori Berita</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/berita" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Tambah Berita</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/berita/komentar" class="nav-link">
+                                        <i class="fas fa-comments nav-icon"></i>
+                                        <p>Komentar Berita</p>
+                                    </a>
+                                </li>
                             </ul>
-                          </li>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -177,6 +182,35 @@
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.js') }}">
+        < script src = "../../plugins/datatables/jquery.dataTables.min.js" >
+    </script>
+    <script src="{{ asset('template-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+
+    </script>
+
+    {{-- izitoast --}}
+    <script src="{{ asset('assets/modules/izitoast/js/iziToast.min.js') }}"></script>
+
+    @if (session('sukses'))
+        <script>
+            iziToast.success({
+                title: 'Berhasil',
+                message: '{{ session('sukses') }}',
+                position: 'topRight'
+            });
+        </script>
+    @elseif (session('gagal'))
+        <script>
+            iziToast.error({
+                title: 'Gagal',
+                message: '{{ session('gagal') }}',
+                position: 'topRight'
+            });
+        </script>
+    @endif
+
     </script>
     @stack('script')
 </body>
