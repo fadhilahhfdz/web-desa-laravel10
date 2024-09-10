@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Penduduk;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
@@ -24,7 +25,7 @@ class AuthController extends Controller
             $request->validate([
                 'nama' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email',
-                'password' => 'required|string|min:8',
+                'password' => 'required|string|min:8|regex:/[A-Z]/',
             ]);
     
             $user = new User;
@@ -57,7 +58,8 @@ class AuthController extends Controller
         $berita = Berita::all();
         $date = Carbon::now();
         $user = User::all();
+        $penduduk = Penduduk::all();
         
-        return view('admin.auth.dashboard', compact('berita', 'date', 'user'));
+        return view('admin.auth.dashboard', compact('berita', 'date', 'user', 'penduduk'));
     }
 }

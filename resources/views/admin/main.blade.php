@@ -37,6 +37,10 @@
     {{-- izitoast --}}
     <link rel="stylesheet" href="{{ asset('assets/modules/izitoast/css/iziToast.min.css') }}">
 
+    {{-- chart js --}}
+    <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.css') }}">
+    <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.min.css') }}">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -62,7 +66,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <p class="brand-link">
-                <img src="{{ asset('template-admin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                <img src="{{ asset('template-admin/dist/img/AdminLTELogo.png') }}" alt="Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Desa Tangkil</span>
             </p>
@@ -89,6 +93,14 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/penduduk" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Penduduk
                                 </p>
                             </a>
                         </li>
@@ -181,17 +193,20 @@
 
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('template-admin/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.js') }}">
-        < script src = "../../plugins/datatables/jquery.dataTables.min.js" >
-    </script>
+    <script src="{{ asset('template-admin/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
 
-    </script>
-
     {{-- izitoast --}}
     <script src="{{ asset('assets/modules/izitoast/js/iziToast.min.js') }}"></script>
+
+    {{-- chart js --}}
+
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
 
     @if (session('sukses'))
         <script>

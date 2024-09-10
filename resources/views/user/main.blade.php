@@ -121,7 +121,7 @@
                                                 <li><a href="/visi ppid">VISI & MISI PPID DESA TANGKIL</a></li>
                                                 <li><a href="/hukum">DASAR HUKUM</a></li>
                                                 <li class="dropdown-submenu">
-                                                    <a class="dropdown-item" href="/daftar">DAFTAR INFORMASI <i style="padding:15px;"class="icofont-rounded-right"></i></a>
+                                                    <a class="dropdown-item" href="#">DAFTAR INFORMASI <i style="padding:15px;"class="icofont-rounded-right"></i></a>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="/daftar-informasi/berkala">INFORMASI BERKALA</a></li>
                                                         <li><a class="dropdown-item" href="/daftar-informasi/setiap">INFORMASI SETIAP SAAT</a></li>
@@ -140,7 +140,7 @@
                                         <li><a href="/apb">APB DESA</a></li>
                                         <li><a href="/anti">DESA ANTIKORUPSI</a></li>
                                         <li><a href="/berita">BERITA</a></li>
-                                        <li><a href="/perpus">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>
+                                        <li><a href="#">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="/katalog">KATALOG BUKU</a></li>
                                             </ul>
@@ -150,11 +150,6 @@
                             </div>
                             <!--/ End Main Menu -->
                         </div>
-                        {{-- <div class="col-lg-2 col-12">
-                            <div class="get-quote">
-                                <a href="appointment.html" class="btn">Book Appointment</a>
-                            </div>
-                        </div> --}}
                         </div>
                     </div>
                 </div>
@@ -189,7 +184,7 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
-                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur , amanah, dan bermartabat.</p>
+                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur, amanah, dan bermartabat.</p>
                             {{-- <ul class="time-sidual">
                                 <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
                                 <li class="day">Istirahat <span>12.00-13.00</span></li>
@@ -202,7 +197,7 @@
                         <div class="single-footer">
                             <h2>Hotline</h2>
                             <ul class="time-sidual">
-                                <li class="">+62xxxxxxxxxx</li>
+                                <li>+62xxxxxxxxxx</li>
                                 <li><a href="#" class="btn">Hubungi Kami</a></li>
                             </ul>
                         </div>

@@ -74,9 +74,9 @@ class KategoriBeritaController extends Controller
 
             $kategori->update($request->all());
 
-            return redirect('/admin/berita/kategori')->with('sukses', 'Data berhasil diubah');
+            return redirect('/admin/berita/kategori')->with('sukses', 'Data berhasil diupdate');
         } catch(\Exception $e) {
-            return redirect(`/admin/berita/kategori/edit/{id}`)->with('gagal', 'Data gagal diubah' . $e->getMessage());
+            return redirect(`/admin/berita/kategori/edit/{id}`)->with('gagal', 'Data gagal diupdate' . $e->getMessage());
         }
     }
 

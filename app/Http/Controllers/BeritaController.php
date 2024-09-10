@@ -13,7 +13,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $berita = Berita::latest()->paginate(10);
+        $berita = Berita::latest()->paginate(15);
         return view('admin.berita.index', compact('berita'));
     }
 
@@ -41,9 +41,9 @@ class BeritaController extends Controller
 
             Berita::create($request->all());
 
-            return redirect('/admin/berita')->with('sukses', 'Berita berhasil dibuat');
+            return redirect('/admin/berita')->with('sukses', 'Berita berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/berita/create')->with('gagal', 'Berita gagal dibuat' . $e->getMessage());
+            return redirect('/admin/berita/create')->with('gagal', 'Berita gagal disimpan' . $e->getMessage());
         }
     }
 
@@ -84,9 +84,9 @@ class BeritaController extends Controller
 
             $berita->update($request->all());
 
-            return redirect('/admin/berita')->with('sukses', 'Berita berhasil diedit');
+            return redirect('/admin/berita')->with('sukses', 'Berita berhasil diupdate');
         } catch(\Exception $e) {
-            return redirect(`/admin/berita/edit/{id}`)->with('gagal', 'Berita gagal diedit' . $e->getMessage());
+            return redirect(`/admin/berita/edit/{id}`)->with('gagal', 'Berita gagal diupdate' . $e->getMessage());
         }
     }
 

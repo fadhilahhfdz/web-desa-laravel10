@@ -453,7 +453,9 @@ body{
 	opacity:1;
 	visibility:visible;
 	transform:translateY(0px);
-	width: 475px;
+	width: 350px;
+	/* max-height: 600px;
+	overflow-y: auto; */
 }
 .header .nav li .dropdown li{
 	float:none;
