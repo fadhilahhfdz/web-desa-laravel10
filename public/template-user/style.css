@@ -453,8 +453,8 @@ body{
 	opacity:1;
 	visibility:visible;
 	transform:translateY(0px);
-	width: 350px;
-	/* max-height: 600px;
+	width: 365px;
+	/* max-height: 500px;
 	overflow-y: auto; */
 }
 .header .nav li .dropdown li{
@@ -907,7 +907,6 @@ body{
 	padding:120px 0;
 }
 .fun-facts{
-	background:url('img/fun-bg.jpg');
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -918,7 +917,7 @@ body{
 	position: absolute;
 	left: 0;
 	font-size: 62px;
-	color: #fff;
+	color: #1A76D1;
 	height: 70px;
 	width: 70px;
 	line-height: 67px;
@@ -926,7 +925,7 @@ body{
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	border: 2px solid #fff;
+	border: 2px solid #1A76D1;
 	border-radius: 0px;
 	top: 50%;
 	margin-top: -35px;
@@ -936,15 +935,15 @@ body{
 	border-radius: 50%;
 }
 .fun-facts .single-fun:hover i{
-	color:#1A76D1;
-	background:#fff;
+	color:#fff;
+	background:#1A76D1;
 	border-color:transparent;
 }
 .fun-facts .single-fun .content {
 	padding-left: 80px;
 }
 .fun-facts .single-fun span {
-	color: #fff;
+	color: #1A76D1;
 	font-weight: 600;
 	font-size: 30px;
 	position: relative;
@@ -956,7 +955,7 @@ body{
 	margin-bottom: 7px;
 }
 .fun-facts .single-fun p{
-	color:#fff;
+	color:#1A76D1;
 	font-size:15px;
 }
 /*===================

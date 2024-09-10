@@ -1299,3 +1299,28 @@ Version:	1.1
         padding: 65px 0px;
     }
 }
+
+@media only screen and (min-width: 1200px) {
+    .fun-facts.section {
+        padding: 70px 0;
+    }
+    .fun-facts .single-fun {
+        margin: 0;
+        margin: 15px 0;
+        position: relative;
+    }
+    .fun-facts .single-fun {
+        margin: 35px 0;
+        padding-top: 60px;
+        text-align: center;
+    }
+    .fun-facts .single-fun i {
+        left: 50%;
+        margin-left: -35px;
+        top: 0;
+        position: absolute;
+    }
+    .fun-facts .single-fun .content {
+        padding: 0;
+    }
+}

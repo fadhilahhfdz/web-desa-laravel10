@@ -59,7 +59,9 @@ class AuthController extends Controller
         $date = Carbon::now();
         $user = User::all();
         $penduduk = Penduduk::all();
+        $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
+        $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
         
-        return view('admin.auth.dashboard', compact('berita', 'date', 'user', 'penduduk'));
+        return view('admin.auth.dashboard', compact('berita', 'date', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan'));
     }
 }

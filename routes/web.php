@@ -143,18 +143,6 @@ Route::get('/penyalahgunaan', function () {
 Route::get('/sengketa', function () {
     return view('user.ppid.sengketa');
 });
-Route::get('/daftar-informasi/berkala', function () {
-    return view('user.ppid.daftar-informasi.berkala');
-});
-Route::get('/daftar-informasi/setiap', function () {
-    return view('user.ppid.daftar-informasi.setiap');
-});
-Route::get('/daftar-informasi/serta', function () {
-    return view('user.ppid.daftar-informasi.serta');
-});
-Route::get('/daftar-informasi/dikecualikan', function () {
-    return view('user.ppid.daftar-informasi.dikecualikan');
-});
 
 Route::get('/produk-hukum', function () {
     return view('user.produk');

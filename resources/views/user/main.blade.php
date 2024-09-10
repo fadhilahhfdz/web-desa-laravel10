@@ -47,6 +47,10 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+     {{-- chart js --}}
+     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.css') }}">
+     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.min.css') }}">
+
 </head>
 
 <body>
@@ -81,9 +85,9 @@
             <div class="container">
                 <div class="inner">
                     <div class="row justify-content-end">
-                        <div class="col-lg-3 col-md-3 col-12">
+                        <div class="col-12">
                             <!-- Mobile Nav -->
-                            <div class="mobile-nav d-flex justify-content-end"></div>
+                            <div class="mobile-nav justify-content-end"></div>
                             <!-- End Mobile Nav -->
                         </div>
                         <div class="col-lg-12 col-md-9 col-12">
@@ -120,15 +124,7 @@
                                                 <li><a href="/tugas ppid">TUGAS DAN FUNGSI PPID DESA TANGKIL</a></li>
                                                 <li><a href="/visi ppid">VISI & MISI PPID DESA TANGKIL</a></li>
                                                 <li><a href="/hukum">DASAR HUKUM</a></li>
-                                                <li class="dropdown-submenu">
-                                                    <a class="dropdown-item" href="#">DAFTAR INFORMASI <i style="padding:15px;"class="icofont-rounded-right"></i></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="/daftar-informasi/berkala">INFORMASI BERKALA</a></li>
-                                                        <li><a class="dropdown-item" href="/daftar-informasi/setiap">INFORMASI SETIAP SAAT</a></li>
-                                                        <li><a class="dropdown-item" href="/daftar-informasi/serta">INFORMASI SERTA MERTA</a></li>
-                                                        <li><a class="dropdown-item" href="/daftar-informasi/dikecualikan">INFORMASI DIKECUALIKAN</a></li>
-                                                    </ul>
-                                                </li>
+                                                <li><a href="/informasi">DAFTAR INFORMASI</a></li>
                                                 <li><a href="/alur">ALUR PELAYANAN INFORMASI PUBLIK</a></li>
                                                 <li><a href="/informasi">TATA CARA PERMOHONAN INFORMASI PUBLIK</a></li>
                                                 <li><a href="/keberatan">TATA CARA PERMOHONAN KEBERATAN</a></li>
@@ -166,31 +162,10 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row justify-content-between">
-                    {{-- <div class="col-lg-3 col-md-6 col-12 mx-5">
-                        <div class="single-footer">
-                            <h2>Tentang Kami</h2>
-                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur , amanah, dan bermartabat.</p>
-                            <!-- Social -->
-                            <ul class="social">
-                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont-google-plus"></i></a></li>
-                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                <li><a href="#"><i class="icofont-pinterest"></i></a></li>
-                            </ul>
-                            <!-- End Social -->
-                        </div>
-                    </div> --}}
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
                             <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur, amanah, dan bermartabat.</p>
-                            {{-- <ul class="time-sidual">
-                                <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
-                                <li class="day">Istirahat <span>12.00-13.00</span></li>
-                                <li class="day">jumat <span>07.15-14.30</span></li>
-                                <li class="day">Istirahat <span>11.30-14.30</span></li>
-                            </ul> --}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
@@ -273,6 +248,12 @@
     <script src="{{ asset('template-user/js/bootstrap.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('template-user/js/main.js') }}"></script>
+
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
+    @stack('script')
 </body>
 
 </html>

@@ -127,108 +127,55 @@
     </section>
     <!--/End Start schedule Area -->
 
-    <!-- Start Feautes -->
-    <!-- <section class="Feautes section"> -->
-    <!-- <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="section-title">
-                                                <h2>We Are Always Ready to Help You & Your Family</h2>
-                                                <img src="img/section-img.png" alt="#">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-12"> -->
-    <!-- Start Single features -->
-    <!-- <div class="single-features">
-                                                <div class="signle-icon">
-                                                    <i class="icofont icofont-ambulance-cross"></i>
-                                                </div>
-                                                <h3>Emergency Help</h3>
-                                                <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                                            </div>
-                                            <-- End Single features -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-12"> -->
-    <!-- Start Single features -->
-    <!-- <div class="single-features">
-                                                <div class="signle-icon">
-                                                    <i class="icofont icofont-medical-sign-alt"></i>
-                                                </div>
-                                                <h3>Enriched Pharmecy</h3>
-                                                <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                                            </div> -->
-    <!-- End Single features -->
-    <!-- </div> -->
-    <!-- <div class="col-lg-4 col-12"> -->
-    <!-- Start Single features -->
-    <!-- <div class="single-features last"> -->
-    <!-- <div class="signle-icon">
-                                                    <i class="icofont icofont-stethoscope"></i>
-                                                </div>
-                                                <h3>Medical Treatment</h3>
-                                                <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                                            </div> -->
-    <!-- End Single features -->
-    <!-- </div>
-                                    </div>
-                                </div>
-                            </section> -->
-    <!--/ End Feautes -->
-
     <!-- Start Fun-facts -->
-    {{-- <div id="fun-facts" class="fun-facts section overlay">
+    <div id="fun-facts" class="fun-facts section mb-5">
         <div class="container">
-            <div class="row">
+            <div class="row-6">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Data Penduduk</h2>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Start Single Fun -->
                     <div class="single-fun">
-                        <i class="icofont icofont-home"></i>
+                        <i class="icofont icofont-users"></i>
                         <div class="content">
-                            <span class="counter">3468</span>
-                            <p>Hospital Rooms</p>
+                            <span class="counter">{{ $penduduk->count() }}</span>
+                            <p>Jumlah Penduduk</p>
                         </div>
-                    </div> --}}
-    <!-- End Single Fun -->
-    {{-- </div>
-                <div class="col-lg-3 col-md-6 col-12"> --}}
-    <!-- Start Single Fun -->
-    {{-- <div class="single-fun">
-                        <i class="icofont icofont-user-alt-3"></i>
-                        <div class="content">
-                            <span class="counter">557</span>
-                            <p>Specialist Doctors</p>
-                        </div>
-                    </div> --}}
-    <!-- End Single Fun -->
-    {{-- </div>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Start Single Fun -->
                     <div class="single-fun">
-                        <i class="icofont-simple-smile"></i>
+                        <i class="icofont icofont-boy"></i>
                         <div class="content">
-                            <span class="counter">4379</span>
-                            <p>Happy Patients</p>
+                            <span class="counter">{{ $totalLakiLaki }}</span>
+                            <p>Laki-laki</p>
                         </div>
-                    </div> --}}
-    <!-- End Single Fun -->
-    {{-- </div>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Start Single Fun -->
                     <div class="single-fun">
-                        <i class="icofont icofont-table"></i>
+                        <i class="icofont icofont-girl"></i>
                         <div class="content">
-                            <span class="counter">32</span>
-                            <p>Years of Experience</p>
+                            <span class="counter">{{ $totalPerempuan }}</span>
+                            <p>Perempuan</p>
                         </div>
-                    </div> --}}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3col-12">
+                    <canvas id="chartPenduduk"
+                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- End Single Fun -->
-    </div>
-    </div>
-    </div>
-    </div>
+
     <!--/ End Fun-facts -->
 
     <!-- Start Why choose -->
@@ -245,22 +192,6 @@
                         <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero
                             tempora cum, consequatur culpa repellendus? Totam reiciendis obcaecati omnis, fuga doloremque
                             sit at veniam odit, libero sint possimus tenetur pariatur.</p>
-                        {{-- <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-                                </ul>
-                            </div>
-                        </div> --}}
                     </div>
                     <!-- End Choose Left -->
                 </div>
@@ -357,186 +288,6 @@
     </section>
     <!--/ End portfolio -->
 
-    <!-- Start service -->
-    <!-- <section class="services section">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="section-title">
-                                                <h2>We Offer Different Services To Improve Your Health</h2>
-                                                <img src="img/section-img.png" alt="#">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-prescription"></i>
-                                                <h4><a href="service-details.html">General Treatment</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-tooth"></i>
-                                                <h4><a href="service-details.html">Teeth Whitening</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-heart-alt"></i>
-                                                <h4><a href="service-details.html">Heart Surgery</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-listening"></i>
-                                                <h4><a href="service-details.html">Ear Treatment</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-eye-alt"></i>
-                                                <h4><a href="service-details.html">Vision Problems</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                        <div class="col-lg-4 col-md-6 col-12"> -->
-    <!-- Start Single Service -->
-    <!-- <div class="single-service">
-                                                <i class="icofont icofont-blood"></i>
-                                                <h4><a href="service-details.html">Blood Transfusion</a></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                                                    imperdiet. </p>
-                                            </div> -->
-    <!-- End Single Service -->
-    <!-- </div>
-                                    </div>
-                                </div>
-                            </section> -->
-    <!--/ End service -->
-
-    <!-- Pricing Table -->
-    <!-- <section class="pricing-table section">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="section-title">
-                                                <h2>We Provide You The Best Treatment In Resonable Price</h2>
-                                                <img src="img/section-img.png" alt="#">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row"> -->
-    <!-- Single Table -->
-    <!-- <div class="col-lg-4 col-md-12 col-12">
-                                            <div class="single-table"> -->
-    <!-- Table Head -->
-    <!-- <div class="table-head">
-                                                    <div class="icon">
-                                                        <i class="icofont icofont-ui-cut"></i>
-                                                    </div>
-                                                    <h4 class="title">Plastic Suggery</h4>
-                                                    <div class="price">
-                                                        <p class="amount">$199<span>/ Per Visit</span></p>
-                                                    </div>
-                                                </div> -->
-    <!-- Table List -->
-    <!-- <ul class="table-list">
-                                                    <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                                                    <li class="cross"><i class="icofont icofont-ui-close"></i>Nullam interdum enim</li>
-                                                    <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                                                    <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-                                                </ul>
-                                                <div class="table-bottom">
-                                                    <a class="btn" href="#">Book Now</a>
-                                                </div> -->
-    <!-- Table Bottom -->
-    </div>
-    </div>
-    <!-- End Single Table-->
-    <!-- Single Table -->
-    <div class="col-lg-4 col-md-12 col-12">
-        <div class="single-table">
-            <!-- Table Head -->
-            <!-- <div class="table-head">
-                                                    <div class="icon">
-                                                        <i class="icofont icofont-tooth"></i>
-                                                    </div>
-                                                    <h4 class="title">Teeth Whitening</h4>
-                                                    <div class="price">
-                                                        <p class="amount">$299<span>/ Per Visit</span></p>
-                                                    </div>
-                                                </div> -->
-            <!-- Table List -->
-            <!-- <ul class="table-list">
-                                                    <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                                                    <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                                                    <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-                                                </ul>
-                                                <div class="table-bottom">
-                                                    <a class="btn" href="#">Book Now</a>
-                                                </div> -->
-            <!-- Table Bottom -->
-            <!-- </div>
-                                        </div> -->
-            <!-- End Single Table-->
-            <!-- Single Table -->
-            <!-- <div class="col-lg-4 col-md-12 col-12">
-                                            <div class="single-table"> -->
-            <!-- Table Head -->
-            <!-- <div class="table-head">
-                                                    <div class="icon">
-                                                        <i class="icofont-heart-beat"></i>
-                                                    </div>
-                                                    <h4 class="title">Heart Suggery</h4>
-                                                    <div class="price">
-                                                        <p class="amount">$399<span>/ Per Visit</span></p>
-                                                    </div>
-                                                </div> -->
-            <!-- Table List -->
-            <!-- <ul class="table-list">
-                                                    <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-                                                    <li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
-                                                </ul>
-                                                <div class="table-bottom">
-                                                    <a class="btn" href="#">Book Now</a>
-                                                </div> -->
-            <!-- Table Bottom -->
-        </div>
-    </div>
-    <!-- End Single Table-->
-    </div>
-    </div>
-    </section>
-    <!--/ End Pricing Table -->
-
     <!-- Start Call to action -->
     <section class="call-action overlay">
         <div class="container">
@@ -609,136 +360,30 @@
         </div>
     </section>
 
-    <!-- Start clients -->
-    {{-- <div class="clients overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="owl-carousel clients-slider">
-                        <div class="single-clients">
-                            <img src="img/client1.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client2.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client3.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client4.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client5.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client1.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client2.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client3.png" alt="#">
-                        </div>
-                        <div class="single-clients">
-                            <img src="img/client4.png" alt="#">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!--/Ens clients -->
-
-    <!-- Start Appointment -->
-    <!-- <section class="appointment">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="section-title">
-                                                <h2>We Are Always Ready to Help You. Book An Appointment</h2>
-                                                <img src="img/section-img.png" alt="#">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-12 col-12">
-                                            <form class="form" action="#">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <input name="name" type="text" placeholder="Name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <input name="email" type="email" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <input name="phone" type="text" placeholder="Phone">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <div class="nice-select form-control wide" tabindex="0"><span
-                                                                    class="current">Department</span>
-                                                                <ul class="list">
-                                                                    <li data-value="1" class="option selected ">Department</li>
-                                                                    <li data-value="2" class="option">Cardiac Clinic</li>
-                                                                    <li data-value="3" class="option">Neurology</li>
-                                                                    <li data-value="4" class="option">Dentistry</li>
-                                                                    <li data-value="5" class="option">Gastroenterology</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <div class="nice-select form-control wide" tabindex="0"><span
-                                                                    class="current">Doctor</span>
-                                                                <ul class="list">
-                                                                    <li data-value="1" class="option selected ">Doctor</li>
-                                                                    <li data-value="2" class="option">Dr. Akther Hossain</li>
-                                                                    <li data-value="3" class="option">Dr. Dery Alex</li>
-                                                                    <li data-value="4" class="option">Dr. Jovis Karon</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Date" id="datepicker">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-md-12 col-12">
-                                                        <div class="form-group">
-                                                            <textarea name="message" placeholder="Write Your Message Here....."></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-5 col-md-4 col-12">
-                                                        <div class="form-group">
-                                                            <div class="button">
-                                                                <button type="submit" class="btn">Book An Appointment</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-7 col-md-8 col-12">
-                                                        <p>( We will be confirm by an Text Message )</p>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 ">
-                                            <div class="appointment-image">
-                                                <img src="img/contact-img.png" alt="#">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section> -->
-    <!-- End Appointment -->
 @endsection
+@push('script')
+    <script>
+        $(document).ready(function() {
+            var donutChartCanvas = $('#chartPenduduk').get(0).getContext('2d');
+            var donutData = {
+                labels: [
+                    'Laki-laki',
+                    'Perempuan'
+                ],
+                datasets: [{
+                    data: [{{ $totalLakiLaki }}, {{ $totalPerempuan }}],
+                    backgroundColor: ['#1A76D1', '#9DB2BF'],
+                }]
+            };
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            };
+            new Chart(donutChartCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+        });
+    </script>
+@endpush

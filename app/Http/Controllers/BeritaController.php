@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\KategoriBerita;
+use App\Models\Penduduk;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -104,8 +105,11 @@ class BeritaController extends Controller
     public function berita()
     {
         $berita = Berita::all();
+        $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
+        $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
+        $penduduk = Penduduk::all();
 
-        return view('user.index', compact('berita'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk'));
     }
 
     public function berita_all() {

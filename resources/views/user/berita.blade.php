@@ -168,15 +168,6 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="main-sidebar">
-                        <!-- Single Widget -->
-                        {{-- <div class="single-widget search">
-                            <div class="form">
-                                <input type="email" placeholder="Search Here...">
-                                <a class="button" href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div> --}}
-                        <!--/ End Single Widget -->
-                        <!-- Single Widget -->
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
                             @foreach ($kategori as $kategori)
@@ -211,21 +202,6 @@
 
                             <!-- End Single Post -->
                         </div>
-                        <!--/ End Single Widget -->
-                        <!-- Single Widget -->
-                        {{-- <div class="single-widget side-tags">
-                            <h3 class="title">Tags</h3>
-                            <ul class="tag">
-                                <li><a href="#">business</a></li>
-                                <li><a href="#">wordpress</a></li>
-                                <li><a href="#">html</a></li>
-                                <li><a href="#">multipurpose</a></li>
-                                <li><a href="#">education</a></li>
-                                <li><a href="#">template</a></li>
-                                <li><a href="#">Ecommerce</a></li>
-                            </ul>
-                        </div> --}}
-                        <!--/ End Single Widget -->
                     </div>
                 </div>
             </div>

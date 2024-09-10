@@ -95,15 +95,6 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="main-sidebar">
-                        <!-- Single Widget -->
-                        {{-- <div class="single-widget search">
-                            <div class="form">
-                                <input type="email" placeholder="Search Here...">
-                                <a class="button" href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div> --}}
-                        <!--/ End Single Widget -->
-                        <!-- Single Widget -->
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
                             @forelse ($kategori as $kategori)

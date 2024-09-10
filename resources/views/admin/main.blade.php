@@ -100,7 +100,7 @@
                             <a href="/admin/penduduk" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Penduduk
+                                    Data Penduduk
                                 </p>
                             </a>
                         </li>

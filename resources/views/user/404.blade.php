@@ -7,10 +7,6 @@
                 <!-- Error Inner -->
                 <div class="error-inner">
                     <h1>404<span>Oop's halaman yang anda cari tidak ditemukan :(</span></h1>
-                    {{-- <form class="search-form">
-                        <input placeholder="Search from Here" type="text">
-                        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                    </form> --}}
                 </div>
                 <!--/ End Error Inner -->
             </div>

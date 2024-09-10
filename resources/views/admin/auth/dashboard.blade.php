@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card card-danger">
+                            <div class="card card-secondary">
                                 <div class="card-header">
                                     <h3 class="card-title">Data Penduduk</h3>
     
@@ -60,9 +60,9 @@
                                 <div class="card-body">
                                     <canvas id="chartPenduduk"
                                         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                    <h6>Jumlah penduduk : {{ $penduduk->count() }}</h6>
-                                    <h6>Jumlah penduduk Laki-laki :</h6>
-                                    <h6>Jumlah penduduk Perempuan :</h6>
+                                    <h6>Jumlah penduduk : {{ $penduduk->count() }} Jiwa</h6>
+                                    <h6>Jumlah penduduk Laki-laki : {{ $totalLakiLaki }} Jiwa</h6>
+                                    <h6>Jumlah penduduk Perempuan : {{ $totalPerempuan }} Jiwa</h6>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -84,8 +84,8 @@
                         'Perempuan'
                     ],
                     datasets: [{
-                        data: [700, 500],
-                        backgroundColor: ['#f56954', '#00a65a'],
+                        data: [{{ $totalLakiLaki }}, {{ $totalPerempuan }}],
+                        backgroundColor: ['#198754', '#0dcaf0'],
                     }]
                 };
                 var donutOptions = {

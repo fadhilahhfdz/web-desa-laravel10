@@ -25,7 +25,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Admin</b></a>
+                <p class="h1"><b>Admin</b></p>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Silahkan Register untuk memulai sesi anda</p>
@@ -57,7 +57,7 @@
                         </div>
                         <div id="warning-message" style="color: red; display: none;">
                           Password minimal 8 karakter dan 1 huruf kapital
-                      </div>
+                        </div>
                     </div>
                     <!-- /.col -->
                     <div class="">
