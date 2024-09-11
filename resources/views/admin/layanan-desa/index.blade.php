@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Penduduk</h1>
+                        <h1 class="m-0">Layanan Desa</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Penduduk</li>
+                            <li class="breadcrumb-item active">Layanan Desa</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,12 +26,12 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Penduduk</h3>
+                                <h3 class="card-title">Halaman Layanan Desa</h3>
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#tambah-penduduk">
+                                            data-target="#tambah-layanan-desa">
                                             <i class="fas fa-plus"></i> Tambah
                                         </button>
                                     </div>
@@ -43,38 +43,23 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Alamat Lengkap</th>
+                                            <th>Nama</th>
+                                            <th>Deskripsi</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($penduduk as $item)
+                                        @foreach ($layananDesa as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
                                                 <td style="width: 20%">{{ $item->nama }}</td>
-                                                {{-- <td style="width: 13%">{{ $item->jenis_kelamin }}</td> --}}
-                                                @if ($item->jenis_kelamin == 'Laki-laki')
-                                                    <td>
-                                                        <div class="badge badge-success">laki-Laki</div>
-                                                    </td>
-                                                @elseif($item->jenis_kelamin == 'Perempuan')
-                                                    <td>
-                                                        <div class="badge badge-info">Perempuan</div>
-                                                    </td>
-                                                @endif
-                                                <td style="width: 15%">
-                                                    {{ \Carbon\Carbon::parse($item->tanggal_lahir)->translatedFormat('d F Y') }}
-                                                </td>
-                                                <td style="width: 38%">{{ $item->alamat }}</td>
+                                                <td style="width: 60%">{{ $item->deskripsi }}</td>
                                                 <td>
-                                                    <a href="/admin/penduduk/edit/{{ $item->id }}"
+                                                    <a href="/admin/layanan-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
-                                                            class="fas fa-edit"></i></a>
-                                                    <a href="/admin/penduduk/delete/{{ $item->id }}"
-                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                                            class="fas fa-edit"></i> Edit</a>
+                                                    <a href="/admin/layanan-desa/delete/{{ $item->id }}"
+                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -90,7 +75,7 @@
         </section>
         <!-- /.content -->
     </div>
-    @include('admin.penduduk.create')
+    @include('admin.layanan-desa.create')
 @endsection
 @push('script')
     <script>

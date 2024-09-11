@@ -1,33 +1,26 @@
-<div class="modal fade" id="tambah-perangkat-desa">
+<div class="modal fade" id="tambah-layanan-desa">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Tambah Data Perangkat Desa</h4>
+                <h4 class="modal-title">Tambah Data Layanan Desa</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admin/perangkat-desa/create" method="POST" enctype="multipart/form-data">
+                <form action="/admin/layanan-desa/create" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="nama">Nama :</label>
+                                <label for="nama">Nama Layanan :</label>
                                 <input type="text" name="nama" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="jabatan">Jabatan :</label>
-                                <input type="text" name="jabatan" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="foto">Foto :</label>
-                                <input type="file" name="foto" class="form-control" accept="image/*">
-                                <small class="text-danger">*Ukuran foto 3x4.</small>
+                                <label for="deskripsi">Deskripsi :</label>
+                                <textarea class="form-control" name="deskripsi" cols="5" rows="3" required></textarea>
                             </div>
                         </div>
                     </div>

@@ -4,8 +4,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
+use App\Http\Controllers\LayananDesaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\UserViewController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BeritaController::class, 'berita']);
+Route::get('/', [UserViewController::class, 'index']);
 
 // Auth
 Route::get('/register', [AuthController::class, 'index']);
@@ -64,6 +66,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/perangkat-desa/edit/{id}', [PerangkatDesaController::class, 'edit']);
     Route::put('/admin/perangkat-desa/edit/{id}', [PerangkatDesaController::class, 'update']);
     Route::get('/admin/perangkat-desa/delete/{id}', [PerangkatDesaController::class, 'destroy']);
+
+    Route::get('/admin/layanan-desa', [LayananDesaController::class, 'index']);
+    Route::post('/admin/layanan-desa/create', [LayananDesaController::class, 'store']);
+    Route::get('/admin/layanan-desa/edit/{id}', [LayananDesaController::class, 'edit']);
+    Route::put('/admin/layanan-desa/edit/{id}', [LayananDesaController::class, 'update']);
+    Route::get('/admin/layanan-desa/delete/{id}', [LayananDesaController::class, 'destroy']);
 });
 
 Route::get('/berita', [BeritaController::class, 'berita_all']);

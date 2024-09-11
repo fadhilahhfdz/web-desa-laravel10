@@ -70,57 +70,22 @@
         <div class="container">
             <div class="schedule-inner">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12 ">
-                        <!-- single-schedule -->
-                        <div class="single-schedule first h-100">
-                            <div class="inner h-100">
-                                <div class="icon">
-                                    <i class="fa fa-ambulance"></i>
-                                </div>
-                                <div class="single-content">
-                                    <h4>Mobil Siaga</h4>
-                                    <p>Layanan Mobil Siaga GRATIS Tidak dipungut Biaya untuk warga Masyarakat DesaTangkil.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- single-schedule -->
-                        <div class="single-schedule middle h-100">
-                            <div class="inner h-100">
-                                <div class="icon">
-                                    <i class="icofont-prescription"></i>
-                                </div>
-                                <div class="single-content">
-                                    <h4>Desa Antikorupsi</h4>
-                                    <p>Desa Tangkil mendapatkan penghargaan sebagai Pelopor Desa Antikorupsi di Kabupaten
-                                        Sragen, Jawa Tengah</p>
+                    @foreach ($layananDesa as $item)
+                        <div class="col-lg-4 col-md-6 col-12 ">
+                            <!-- single-schedule -->
+                            <div class="single-schedule first h-100">
+                                <div class="inner h-100">
+                                    <div class="icon">
+                                        <i class=""></i>
+                                    </div>
+                                    <div class="single-content">
+                                        <h4>{{ $item->nama }}</h4>
+                                        <p>{{ $item->deskripsi }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- single-schedule -->
-                        <div class="single-schedule last h-100">
-                            <div class="inner h-100">
-                                <div class="icon">
-                                    <i class="icofont-ui-clock"></i>
-                                </div>
-                                <div class="single-content">
-                                    <h4>Waktu Pelayanan</h4>
-                                    <ul class="time-sidual">
-                                        <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
-                                        <li class="day">Istirahat <span>12.00-13.00</span></li>
-                                        <li class="day">jumat <span>07.15-14.30</span></li>
-                                        <li class="day">Istirahat <span>11.30-14.30</span></li>
-                                        <li class="day">Waktu Penyelesaian <span>5 s/d 15 menit</span></li>
-                                        <li class="day">Gratis</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -230,15 +195,15 @@
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
-                            @foreach ($perangkatDesa as $item)
+                        @foreach ($perangkatDesa as $item)
                             <div class="single-pf">
                                 <img src="{{ asset($item->foto) }}" alt="{{ $item->nama }}">
                                 <h5 class="d-flex justify-content-center fw-semibold mt-2">{{ $item->nama }}</h5>
                                 <p class="d-flex justify-content-center mt-2">{{ $item->jabatan }}</p>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
+                </div>
             </div>
         </div>
     </section>

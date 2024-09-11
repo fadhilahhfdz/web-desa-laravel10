@@ -82,7 +82,6 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            console.log("DataTables script running");
             $('#table').DataTable();
         })
     </script>

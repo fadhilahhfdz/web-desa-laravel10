@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Penduduk</h1>
+                        <h1 class="m-0">Layanan Desa</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Penduduk</li>
+                            <li class="breadcrumb-item active">Layanan Desa</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -27,38 +27,30 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Edit Data Penduduk
+                                    Edit Halaman Layanan Desa
                                 </h3>
                             </div>
                             <!-- end card header -->
                             <div class="card-body">
-                                <form action="/admin/perangkat-desa/edit/{{ $perangkatDesa->id }}" method="POST" enctype="multipart/form-data">
+                                <form action="/admin/layanan-desa/edit/{{ $layananDesa->id }}" method="POST">
                                     @method('PUT')
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="nama">Nama :</label>
+                                                <label for="nama">Nama Layanan :</label>
                                                 <input type="text" name="nama" class="form-control"
-                                                    value="{{ $perangkatDesa->nama }}" required>
+                                                    value="{{ $layananDesa->nama }}" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jabatan">Jabatan :</label>
-                                                <input type="text" name="jabatan" class="form-control"
-                                                    value="{{ $perangkatDesa->jabatan }}" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="foto">Foto :</label>
-                                                <input type="file" name="foto" class="form-control" accept="image/*">
-                                                <small class="text-danger">*Biarkan kosong jika tidak ingin mengubah foto.</small>
+                                                <label for="deskripsi">Deskripsi :</label>
+                                                <textarea class="form-control" name="deskripsi" cols="5" rows="3" required>{{ $layananDesa->deskripsi }}</textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="/admin/perangkat-desa" class="btn btn-sm btn-outline-secondary"><i
+                                    <a href="/admin/layanan-desa" class="btn btn-sm btn-outline-secondary"><i
                                             class="fas fa-caret-left"></i> Kembali</a>
                                     <button type="submit" class="btn btn-sm btn-primary"><i
                                             class="fab fa-telegram-plane"></i> Submit</button>

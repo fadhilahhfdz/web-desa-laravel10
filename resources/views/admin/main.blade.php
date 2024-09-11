@@ -142,12 +142,21 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/penduduk" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>
                                     Tampilan Web
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/layanan-desa" class="nav-link">
+                                        <i class="fas fa-tasks nav-icon"></i>
+                                        <p>Layanan Desa</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -237,6 +246,14 @@
             iziToast.error({
                 title: 'Gagal',
                 message: '{{ session('gagal') }}',
+                position: 'topRight'
+            });
+        </script>
+    @elseif (session('error'))
+        <script>
+            iziToast.error({
+                title: 'Error',
+                message: '{{ session('error') }}',
                 position: 'topRight'
             });
         </script>
