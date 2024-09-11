@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Penduduk extends Model
+class PerangkatDesa extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nama',
-        'jenis_kelamin',
-        'tanggal_lahir',
-        'alamat'
+        'jabatan',
+        'foto',
     ];
 
-    protected $table = 'penduduks';
+    protected $table = 'perangkat_desas';
 }

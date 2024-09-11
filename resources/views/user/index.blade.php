@@ -130,7 +130,7 @@
     <!-- Start Fun-facts -->
     <div id="fun-facts" class="fun-facts section mb-5">
         <div class="container">
-            <div class="row-6">
+            <div class="row">
                 <div class="col-12">
                     <div class="section-title">
                         <h2>Data Penduduk</h2>
@@ -166,17 +166,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3col-12">
+                <div class="col-lg-3 col-md-3 col-12">
                     <canvas id="chartPenduduk"
                         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <!-- End Single Fun -->
-
-    <!--/ End Fun-facts -->
 
     <!-- Start Why choose -->
     <section class="why-choose section overlay">
@@ -233,56 +230,15 @@
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
-                        </div>
-                        <div class="single-pf">
-                            <img src="https://by.possiblewedding.com/wp-content/uploads/2024/01/dummy-3x4-1.jpg"
-                                alt="#">
-                            <h5 class="d-flex justify-content-center fw-semibold mt-2">Nama</h5>
-                            <p class="d-flex justify-content-center mt-2">Jabatan</p>
+                            @foreach ($perangkatDesa as $item)
+                            <div class="single-pf">
+                                <img src="{{ asset($item->foto) }}" alt="{{ $item->nama }}">
+                                <h5 class="d-flex justify-content-center fw-semibold mt-2">{{ $item->nama }}</h5>
+                                <p class="d-flex justify-content-center mt-2">{{ $item->jabatan }}</p>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -359,7 +315,6 @@
             </div>
         </div>
     </section>
-
 @endsection
 @push('script')
     <script>

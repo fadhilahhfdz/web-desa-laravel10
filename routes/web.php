@@ -5,6 +5,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
 use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\PerangkatDesaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/penduduk/edit/{id}', [PendudukController::class, 'edit']);
     Route::put('/admin/penduduk/edit/{id}', [PendudukController::class, 'update']);
     Route::get('/admin/penduduk/delete/{id}', [PendudukController::class, 'destroy']);
+
+    Route::get('/admin/perangkat-desa', [PerangkatDesaController::class, 'index']);
+    Route::post('/admin/perangkat-desa/create', [PerangkatDesaController::class, 'store']);
+    Route::get('/admin/perangkat-desa/edit/{id}', [PerangkatDesaController::class, 'edit']);
+    Route::put('/admin/perangkat-desa/edit/{id}', [PerangkatDesaController::class, 'update']);
+    Route::get('/admin/perangkat-desa/delete/{id}', [PerangkatDesaController::class, 'destroy']);
 });
 
 Route::get('/berita', [BeritaController::class, 'berita_all']);

@@ -105,6 +105,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/admin/perangkat-desa" class="nav-link">
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>
+                                    Data Perangkat Desa
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-newspaper"></i>
                                 <p>
@@ -132,6 +140,14 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/penduduk" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Tampilan Web
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </nav>

@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nama">Jenis Kelamin :</label>
+                                <label for="jenis_kelamin">Jenis Kelamin :</label>
                                 <select name="jenis_kelamin" class="form-control" required>
                                     <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nama">Tanggal Lahir :</label>
+                                <label for="tanggal_lahir">Tanggal Lahir :</label>
                                 <input type="date" name="tanggal_lahir" class="form-control" required>
                             </div>
                         </div>
