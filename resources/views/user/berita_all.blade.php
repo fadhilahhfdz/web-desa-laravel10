@@ -68,14 +68,6 @@
                                     <div class="blog-bottom">
                                         <a href="/detail-berita/{{ $item->id }}" class="btn btn-sm text-white">Baca
                                             Selengkapnya</a>
-                                        <!-- Next Prev -->
-                                        {{-- <ul class="prev-next">
-                                        <li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a>
-                                        </li>
-                                        <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a>
-                                        </li>
-                                    </ul> --}}
-                                        <!--/ End Next Prev -->
                                     </div>
                                 </div>
                             </div>

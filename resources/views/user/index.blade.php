@@ -4,14 +4,13 @@
     <section class="slider">
         <div class="hero-slider">
             <!-- Start Single Slider -->
-            <div class="single-slider" id="hero" style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+            <div class="single-slider" id="hero" style="background-image:url('{{ isset($fotoDesa[0]) ? asset($fotoDesa[0]->foto_desa) : asset('assets/default.png') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa Tangkil</span> Kecamatan <span>Sragen</span></h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
-                                    pellentesque, faucibus libero eu, gravida quam. </p>
+                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
+                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -23,16 +22,13 @@
             <!-- End Single Slider -->
             <!-- Start Single Slider -->
             <div class="single-slider" id="hero"
-                style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+                style="background-image:url('{{ isset($fotoDesa[1]) ? asset($fotoDesa[1]->foto_desa) : asset('assets/default.png') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa Tangkil</span> Kecamatan
-                                    <span>Sragen</span>
-                                </h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
-                                    pellentesque, faucibus libero eu, gravida quam. </p>
+                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
+                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -44,14 +40,13 @@
             <!-- Start End Slider -->
             <!-- Start Single Slider -->
             <div class="single-slider" id="hero"
-                style="background-image:url('{{ asset('assets/img/tangkil.webp') }}')">
+                style="background-image:url('{{ isset($fotoDesa[2]) ? asset($fotoDesa[2]->foto_desa) : asset('assets/default.png') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa Tangkil</span> Kecamatan <span>Sragen</span></h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
-                                    pellentesque, faucibus libero eu, gravida quam. </p>
+                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
+                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -148,18 +143,13 @@
                     <!-- Start Choose Left -->
                     <div class="choose-left">
                         <h3 class="text-white">Tentang Kami</h3>
-                        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra
-                            antege vel est
-                            lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
-                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero
-                            tempora cum, consequatur culpa repellendus? Totam reiciendis obcaecati omnis, fuga doloremque
-                            sit at veniam odit, libero sint possimus tenetur pariatur.</p>
+                        <p class="text-white">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
                     </div>
                     <!-- End Choose Left -->
                 </div>
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Rights -->
-                    <div class="choose-right">
+                    <div class="choose-right" style="background-image: url({{ isset($informasiDesa[0]) ? asset($informasiDesa[0]->thumbnail_video) : asset('assets/default.png') }});">
                         <div class="video-image">
                             <!-- Video Animation -->
                             <div class="promo-video">
@@ -170,7 +160,7 @@
                                 </div>
                             </div>
                             <!--/ End Video Animation -->
-                            <a href="#" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                            <a href="{{ isset($informasiDesa[0]) ? $informasiDesa[0]->link_video : '#' }}" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                     <!-- End Choose Rights -->

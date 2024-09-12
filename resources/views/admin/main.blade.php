@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Desa Tangkil - Admin</title>
 
+    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -66,8 +68,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <p class="brand-link">
-                <img src="{{ asset('template-admin/dist/img/AdminLTELogo.png') }}" alt="Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ asset('assets/img/home.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light">Desa Tangkil</span>
             </p>
 
@@ -97,18 +99,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/penduduk" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
+                            <a href="/admin/perangkat-desa" class="nav-link">
+                                <i class="nav-icon fas fa-user-tie"></i>
                                 <p>
-                                    Data Penduduk
+                                    Perangkat Desa
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/perangkat-desa" class="nav-link">
-                                <i class="nav-icon fas fa-user-tie"></i>
+                            <a href="/admin/penduduk" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Data Perangkat Desa
+                                    Data Penduduk
                                 </p>
                             </a>
                         </li>
@@ -145,11 +147,23 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>
-                                    Tampilan Web
+                                    Pengaturan Tampilan
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/informasi-desa" class="nav-link">
+                                        <i class="fas fa-pencil-alt nav-icon"></i>
+                                        <p>Informasi Desa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/informasi-desa/foto" class="nav-link">
+                                        <i class="fas fa-image nav-icon"></i>
+                                        <p>Upload Foto Desa</p>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a href="/admin/layanan-desa" class="nav-link">
                                         <i class="fas fa-tasks nav-icon"></i>
@@ -218,7 +232,8 @@
 
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('template-admin/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('template-admin/plugins/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.js') }}">
+    </script>
     <script src="{{ asset('template-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>

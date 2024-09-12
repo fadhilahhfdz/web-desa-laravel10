@@ -11,15 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Website Resmi - Desa</title>
+    <title>Website Resmi - Desa Tangkil</title>
 
     <!-- Favicon -->
-    {{-- <link rel="icon" href="{{ asset('template-user/img/favicon.png') }}"> --}}
+    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
 
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('template-user/css/bootstrap.min.css') }}">
@@ -64,15 +67,15 @@
                     <div class="col-lg-6 col-md-5 col-12">
                         <!-- Contact -->
                         <div class="logo">
-                            <a href="#"><img src="{{ asset('assets/img/logo.png') }}" alt="LOGO"></a>
+                            <h1 class="text"><a href="#">Desa <span>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></a></h1>
                         </div>
                         <!-- End Contact -->
                     </div>
                     <div class="col-lg-6 col-md-7 col-12">
                         <!-- Top Contact -->
                         <ul class="top-contact mt-5">
-                            <li><i class="fa fa-phone"></i>+62 XXX</li>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:XXX">XXX@gmail.com</a></li>
+                            <li><i class="fa fa-phone"></i>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}</li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:XXX">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}</a></li>
                         </ul>
                         <!-- End Top Contact -->
                     </div>
@@ -165,14 +168,14 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
-                            <p>Bangkit bersama masyarakat Desa Tangkil untuk perubahan dan pembaharuan yang smart, sejahtera, jujur, amanah, dan bermartabat.</p>
+                            <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Hotline</h2>
                             <ul class="time-sidual">
-                                <li>+62xxxxxxxxxx</li>
+                                <li>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}</li>
                                 <li><a href="#" class="btn">Hubungi Kami</a></li>
                             </ul>
                         </div>
