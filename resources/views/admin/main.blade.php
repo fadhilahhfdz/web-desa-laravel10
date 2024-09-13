@@ -4,7 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Desa Tangkil - Admin</title>
+
+    @php
+        use App\Models\InformasiDesa;
+        $informasiDesa = InformasiDesa::all();
+    @endphp
+
+    <title>Web Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }} - Admin
+    </title>
 
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
 
@@ -159,15 +166,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/admin/sub-informasi-desa" class="nav-link">
+                                        <i class="fas fa-info-circle nav-icon"></i>
+                                        <p>Sub Informasi Desa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/admin/informasi-desa/foto" class="nav-link">
                                         <i class="fas fa-image nav-icon"></i>
                                         <p>Upload Foto Desa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/layanan-desa" class="nav-link">
+                                    <a href="/admin/waktu-layanan-desa" class="nav-link">
                                         <i class="fas fa-tasks nav-icon"></i>
-                                        <p>Layanan Desa</p>
+                                        <p>Waktu Layanan Desa</p>
                                     </a>
                                 </li>
                             </ul>

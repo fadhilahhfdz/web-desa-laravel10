@@ -36,7 +36,7 @@ class InformasiDesaController extends Controller
                 'hotline_desa' => 'required|string',
                 'email_desa' => 'required|email|unique:users,email',
                 'deskripsi_desa' => 'required',
-                'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+                'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'link_video' => 'nullable|string',
             ]);
 
@@ -92,7 +92,7 @@ class InformasiDesaController extends Controller
                 'hotline_desa' => 'required|string',
                 'email_desa' => 'required|email|unique:users,email',
                 'deskripsi_desa' => 'required',
-                'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+                'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'link_video' => 'nullable|string',
             ]);
 

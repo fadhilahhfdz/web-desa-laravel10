@@ -32,7 +32,7 @@ class FotoDesaController extends Controller
     {
         try {
             $request->validate([
-                'foto_desa' => 'required|image|mimes:jpeg,png,jpg|max:10240',
+                'foto_desa' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             if (FotoDesa::count() >= 3) {
@@ -78,7 +78,7 @@ class FotoDesaController extends Controller
     {
         try {
             $request->validate([
-                'foto_desa' => 'required|image|mimes:jpeg,png,jpg|max:10240',
+                'foto_desa' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             $fotoDesa = FotoDesa::findOrFail($id);

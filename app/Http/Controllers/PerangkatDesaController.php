@@ -34,7 +34,7 @@ class PerangkatDesaController extends Controller
             $request->validate([
                 'nama' => 'required|string|max:255',
                 'jabatan' => 'required|string|max:255',
-                'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+                'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             ]);
             
             // $fotoPath = $request->file('foto')->store('perangkat_desas');
@@ -82,7 +82,7 @@ class PerangkatDesaController extends Controller
             $request->validate([
                 'nama' => 'required|string|max:255',
                 'jabatan' => 'required|string|max:255',
-                'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
+                'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             $perangkatDesa = PerangkatDesa::findOrFail($id);

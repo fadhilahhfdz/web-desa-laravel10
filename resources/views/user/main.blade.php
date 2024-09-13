@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Website Resmi - Desa Tangkil</title>
+    <title>Website Resmi - Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -168,7 +168,7 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
-                            <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
+                            <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 300) : 'Deskripsi desa belum ada' }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
@@ -256,6 +256,7 @@
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
+
     @stack('script')
 </body>
 

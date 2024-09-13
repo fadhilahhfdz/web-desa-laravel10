@@ -27,30 +27,35 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Edit Halaman Layanan Desa
+                                    Edit Waktu Layanan Desa
                                 </h3>
                             </div>
                             <!-- end card header -->
                             <div class="card-body">
-                                <form action="/admin/layanan-desa/edit/{{ $layananDesa->id }}" method="POST">
+                                <form action="/admin/waktu-layanan-desa/edit/{{ $waktuLayanan->id }}" method="POST">
                                     @method('PUT')
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="nama">Nama Layanan :</label>
-                                                <input type="text" name="nama" class="form-control"
-                                                    value="{{ $layananDesa->nama }}" required>
+                                                <label for="hari">Hari :</label>
+                                                <input type="text" name="hari" class="form-control" value="{{ $waktuLayanan->hari }}" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="deskripsi">Deskripsi :</label>
-                                                <textarea class="form-control" name="deskripsi" cols="5" rows="3" required>{{ $layananDesa->deskripsi }}</textarea>
+                                                <label for="jam_buka">Jam Buka :</label>
+                                                <input type="time" name="jam_buka" class="form-control" value="{{ $waktuLayanan->jam_buka }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="jam_tutup">Jam Tutup :</label>
+                                                <input type="time" name="jam_tutup" class="form-control" value="{{ $waktuLayanan->jam_tutup }}" required>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="/admin/layanan-desa" class="btn btn-sm btn-outline-secondary"><i
+                                    <a href="/admin/waktu-layanan-desa" class="btn btn-sm btn-outline-secondary"><i
                                             class="fas fa-caret-left"></i> Kembali</a>
                                     <button type="submit" class="btn btn-sm btn-primary"><i
                                             class="fab fa-telegram-plane"></i> Submit</button>

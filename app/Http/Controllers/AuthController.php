@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\InformasiDesa;
 use App\Models\Penduduk;
 use App\Models\User;
 use Carbon\Carbon;
@@ -60,7 +61,8 @@ class AuthController extends Controller
         $penduduk = Penduduk::all();
         $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
         $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
+        $informasiDesa = InformasiDesa::all();
         
-        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan'));
+        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa'));
     }
 }

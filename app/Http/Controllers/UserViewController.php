@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\FotoDesa;
 use App\Models\InformasiDesa;
-use App\Models\LayananDesa;
 use App\Models\Penduduk;
 use App\Models\PerangkatDesa;
+use App\Models\SubInformasiDesa;
+use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UserViewController extends Controller
 {
@@ -18,10 +20,11 @@ class UserViewController extends Controller
         $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
         $penduduk = Penduduk::all();
         $perangkatDesa = PerangkatDesa::all();
-        $layananDesa = LayananDesa::all();
+        $subInformasiDesa = SubInformasiDesa::all();
         $informasiDesa = InformasiDesa::all();
         $fotoDesa = FotoDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'layananDesa', 'informasiDesa', 'fotoDesa'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan'));
     }
 }

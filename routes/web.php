@@ -9,7 +9,9 @@ use App\Http\Controllers\KomentarBeritaController;
 use App\Http\Controllers\LayananDesaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\SubInformasiDesaController;
 use App\Http\Controllers\UserViewController;
+use App\Http\Controllers\WaktuLayananController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -69,11 +71,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/admin/perangkat-desa/edit/{id}', [PerangkatDesaController::class, 'update']);
     Route::get('/admin/perangkat-desa/delete/{id}', [PerangkatDesaController::class, 'destroy']);
 
-    Route::get('/admin/layanan-desa', [LayananDesaController::class, 'index']);
-    Route::post('/admin/layanan-desa/create', [LayananDesaController::class, 'store']);
-    Route::get('/admin/layanan-desa/edit/{id}', [LayananDesaController::class, 'edit']);
-    Route::put('/admin/layanan-desa/edit/{id}', [LayananDesaController::class, 'update']);
-    Route::get('/admin/layanan-desa/delete/{id}', [LayananDesaController::class, 'destroy']);
+    Route::get('/admin/sub-informasi-desa', [SubInformasiDesaController::class, 'index']);
+    Route::post('/admin/sub-informasi-desa/create', [SubInformasiDesaController::class, 'store']);
+    Route::get('/admin/sub-informasi-desa/edit/{id}', [SubInformasiDesaController::class, 'edit']);
+    Route::put('/admin/sub-informasi-desa/edit/{id}', [SubInformasiDesaController::class, 'update']);
+    Route::get('/admin/sub-informasi-desa/delete/{id}', [SubInformasiDesaController::class, 'destroy']);
 
     Route::get('/admin/informasi-desa', [InformasiDesaController::class, 'index']);
     Route::post('/admin/informasi-desa/create', [InformasiDesaController::class, 'store']);
@@ -86,6 +88,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/informasi-desa/foto/edit/{id}', [FotoDesaController::class, 'edit']);
     Route::put('/admin/informasi-desa/foto/edit/{id}', [FotoDesaController::class, 'update']);
     Route::get('/admin/informasi-desa/foto/delete/{id}', [FotoDesaController::class, 'destroy']);
+
+    Route::get('/admin/waktu-layanan-desa', [WaktuLayananController::class, 'index']);
+    Route::post('/admin/waktu-layanan-desa/create', [WaktuLayananController::class, 'store']);
+    Route::get('/admin/waktu-layanan-desa/edit/{id}', [WaktuLayananController::class, 'edit']);
+    Route::put('/admin/waktu-layanan-desa/edit/{id}', [WaktuLayananController::class, 'update']);
+    Route::get('/admin/waktu-layanan-desa/delete/{id}', [WaktuLayananController::class, 'destroy']);
 });
 
 Route::get('/berita', [BeritaController::class, 'berita_all']);

@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Perangkat Desa</h1>
+                        <h1 class="m-0">Sub Informasi Desa</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Perangkat Desa</li>
+                            <li class="breadcrumb-item active">Sub Informasi Desa</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,12 +26,12 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Perangkat Desa</h3>
+                                <h3 class="card-title">Halaman Sub Informasi Desa</h3>
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#tambah-perangkat-desa">
+                                            data-target="#tambah-sub-informasi-desa">
                                             <i class="fas fa-plus"></i> Tambah
                                         </button>
                                     </div>
@@ -44,24 +44,21 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama</th>
-                                            <th>Jabatan</th>
-                                            <th>Foto</th>
+                                            <th>Deskripsi</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($perangkatDesa as $item)
+                                        @foreach ($subInformasiDesa as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
-                                                <td style="width: 40%">{{ $item->nama }}</td>
-                                                <td style="width: 20%">{{ $item->jabatan }}</td>
-                                                <td style="width: 20%"><img src="{{ asset($item->foto) }}" alt=""
-                                                        width="100"></td>
+                                                <td style="width: 20%">{{ $item->nama }}</td>
+                                                <td style="width: 60%">{{ $item->deskripsi }}</td>
                                                 <td>
-                                                    <a href="/admin/perangkat-desa/edit/{{ $item->id }}"
+                                                    <a href="/admin/sub-informasi-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
                                                             class="fas fa-edit"></i> Edit</a>
-                                                    <a href="/admin/perangkat-desa/delete/{{ $item->id }}"
+                                                    <a href="/admin/sub-informasi-desa/delete/{{ $item->id }}"
                                                         class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
@@ -78,7 +75,7 @@
         </section>
         <!-- /.content -->
     </div>
-    @include('admin.perangkat-desa.create')
+    @include('admin.sub-informasi-desa.create')
 @endsection
 @push('script')
     <script>

@@ -26,12 +26,12 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Halaman Layanan Desa</h3>
+                                <h3 class="card-title">Waktu Layanan Desa</h3>
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#tambah-layanan-desa">
+                                            data-target="#tambah-waktu-layanan-desa">
                                             <i class="fas fa-plus"></i> Tambah
                                         </button>
                                     </div>
@@ -43,22 +43,24 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Deskripsi</th>
+                                            <th>Hari</th>
+                                            <th>Jam Buka</th>
+                                            <th>Jam Tutup</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($layananDesa as $item)
+                                        @foreach ($waktuLayanan as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
-                                                <td style="width: 20%">{{ $item->nama }}</td>
-                                                <td style="width: 60%">{{ $item->deskripsi }}</td>
+                                                <td style="width: 20%">{{ $item->hari }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($item->jam_buka)->format('H:i') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($item->jam_tutup)->format('H:i') }}</td>
                                                 <td>
-                                                    <a href="/admin/layanan-desa/edit/{{ $item->id }}"
+                                                    <a href="/admin/waktu-layanan-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
                                                             class="fas fa-edit"></i> Edit</a>
-                                                    <a href="/admin/layanan-desa/delete/{{ $item->id }}"
+                                                    <a href="/admin/waktu-layanan-desa/delete/{{ $item->id }}"
                                                         class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
@@ -75,7 +77,7 @@
         </section>
         <!-- /.content -->
     </div>
-    @include('admin.layanan-desa.create')
+    @include('admin.waktu-layanan-desa.create')
 @endsection
 @push('script')
     <script>

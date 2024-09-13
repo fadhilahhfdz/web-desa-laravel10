@@ -4,13 +4,17 @@
     <section class="slider">
         <div class="hero-slider">
             <!-- Start Single Slider -->
-            <div class="single-slider" id="hero" style="background-image:url('{{ isset($fotoDesa[0]) ? asset($fotoDesa[0]->foto_desa) : asset('assets/default.png') }}')">
+            <div class="single-slider" id="hero"
+                style="background-image:url('{{ isset($fotoDesa[0]) ? asset($fotoDesa[0]->foto_desa) : asset('assets/default.png') }}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
-                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
+                                <h1>Selamat Datang Di <span>Desa
+                                        {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span>
+                                </h1>
+                                <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
+                                </p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -27,8 +31,11 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
-                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
+                                <h1>Selamat Datang Di <span>Desa
+                                        {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span>
+                                </h1>
+                                <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
+                                </p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -45,8 +52,11 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="text">
-                                <h1>Selamat Datang Di <span>Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></h1>
-                                <p>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
+                                <h1>Selamat Datang Di <span>Desa
+                                        {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span>
+                                </h1>
+                                <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
+                                </p>
                                 <div class="button">
                                     <a href="#" class="btn">Selengkapnya</a>
                                 </div>
@@ -65,14 +75,11 @@
         <div class="container">
             <div class="schedule-inner">
                 <div class="row">
-                    @foreach ($layananDesa as $item)
+                    @foreach ($subInformasiDesa as $item)
                         <div class="col-lg-4 col-md-6 col-12 ">
                             <!-- single-schedule -->
                             <div class="single-schedule first h-100">
                                 <div class="inner h-100">
-                                    <div class="icon">
-                                        <i class=""></i>
-                                    </div>
                                     <div class="single-content">
                                         <h4>{{ $item->nama }}</h4>
                                         <p>{{ $item->deskripsi }}</p>
@@ -81,6 +88,27 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="col-lg-4 col-md-6 col-12 ">
+                        <!-- single-schedule -->
+                        <div class="single-schedule first h-100">
+                            <div class="inner h-100">
+                                <div class="single-content">
+                                    <div class="single-content">
+                                        <h4>Waktu Layanan</h4>
+                                        <ul class="time-sidual">
+                                            @forelse ($waktuLayanan as $item)
+                                                <li class="day">{{ $item->hari }}
+                                                    <span>{{ \Carbon\Carbon::parse($item->jam_buka)->format('H:i') }}-{{ \Carbon\Carbon::parse($item->jam_tutup)->format('H:i') }}</span>
+                                                </li>
+                                            @empty
+                                                <li class="text-warning">*Waktu pelayanan belum di setting</li>
+                                            @endforelse
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,13 +171,16 @@
                     <!-- Start Choose Left -->
                     <div class="choose-left">
                         <h3 class="text-white">Tentang Kami</h3>
-                        <p class="text-white">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}</p>
+                        <p class="text-white">
+                            {{ isset($informasiDesa[0]) ? $informasiDesa[0]->deskripsi_desa : 'Deskripsi desa belum ada' }}
+                        </p>
                     </div>
                     <!-- End Choose Left -->
                 </div>
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Rights -->
-                    <div class="choose-right" style="background-image: url({{ isset($informasiDesa[0]) ? asset($informasiDesa[0]->thumbnail_video) : asset('assets/default.png') }});">
+                    <div class="choose-right"
+                        style="background-image: url({{ isset($informasiDesa[0]) ? asset($informasiDesa[0]->thumbnail_video) : asset('assets/default.png') }});">
                         <div class="video-image">
                             <!-- Video Animation -->
                             <div class="promo-video">
@@ -160,7 +191,8 @@
                                 </div>
                             </div>
                             <!--/ End Video Animation -->
-                            <a href="{{ isset($informasiDesa[0]) ? $informasiDesa[0]->link_video : '#' }}" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                            <a href="{{ isset($informasiDesa[0]) ? $informasiDesa[0]->link_video : '#' }}" class="video"
+                                target="blank"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                     <!-- End Choose Rights -->
@@ -206,8 +238,7 @@
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="content">
                         <h2>Layanan Hotline Desa</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec
-                            gravida.</p>
+                        <p>Jika ada pertanyaan dan informasi silahkan hubungi kami</p>
                         <div class="button">
                             <a href="#" class="btn">Hubungi Kami</a>
                         </div>
