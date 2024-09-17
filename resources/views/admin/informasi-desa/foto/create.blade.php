@@ -15,6 +15,7 @@
                             <div class="form-group">
                                 <input type="file" name="foto_desa" class="form-control" accept="image/*">
                                 <small class="text-danger">*Rasio foto disarankan 16:9.</small>
+                                <small class="text-danger">*Max 2MB</small>
                             </div>
                         </div>
                     </div>

@@ -1323,4 +1323,7 @@ Version:	1.1
     .fun-facts .single-fun .content {
         padding: 0;
     }
+    .why-choose .choose-right {
+        height: 350px;
+    }
 }

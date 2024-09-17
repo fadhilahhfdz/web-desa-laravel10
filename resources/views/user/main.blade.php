@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Website Resmi - Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</title>
+    <title>Website Resmi - Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}
+    </title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -50,9 +51,9 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-     {{-- chart js --}}
-     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.css') }}">
-     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.min.css') }}">
+    {{-- chart js --}}
+    <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.css') }}">
+    <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.min.css') }}">
 
 </head>
 
@@ -67,15 +68,21 @@
                     <div class="col-lg-6 col-md-5 col-12">
                         <!-- Contact -->
                         <div class="logo">
-                            <h1 class="text"><a href="#">Desa <span>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></a></h1>
+                            <h1 class="text"><a href="#">Desa
+                                    <span>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span></a>
+                            </h1>
                         </div>
                         <!-- End Contact -->
                     </div>
                     <div class="col-lg-6 col-md-7 col-12">
                         <!-- Top Contact -->
                         <ul class="top-contact mt-5">
-                            <li><i class="fa fa-phone"></i>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}</li>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:XXX">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}</a></li>
+                            <li><i
+                                    class="fa fa-phone"></i>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}
+                            </li>
+                            <li><i class="fa fa-envelope"></i><a
+                                    href="mailto:XXX">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}</a>
+                            </li>
                         </ul>
                         <!-- End Top Contact -->
                     </div>
@@ -120,9 +127,9 @@
                                                 <li><a href="/indeks">INDEKS KEPUASAN MASYARAKAT (IKM)</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#" >PPID <i class="icofont-rounded-down"></i></a>
+                                        <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                            <li><a href="/profil">PROFIL PPID</a></li>
+                                                <li><a href="/profil">PROFIL PPID</a></li>
                                                 <li><a href="/stppid">STRUKTUR PPID</a></li>
                                                 <li><a href="/tugas ppid">TUGAS DAN FUNGSI PPID DESA TANGKIL</a></li>
                                                 <li><a href="/visi ppid">VISI & MISI PPID DESA TANGKIL</a></li>
@@ -131,8 +138,10 @@
                                                 <li><a href="/alur">ALUR PELAYANAN INFORMASI PUBLIK</a></li>
                                                 <li><a href="/informasi">TATA CARA PERMOHONAN INFORMASI PUBLIK</a></li>
                                                 <li><a href="/keberatan">TATA CARA PERMOHONAN KEBERATAN</a></li>
-                                                <li><a href="/penyalahgunaan">TATA CARA PENGADUAN PENYALAHGUNAAN WEWENANG PEJABAT BADAN PUBLIK</a></li>
-                                                <li><a href="/sengketa">TATA CARA PENYELESAIAN SENGKETA MELALUI KOMISI INFORMASI</a></li>
+                                                <li><a href="/penyalahgunaan">TATA CARA PENGADUAN PENYALAHGUNAAN
+                                                        WEWENANG PEJABAT BADAN PUBLIK</a></li>
+                                                <li><a href="/sengketa">TATA CARA PENYELESAIAN SENGKETA MELALUI KOMISI
+                                                        INFORMASI</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="/produk-hukum">PRODUK HUKUM</a></li>
@@ -149,11 +158,11 @@
                             </div>
                             <!--/ End Main Menu -->
                         </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!--/ End Header Inner -->
+        </div>
+        <!--/ End Header Inner -->
     </header>
     <!-- End Header Area -->
 
@@ -168,14 +177,16 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
-                            <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 300) : 'Deskripsi desa belum ada' }}</p>
+                            <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 300) : 'Deskripsi desa belum ada' }}
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Hotline</h2>
                             <ul class="time-sidual">
-                                <li>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}</li>
+                                <li>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}
+                                </li>
                                 <li><a href="#" class="btn">Hubungi Kami</a></li>
                             </ul>
                         </div>
@@ -184,10 +195,13 @@
                         <div class="single-footer">
                             <h2>Waktu Pelayanan</h2>
                             <ul class="time-sidual">
-                                <li class="day">Senin s/d Kamis <span>07.30-16.00</span></li>
-                                <li class="day">Istirahat <span>12.00-13.00</span></li>
-                                <li class="day">jumat <span>07.15-14.30</span></li>
-                                <li class="day">Istirahat <span>11.30-14.30</span></li>
+                                @forelse ($waktuLayanan as $item)
+                                    <li class="day">{{ $item->hari }}
+                                        <span>{{ \Carbon\Carbon::parse($item->jam_buka)->format('H:i') }}-{{ \Carbon\Carbon::parse($item->jam_tutup)->format('H:i') }}</span>
+                                    </li>
+                                @empty
+                                    <li class="text-warning">*Waktu pelayanan belum di setting</li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

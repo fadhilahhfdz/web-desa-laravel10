@@ -59,15 +59,15 @@
                                                 <td>{{ $item->nama_desa }}</td>
                                                 <td>{{ $item->hotline_desa }}</td>
                                                 <td>{{ $item->email_desa }}</td>
-                                                <td style="width: 50%">{{ $item->deskripsi_desa }}</td>
+                                                <td style="width: 25%">{{ $item->deskripsi_desa }}</td>
                                                 <td>{{ $item->link_video }}</td>
                                                 <td><img src="{{ asset($item->thumbnail_video)}}" alt="" width="100"></td>
                                                 <td>
                                                     <a href="/admin/informasi-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
-                                                            class="fas fa-edit"></i> Edit</a>
+                                                            class="fas fa-edit"></i></a>
                                                     <a href="/admin/informasi-desa/delete/{{ $item->id }}"
-                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

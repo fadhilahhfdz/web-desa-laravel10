@@ -28,6 +28,7 @@
                                 <label for="foto">Foto :</label>
                                 <input type="file" name="foto" class="form-control" accept="image/*">
                                 <small class="text-danger">*Ukuran foto 3x4.</small>
+                                <small class="text-danger">*Max 2MB.</small>
                             </div>
                         </div>
                     </div>

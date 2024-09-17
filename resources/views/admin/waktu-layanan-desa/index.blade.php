@@ -52,7 +52,7 @@
                                     <tbody>
                                         @foreach ($waktuLayanan as $item)
                                             <tr>
-                                                <td style="width: 3%">{{ $loop->iteration }}</td>
+                                                <td style="width: 10%">{{ $loop->iteration }}</td>
                                                 <td style="width: 20%">{{ $item->hari }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($item->jam_buka)->format('H:i') }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($item->jam_tutup)->format('H:i') }}</td>

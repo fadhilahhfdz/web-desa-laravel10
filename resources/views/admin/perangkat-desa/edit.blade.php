@@ -32,7 +32,8 @@
                             </div>
                             <!-- end card header -->
                             <div class="card-body">
-                                <form action="/admin/perangkat-desa/edit/{{ $perangkatDesa->id }}" method="POST" enctype="multipart/form-data">
+                                <form action="/admin/perangkat-desa/edit/{{ $perangkatDesa->id }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
                                     <div class="row">
@@ -54,7 +55,10 @@
                                             <div class="form-group">
                                                 <label for="foto">Foto :</label>
                                                 <input type="file" name="foto" class="form-control" accept="image/*">
-                                                <small class="text-danger">*Biarkan kosong jika tidak ingin mengubah foto.</small>
+                                                <small class="text-danger">*Biarkan kosong jika tidak ingin mengubah
+                                                    foto.</small>
+                                                <small class="text-danger">*Ukuran foto 3x4.</small>
+                                                <small class="text-danger">*Max 2MB.</small>
                                             </div>
                                         </div>
                                     </div>

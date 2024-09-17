@@ -31,15 +31,19 @@
                             </div>
                             <!-- end card header -->
                             <div class="card-body">
-                                <form action="/admin/informasi-desa/foto/edit/{{ $fotoDesa->id }}" method="POST" enctype="multipart/form-data">
+                                <form action="/admin/informasi-desa/foto/edit/{{ $fotoDesa->id }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="file" name="foto_desa" class="form-control" accept="image/*">
-                                                <small class="text-danger">*Biarkan kosong jika tidak ingin mengubah.</small>
+                                                <input type="file" name="foto_desa" class="form-control"
+                                                    accept="image/*">
+                                                <small class="text-danger">*Biarkan kosong jika tidak ingin
+                                                    mengubah.</small>
                                                 <small class="text-danger">*Rasio foto disarankan 16:9.</small>
+                                                <small class="text-danger">*Max 2MB</small>
                                             </div>
                                         </div>
                                     </div>
