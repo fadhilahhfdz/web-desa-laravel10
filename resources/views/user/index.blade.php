@@ -129,7 +129,7 @@
                     <div class="single-fun">
                         <i class="icofont icofont-users"></i>
                         <div class="content">
-                            <span class="counter">{{ $penduduk->count() }}</span>
+                            <span class="counter">{{ $totalJiwa }}</span>
                             <p>Jumlah Penduduk</p>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Rights -->
                     <div class="choose-right"
-                        style="background-image: url({{ isset($informasiDesa[0]) ? asset($informasiDesa[0]->thumbnail_video) : asset('assets/default.png') }});">
+                        style="background-image: url({{ isset($informasiDesa[0]) ? asset($informasiDesa[0]->thumbnail_video) : asset('assets/img/default.png') }});">
                         <div class="video-image">
                             <!-- Video Animation -->
                             <div class="promo-video">

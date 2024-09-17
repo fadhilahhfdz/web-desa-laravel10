@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DukuhController;
 use App\Http\Controllers\FotoDesaController;
 use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
@@ -59,7 +60,14 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/admin/berita/komentar', [KomentarBeritaController::class, 'index']);
 
+    Route::get('/admin/penduduk/dukuh', [DukuhController::class, 'index']);
+    Route::post('/admin/penduduk/dukuh/create', [DukuhController::class, 'store']);
+    Route::get('/admin/penduduk/dukuh/edit/{id}', [DukuhController::class, 'edit']);
+    Route::put('/admin/penduduk/dukuh/edit/{id}', [DukuhController::class, 'update']);
+    Route::get('/admin/penduduk/dukuh/delete/{id}', [DukuhController::class, 'destroy']);
+
     Route::get('/admin/penduduk', [PendudukController::class, 'index']);
+    Route::get('/admin/penduduk/create', [PendudukController::class, 'create']);
     Route::post('/admin/penduduk/create', [PendudukController::class, 'store']);
     Route::get('/admin/penduduk/edit/{id}', [PendudukController::class, 'edit']);
     Route::put('/admin/penduduk/edit/{id}', [PendudukController::class, 'update']);

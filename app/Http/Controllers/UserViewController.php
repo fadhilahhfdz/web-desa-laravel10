@@ -16,8 +16,9 @@ class UserViewController extends Controller
 {
     public function index() {
         $berita = Berita::all();
-        $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
-        $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
+        $totalLakiLaki = Penduduk::sum('laki_laki');
+        $totalPerempuan = Penduduk::sum('perempuan');
+        $totalJiwa = $totalLakiLaki + $totalPerempuan;
         $penduduk = Penduduk::all();
         $perangkatDesa = PerangkatDesa::all();
         $subInformasiDesa = SubInformasiDesa::all();
@@ -25,6 +26,6 @@ class UserViewController extends Controller
         $fotoDesa = FotoDesa::all();
         $waktuLayanan = WaktuLayanan::all();
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa'));
     }
 }

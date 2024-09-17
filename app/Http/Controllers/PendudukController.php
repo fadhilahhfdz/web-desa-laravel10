@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dukuh;
 use App\Models\Penduduk;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,9 @@ class PendudukController extends Controller
      */
     public function create()
     {
-        //
+        $dukuh = Dukuh::all();
+
+        return view('admin.penduduk.create', compact('dukuh'));
     }
 
     /**
@@ -32,10 +35,8 @@ class PendudukController extends Controller
     {
         try {
             $request->validate([
-                'nama' => 'required|string|max:255',
-                'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-                'tanggal_lahir' => 'required|date',
-                'alamat' => 'required|string',
+                'laki_laki' => 'required|integer|min:0',
+                'perempuan' => 'required|integer|min:0',
             ]);
 
             Penduduk::create($request->all());
@@ -60,8 +61,9 @@ class PendudukController extends Controller
     public function edit($id)
     {
         $penduduk = Penduduk::findOrFail($id);
+        $dukuh = Dukuh::all();
 
-        return view('admin.penduduk.edit', compact('penduduk'));
+        return view('admin.penduduk.edit', compact('penduduk', 'dukuh'));
     }
 
     /**
@@ -73,17 +75,15 @@ class PendudukController extends Controller
 
         try {
             $request->validate([
-                'nama' => 'required|string|max:255',
-                'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-                'tanggal_lahir' => 'required|date',
-                'alamat' => 'required|string',
+                'laki_laki' => 'required|integer|min:0',
+                'perempuan' => 'required|integer|min:0',
             ]);
 
             $penduduk->update($request->all());
 
             return redirect('/admin/penduduk')->with('sukses', 'Data berhasil diupdate');
         } catch(\Exception $e) {
-            return redirect(`/admin/penduduk/edit/{id}`)->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect('/admin/penduduk/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 

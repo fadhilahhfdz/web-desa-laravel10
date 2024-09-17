@@ -49,6 +49,18 @@
                                             <label for="author">Nama Author</label>
                                             <input type="text" id="author" name="author" class="form-control" value="{{ $berita->author }}">
                                         </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="kategori">Kategori Berita</label>
+                                            <div class="input-group">
+                                                <select class="custom-select" name="id_kategori">
+                                                    <option disabled>Pilih Kategori</option>
+                                                    @foreach ($kategori as $item)
+                                                        <option value="{{ $item->id }}" {{ $berita->id_kategori == $item->id ? 'selected' : '' }}>{{ $item->nama }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="form-group col-md-12">
                                             <label for="konten">Konten Berita</label>
                                             <textarea name="konten" class="form-control" id="summernote">{{ $berita->konten}}</textarea>

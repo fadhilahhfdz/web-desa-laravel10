@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\InformasiDesa;
 use App\Models\KategoriBerita;
 use App\Models\Penduduk;
 use App\Models\PerangkatDesa;
+use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -57,8 +59,10 @@ class BeritaController extends Controller
         $berita = Berita::findOrFail($id);
         $kategori = KategoriBerita::all();
         $recent = Berita::latest()->paginate(5);
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
         
-        return view('user.berita', compact('berita', 'kategori', 'recent'));
+        return view('user.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa'));
     }
 
     /**
@@ -67,7 +71,8 @@ class BeritaController extends Controller
     public function edit($id)
     {
         $berita = Berita::findOrFail($id);
-        return view('admin.berita.edit', compact('berita'));
+        $kategori = KategoriBerita::all();
+        return view('admin.berita.edit', compact('berita', 'kategori'));
     }
 
     /**
@@ -103,31 +108,33 @@ class BeritaController extends Controller
         return redirect('/admin/berita')->with('sukses', 'Berhasil menghapus data');
     }
 
-    public function berita()
-    {
-        $berita = Berita::all();
-        $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
-        $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
-        $penduduk = Penduduk::all();
-        $perangkatDesa = PerangkatDesa::all();
+    // public function berita()
+    // {
+    //     $berita = Berita::all();
+    //     $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
+    //     $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
+    //     $penduduk = Penduduk::all();
+    //     $perangkatDesa = PerangkatDesa::all();
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa'));
-    }
+    //     return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa'));
+    // }
 
     public function berita_all() {
         $berita = Berita::latest()->paginate(5);
         $kategori = KategoriBerita::all();
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
 
-        return view('user.berita_all', compact('berita', 'kategori'));
+        return view('user.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa'));
     }
 
     public function berita_by_kategori($id) {
         $kategori = KategoriBerita::find($id);
-
         $berita = Berita::where('id_kategori', $id)->latest()->paginate(5);
-
         $all = KategoriBerita::all();
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
 
-        return view('user.by-kategori', compact('berita', 'kategori', 'all'));
+        return view('user.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa'));
     }
 }

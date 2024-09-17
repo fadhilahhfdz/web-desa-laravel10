@@ -59,7 +59,7 @@
                                 <div class="card-body">
                                     <canvas id="chartPenduduk"
                                         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                    <h6>Jumlah penduduk : {{ $penduduk->count() }} Jiwa</h6>
+                                    <h6>Jumlah penduduk : {{ $totalJiwa }} Jiwa</h6>
                                     <h6>Jumlah penduduk Laki-laki : {{ $totalLakiLaki }} Jiwa</h6>
                                     <h6>Jumlah penduduk Perempuan : {{ $totalPerempuan }} Jiwa</h6>
                                 </div>

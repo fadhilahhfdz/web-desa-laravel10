@@ -30,10 +30,7 @@
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
-                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#tambah-penduduk">
-                                            <i class="fas fa-plus"></i> Tambah
-                                        </button>
+                                        <a href="/admin/penduduk/create" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                                     </div>
                                 </div>
                             </div>
@@ -43,10 +40,11 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Alamat Lengkap</th>
+                                            <th>Nama Dukuh</th>
+                                            <th>RT</th>
+                                            <th>RW</th>
+                                            <th>Laki - Laki</th>
+                                            <th>Perempuan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -54,21 +52,11 @@
                                         @foreach ($penduduk as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
-                                                <td style="width: 20%">{{ $item->nama }}</td>
-                                                {{-- <td style="width: 13%">{{ $item->jenis_kelamin }}</td> --}}
-                                                @if ($item->jenis_kelamin == 'Laki-laki')
-                                                    <td>
-                                                        <div class="badge badge-success">laki-Laki</div>
-                                                    </td>
-                                                @elseif($item->jenis_kelamin == 'Perempuan')
-                                                    <td>
-                                                        <div class="badge badge-info">Perempuan</div>
-                                                    </td>
-                                                @endif
-                                                <td style="width: 15%">
-                                                    {{ \Carbon\Carbon::parse($item->tanggal_lahir)->translatedFormat('d F Y') }}
-                                                </td>
-                                                <td style="width: 38%">{{ $item->alamat }}</td>
+                                                <td style="width: 25%">Dukuh {{ $item->dukuh ? $item->dukuh->nama_dukuh : 'Data tidak tersedia' }}</td>
+                                                <td style="width: 10%">{{ $item->dukuh ? $item->dukuh->rt : 'Data tidak tersedia' }}</td>
+                                                <td style="width: 10%">{{ $item->dukuh ? $item->dukuh->rw : 'Data tidak tersedia' }}</td>
+                                                <td style="width: 20%">{{ $item->laki_laki }}</td>
+                                                <td style="width: 20%">{{ $item->perempuan }}</td>
                                                 <td>
                                                     <a href="/admin/penduduk/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
@@ -90,7 +78,6 @@
         </section>
         <!-- /.content -->
     </div>
-    @include('admin.penduduk.create')
 @endsection
 @push('script')
     <script>

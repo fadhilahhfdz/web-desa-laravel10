@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Berita</h1>
+                        <h1 class="m-0">Dukuh</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Berita</li>
+                            <li class="breadcrumb-item active">Dukuh</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,39 +26,42 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Berita</h3>
+                                <h3 class="card-title">Data Dukuh</h3>
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
-                                        <a href="/admin/berita/create" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#tambah-dukuh">
+                                            <i class="fas fa-plus"></i> Tambah
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-2">
-                                <table class="table table-hover text-nowrap" id="table">
+                                <table class="table table-hover" id="table">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Judul Berita</th>
-                                            <th>Author</th>
-                                            <th>Kategori</th>
-                                            <th>Tanggal Dibuat</th>
+                                            <th>Nama Dukuh</th>
+                                            <th>RT</th>
+                                            <th>RW</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($berita as $b)
+                                        @foreach ($dukuh as $item)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 300px">{{ $b->judul }}</td>
-                                                <td style="width: 300px">{{ $b->author }}</td>
-                                                <td><div class="badge badge-success">{{ $b->kategori ? $b->kategori->nama : 'Data tidak tersedia' }}</div></td>
-                                                <td><div class="badge badge-info">{{ $b->created_at->format('d F Y') }}</div></td>
+                                                <td style="width: 3%">{{ $loop->iteration }}</td>
+                                                <td style="width: 20%">{{ $item->nama_dukuh }}</td>
+                                                <td>{{ $item->rt }}</td>
+                                                <td>{{ $item->rw }}</td>
                                                 <td>
-                                                    <a href="/admin/berita/edit/{{ $b->id }}" class="btn btn-sm btn-warning text-white"><i class="fas fa-edit"></i> Edit</a>
-                                                    {{-- <a href="/admin/berita/show/{{ $b->id }}" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> Detail</a> --}}
-                                                    <a href="/admin/berita/delete/{{ $b->id }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                    <a href="/admin/penduduk/dukuh/edit/{{ $item->id }}"
+                                                        class="btn btn-sm btn-warning text-white"><i
+                                                            class="fas fa-edit"></i> Edit</a>
+                                                    <a href="/admin/penduduk/dukuh/delete/{{ $item->id }}"
+                                                        class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -74,6 +77,7 @@
         </section>
         <!-- /.content -->
     </div>
+    @include('admin.dukuh.create')
 @endsection
 @push('script')
     <script>

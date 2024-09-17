@@ -36,9 +36,9 @@ class KategoriBeritaController extends Controller
 
             KategoriBerita::create($request->all());
 
-            return redirect('/admin/berita/kategori')->with('sukses'. 'Data berhasil disimpan');
+            return redirect('/admin/berita/kategori')->with('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/berita/kategori/create')->with('gagal', 'Data gagal disimpan' . $e->getMessage());
+            return redirect('/admin/berita/kategori')->with('gagal', 'Data gagal disimpan' . $e->getMessage());
         }
     }
 

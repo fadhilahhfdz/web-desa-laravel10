@@ -59,10 +59,11 @@ class AuthController extends Controller
         $berita = Berita::all();
         $user = User::all();
         $penduduk = Penduduk::all();
-        $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
-        $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
+        $totalLakiLaki = Penduduk::sum('laki_laki');
+        $totalPerempuan = Penduduk::sum('perempuan');
+        $totalJiwa = $totalLakiLaki + $totalPerempuan;
         $informasiDesa = InformasiDesa::all();
         
-        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa'));
+        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa', 'totalJiwa'));
     }
 }

@@ -1,51 +1,84 @@
-<div class="modal fade" id="tambah-penduduk">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Tambah Data Penduduk</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/admin/penduduk/create" method="POST">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="nama">Nama Lengkap :</label>
-                                <input type="text" name="nama" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="jenis_kelamin">Jenis Kelamin :</label>
-                                <select name="jenis_kelamin" class="form-control" required>
-                                    <option value="Laki-laki">Laki-laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tanggal_lahir">Tanggal Lahir :</label>
-                                <input type="date" name="tanggal_lahir" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="alamat">Alamat Lengkap :</label>
-                                <textarea class="form-control" name="alamat" cols="5" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer justify-content-end">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
+@extends('admin.main');
+@section('content')
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Penduduk</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                            <li class="breadcrumb-item active">Penduduk</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-        <!-- /.modal-content -->
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Tambah Data Penduduk</h3>
+
+                                <div class="card-tools">
+                                    <div class="card-header-form">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form action="/admin/penduduk/create" method="POST">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nama_dukuh">Nama Dukuh :</label>
+                                                <div class="input-group">
+                                                    <select class="custom-select" name="id_dukuh">
+                                                        <option >--Pilih Dukuh--</option>
+                                                        @foreach ($dukuh as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->nama_dukuh }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="laki_laki">Jumlah Laki-laki :</label>
+                                                <input type="number" name="laki_laki" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="perempuan">Jumlah Perempuan :</label>
+                                                <input type="number" name="perempuan" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="modal-footer justify-content-end">
+                                <a href="/admin/penduduk" class="btn btn-sm btn-outline-secondary"><i class="fas fa-caret-left"></i> Kembali</a>
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fab fa-telegram-plane"></i> Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
-    <!-- /.modal-dialog -->
-</div>
+@endsection

@@ -11,11 +11,14 @@ class Penduduk extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
-        'jenis_kelamin',
-        'tanggal_lahir',
-        'alamat'
+        'id_dukuh',
+        'laki_laki',
+        'perempuan',
     ];
 
     protected $table = 'penduduks';
+
+    public function dukuh() {
+        return $this->belongsTo(Dukuh::class, 'id_dukuh');
+    }
 }
