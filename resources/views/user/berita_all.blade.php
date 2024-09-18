@@ -1,22 +1,18 @@
 @extends('user.main')
 @section('content')
     <!-- Breadcrumbs -->
-    <div class="breadcrumbs overlay">
+    {{-- <div class="breadcrumbs">
         <div class="container">
             <div class="bread-inner">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Berita</h2>
-                        <ul class="bread-list">
-                            <li><a href="/">Beranda</a></li>
-                            <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Berita</li>
-                        </ul>
+                        <h2 class="text-black">Berita</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    <h2 class="text-black text-center mt-5">Berita</h2>
     <!-- End Breadcrumbs -->
     <section class="news-single section">
         <div class="container">

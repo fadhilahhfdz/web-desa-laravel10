@@ -44,9 +44,16 @@ class InformasiDesaController extends Controller
                 return redirect('/admin/informasi-desa')->with('error', 'Anda hanya dapat menambahkan 1 data');
             }
 
-            $fotoName = time() . '.' . $request->thumbnail_video->extension();
-            $fotoPath = 'thumbnail_video/' . $fotoName;
-            $request->thumbnail_video->move(public_path('thumbnail_video'), $fotoName);
+            $fotoPath = null;
+
+            if ($fotoPath != null) {
+                $fotoName = time() . '.' . $request->thumbnail_video->extension();
+                $fotoPath = 'thumbnail_video/' . $fotoName;
+                $request->thumbnail_video->move(public_path('thumbnail_video'), $fotoName);
+            }
+
+
+            
 
             InformasiDesa::create([
                 'nama_desa' => $request->nama_desa,
