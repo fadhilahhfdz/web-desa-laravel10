@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\InformasiDesa;
 use App\Models\KategoriBerita;
+use App\Models\Pelayanan;
 use App\Models\Penduduk;
 use App\Models\PerangkatDesa;
+use App\Models\Ppid;
+use App\Models\ProfilDesa;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -61,8 +64,11 @@ class BeritaController extends Controller
         $recent = Berita::latest()->paginate(5);
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
         
-        return view('user.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa'));
+        return view('user.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
     /**
@@ -124,8 +130,11 @@ class BeritaController extends Controller
         $kategori = KategoriBerita::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
 
-        return view('user.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa'));
+        return view('user.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
     public function berita_by_kategori($id) {
@@ -134,7 +143,10 @@ class BeritaController extends Controller
         $all = KategoriBerita::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
 
-        return view('user.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa'));
+        return view('user.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 }

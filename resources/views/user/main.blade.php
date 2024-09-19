@@ -109,39 +109,23 @@
                                         </li>
                                         <li><a href="#">PROFIL </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="/struktur">STRUKTUR ORGANISASI</a></li>
-                                                <li><a href="/perangkat">PERANGKAT DESA</a></li>
-                                                <li><a href="/tugas">TUGAS DAN FUNGSI</a></li>
-                                                <li><a href="/visi">VISI DAN MISI</a></li>
-                                                <li><a href="/demografi">DEMOGRAFI</a></li>
-                                                <li><a href="/peta">PETA DESA TANGKIL</a></li>
+                                                @foreach ($dropdownProfil as $item)
+                                                    <li><a href="/profil-desa/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="#">PELAYANAN </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="/sop">SOP PELAYANAN ADMINISTRASI MASYARAKAT</a></li>
-                                                <li><a href="/maklumat">MAKLUMAT PELAYANAN</a></li>
-                                                <li><a href="/layanan">LAYANAN PENGADUAN</a></li>
-                                                <li><a href="/survay">SURVEY KEPUASAN MASYARAKAT</a></li>
-                                                <li><a href="/survai">SURVEI PERSEPSI ANTIKORUPSI (SPAK)</a></li>
-                                                <li><a href="/indeks">INDEKS KEPUASAN MASYARAKAT (IKM)</a></li>
+                                                @foreach ($dropdownPelayanan as $item)
+                                                    <li><a href="/pelayanan/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="/profil">PROFIL PPID</a></li>
-                                                <li><a href="/stppid">STRUKTUR PPID</a></li>
-                                                <li><a href="/tugas ppid">TUGAS DAN FUNGSI PPID DESA TANGKIL</a></li>
-                                                <li><a href="/visi ppid">VISI & MISI PPID DESA TANGKIL</a></li>
-                                                <li><a href="/hukum">DASAR HUKUM</a></li>
-                                                <li><a href="/informasi">DAFTAR INFORMASI</a></li>
-                                                <li><a href="/alur">ALUR PELAYANAN INFORMASI PUBLIK</a></li>
-                                                <li><a href="/informasi">TATA CARA PERMOHONAN INFORMASI PUBLIK</a></li>
-                                                <li><a href="/keberatan">TATA CARA PERMOHONAN KEBERATAN</a></li>
-                                                <li><a href="/penyalahgunaan">TATA CARA PENGADUAN PENYALAHGUNAAN
-                                                        WEWENANG PEJABAT BADAN PUBLIK</a></li>
-                                                <li><a href="/sengketa">TATA CARA PENYELESAIAN SENGKETA MELALUI KOMISI
-                                                        INFORMASI</a></li>
+                                                @foreach ($dropdownPpid as $item)
+                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="/produk-hukum">PRODUK HUKUM</a></li>

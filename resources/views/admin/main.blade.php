@@ -175,43 +175,43 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/profil-desa" class="nav-link">
+                                    <a href="/admin/profil-desa" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Profil Desa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/pelayanan" class="nav-link">
+                                    <a href="/admin/pelayanan" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Pelayanan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/ppid" class="nav-link">
+                                    <a href="/admin/ppid" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>PPID</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/produk-hukum" class="nav-link">
+                                    <a href="/admin/produk-hukum" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Produk Hukum</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/apb-desa" class="nav-link">
+                                    <a href="/admin/apb-desa" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>APB Desa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/desa-antikorupsi" class="nav-link">
+                                    <a href="/admin/desa-antikorupsi" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Desa Antikorupsi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/galeri" class="nav-link">
+                                    <a href="/admin/galeri" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Galeri</p>
                                     </a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApbDesaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DukuhController;
@@ -8,8 +9,11 @@ use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
 use App\Http\Controllers\LayananDesaController;
+use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\PpidController;
+use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\SubInformasiDesaController;
 use App\Http\Controllers\UserViewController;
 use App\Http\Controllers\WaktuLayananController;
@@ -102,6 +106,34 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/waktu-layanan-desa/edit/{id}', [WaktuLayananController::class, 'edit']);
     Route::put('/admin/waktu-layanan-desa/edit/{id}', [WaktuLayananController::class, 'update']);
     Route::get('/admin/waktu-layanan-desa/delete/{id}', [WaktuLayananController::class, 'destroy']);
+
+    Route::get('/admin/apb-desa', [ApbDesaController::class, 'index']);
+    Route::get('/admin/apb-desa/create', [ApbDesaController::class, 'create']);
+    Route::post('/admin/apb-desa/create', [ApbDesaController::class, 'store']);
+    Route::get('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'edit']);
+    Route::put('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'update']);
+    Route::get('/admin/apb-desa/delete/{id}', [ApbDesaController::class, 'destroy']);
+
+    Route::get('/admin/profil-desa', [ProfilDesaController::class, 'index']);
+    Route::get('/admin/profil-desa/create', [ProfilDesaController::class, 'create']);
+    Route::post('/admin/profil-desa/create', [ProfilDesaController::class, 'store']);
+    Route::get('/admin/profil-desa/edit/{id}', [ProfilDesaController::class, 'edit']);
+    Route::put('/admin/profil-desa/edit/{id}', [ProfilDesaController::class, 'update']);
+    Route::get('/admin/profil-desa/delete/{id}', [ProfilDesaController::class, 'destroy']);
+
+    Route::get('/admin/pelayanan', [PelayananController::class, 'index']);
+    Route::get('/admin/pelayanan/create', [PelayananController::class, 'create']);
+    Route::post('/admin/pelayanan/create', [PelayananController::class, 'store']);
+    Route::get('/admin/pelayanan/edit/{id}', [PelayananController::class, 'edit']);
+    Route::put('/admin/pelayanan/edit/{id}', [PelayananController::class, 'update']);
+    Route::get('/admin/pelayanan/delete/{id}', [PelayananController::class, 'destroy']);
+    
+    Route::get('/admin/ppid', [PpidController::class, 'index']);
+    Route::get('/admin/ppid/create', [PpidController::class, 'create']);
+    Route::post('/admin/ppid/create', [PpidController::class, 'store']);
+    Route::get('/admin/ppid/edit/{id}', [PpidController::class, 'edit']);
+    Route::put('/admin/ppid/edit/{id}', [PpidController::class, 'update']);
+    Route::get('/admin/ppid/delete/{id}', [PpidController::class, 'destroy']);
 });
 
 Route::get('/berita', [BeritaController::class, 'berita_all']);
@@ -109,6 +141,11 @@ Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
 Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
 
 Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->name('komentar.store');
+
+// konten
+Route::get('/profil-desa/{id}', [ProfilDesaController::class, 'show']);
+Route::get('/pelayanan/{id}', [PelayananController::class, 'show']);
+Route::get('/ppid/{id}', [PpidController::class, 'show']);
 
 Route::get('/struktur', function () {
     return view('user.profil.struktur');
