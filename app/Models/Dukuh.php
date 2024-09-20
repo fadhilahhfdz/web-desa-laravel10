@@ -13,8 +13,6 @@ class Dukuh extends Model
 
     protected $fillable = [
         'nama_dukuh',
-        'rt',
-        'rw',
     ];
 
     public function penduduk() {

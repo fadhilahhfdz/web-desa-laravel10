@@ -66,7 +66,7 @@ class PpidController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ppid $id)
+    public function edit($id)
     {
         $ppid = Ppid::findOrFail($id);
 

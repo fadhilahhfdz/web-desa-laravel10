@@ -35,20 +35,36 @@
                                 <form action="/admin/apb-desa/edit/{{ $apbDesa->id }}" method="POST">
                                     @method('PUT')
                                     @csrf
-                                    <div class="d-flex justify-content-end">
-                                        <a href="/admin/apb-desa" class="btn btn-sm btn-outline-secondary mx-2"><i class="fas fa-caret-left"></i> Kembali</a>
-                                        <button type="submit" class="btn btn-sm btn-primary"><i class="fab fa-telegram-plane"></i> Submit</button>
-                                    </div>
                                     <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <label for="judul">Judul :</label>
-                                            <input type="text" id="judul" name="judul" class="form-control" value="{{ $apbDesa->judul }}">
+                                        <div class="col-md-2">
+                                            <label for="jenis">Jenis APB :</label>
+                                            <select name="jenis" id="jenis" class="form-control" required>
+                                                <option
+                                                    value="Pendapatan"{{ $apbDesa->jenis == 'Pendapatan' ? 'selected' : '' }}>
+                                                    Pendapatan</option>
+                                                <option value="Belanja"{{ $apbDesa->jenis == 'Belanja' ? 'selected' : '' }}>
+                                                    Belanja</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="konten">Konten :</label>
-                                            <textarea name="konten" class="form-control" id="summernote">{{ $apbDesa->konten}}</textarea>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="kategori">Kategori :</label>
+                                                <input type="text" name="kategori" class="form-control"
+                                                    value="{{ $apbDesa->kategori }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="nominal">Nominal :</label>
+                                                <input type="number" name="nominal" class="form-control"
+                                                    value="{{ $apbDesa->nominal }}">
+                                            </div>
                                         </div>
                                     </div>
+                                    <a href="/admin/apb-desa" class="btn btn-sm btn-outline-secondary"><i
+                                            class="fas fa-caret-left"></i> Kembali</a>
+                                    <button type="submit" class="btn btn-sm btn-primary"><i
+                                            class="fab fa-telegram-plane"></i> Submit</button>
                                 </form>
                             </div>
                         </div>

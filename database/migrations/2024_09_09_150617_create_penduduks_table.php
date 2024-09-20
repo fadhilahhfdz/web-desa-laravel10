@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('penduduks', function (Blueprint $table) {
             $table->id();
             $table->string('id_dukuh');
+            $table->string('rt');
+            $table->string('rw');
             $table->bigInteger('laki_laki');
             $table->bigInteger('perempuan');
             $table->timestamps();

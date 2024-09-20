@@ -53,8 +53,8 @@
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
                                                 <td style="width: 25%">Dukuh {{ $item->dukuh ? $item->dukuh->nama_dukuh : 'Data tidak tersedia' }}</td>
-                                                <td style="width: 10%">{{ $item->dukuh ? $item->dukuh->rt : 'Data tidak tersedia' }}</td>
-                                                <td style="width: 10%">{{ $item->dukuh ? $item->dukuh->rw : 'Data tidak tersedia' }}</td>
+                                                <td style="width: 10%">{{ $item->rt }}</td>
+                                                <td style="width: 10%">{{ $item->rw }}</td>
                                                 <td style="width: 20%">{{ $item->laki_laki }}</td>
                                                 <td style="width: 20%">{{ $item->perempuan }}</td>
                                                 <td>

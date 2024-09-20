@@ -33,8 +33,6 @@ class DukuhController extends Controller
         try {
             $request->validate([
                 'nama_dukuh' => 'required|string|max:255',
-                'rt' => 'required|string',
-                'rw' => 'required|string',
             ]);
 
             Dukuh::create($request->all());
@@ -71,8 +69,6 @@ class DukuhController extends Controller
         try {
             $request->validate([
                 'nama_dukuh' => 'required|string|max:255',
-                'rt' => 'required|string',
-                'rw' => 'required|string',
             ]);
 
             $dukuh = Dukuh::findOrFail($id);

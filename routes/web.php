@@ -8,7 +8,6 @@ use App\Http\Controllers\FotoDesaController;
 use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
-use App\Http\Controllers\LayananDesaController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
@@ -108,7 +107,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/waktu-layanan-desa/delete/{id}', [WaktuLayananController::class, 'destroy']);
 
     Route::get('/admin/apb-desa', [ApbDesaController::class, 'index']);
-    Route::get('/admin/apb-desa/create', [ApbDesaController::class, 'create']);
     Route::post('/admin/apb-desa/create', [ApbDesaController::class, 'store']);
     Route::get('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'edit']);
     Route::put('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'update']);

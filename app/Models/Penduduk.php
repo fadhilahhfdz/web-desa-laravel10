@@ -12,6 +12,8 @@ class Penduduk extends Model
 
     protected $fillable = [
         'id_dukuh',
+        'rt',
+        'rw',
         'laki_laki',
         'perempuan',
     ];

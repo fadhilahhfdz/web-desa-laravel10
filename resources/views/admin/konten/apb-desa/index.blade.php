@@ -30,8 +30,10 @@
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
-                                        <a href="/admin/apb-desa/create" class="btn btn-sm btn-primary"><i
-                                                class="fas fa-plus"></i> Tambah</a>
+                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#tambah-apb">
+                                            <i class="fas fa-plus"></i> Tambah
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -41,8 +43,9 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Judul</th>
-                                            <th>Konten</th>
+                                            <th>Jenis</th>
+                                            <th>Kategori</th>
+                                            <th>Nominal</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -50,8 +53,9 @@
                                         @foreach ($apbDesa as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
-                                                <td>{{ $item->judul }}</td>
-                                                <td>{!! $item->konten !!}</td>
+                                                <td>{{ $item->jenis }}</td>
+                                                <td>{{ $item->kategori }}</td>
+                                                <td>{{ $item->nominal }}</td>
                                                 <td>
                                                     <a href="/admin/apb-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
@@ -73,6 +77,7 @@
         </section>
         <!-- /.content -->
     </div>
+@include('admin.konten.apb-desa.create')
 @endsection
 @push('script')
     <script>

@@ -35,6 +35,8 @@ class PendudukController extends Controller
     {
         try {
             $request->validate([
+                'rt' => 'required|string|min:0',
+                'rw' => 'required|string|min:0',
                 'laki_laki' => 'required|integer|min:0',
                 'perempuan' => 'required|integer|min:0',
             ]);
@@ -75,6 +77,8 @@ class PendudukController extends Controller
 
         try {
             $request->validate([
+                'rt' => 'required|string|min:0',
+                'rw' => 'required|string|min:0',
                 'laki_laki' => 'required|integer|min:0',
                 'perempuan' => 'required|integer|min:0',
             ]);

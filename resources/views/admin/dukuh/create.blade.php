@@ -17,18 +17,6 @@
                                 <input type="text" name="nama_dukuh" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="rt">RT :</label>
-                                <input type="number" name="rt" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="rw">RW :</label>
-                                <input type="number" name="rw" class="form-control" required>
-                            </div>
-                        </div>
                     </div>
             </div>
             <div class="modal-footer justify-content-end">

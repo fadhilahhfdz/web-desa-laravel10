@@ -44,8 +44,6 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama Dukuh</th>
-                                            <th>RT</th>
-                                            <th>RW</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -53,9 +51,7 @@
                                         @foreach ($dukuh as $item)
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
-                                                <td style="width: 20%">{{ $item->nama_dukuh }}</td>
-                                                <td>{{ $item->rt }}</td>
-                                                <td>{{ $item->rw }}</td>
+                                                <td>{{ $item->nama_dukuh }}</td>
                                                 <td>
                                                     <a href="/admin/penduduk/dukuh/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i

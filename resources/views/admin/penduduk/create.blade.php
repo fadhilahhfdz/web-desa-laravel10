@@ -38,27 +38,37 @@
                                 <form action="/admin/penduduk/create" method="POST">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="nama_dukuh">Nama Dukuh :</label>
-                                                <div class="input-group">
-                                                    <select class="custom-select" name="id_dukuh">
+                                                    <select class="form-control" name="id_dukuh">
                                                         <option >--Pilih Dukuh--</option>
                                                         @foreach ($dukuh as $item)
                                                             <option value="{{ $item->id }}">{{ $item->nama_dukuh }}
                                                             </option>
                                                         @endforeach
                                                     </select>
-                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="rt">RT :</label>
+                                                <input type="number" name="rt" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="rw">RW :</label>
+                                                <input type="number" name="rw" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="laki_laki">Jumlah Laki-laki :</label>
                                                 <input type="number" name="laki_laki" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="perempuan">Jumlah Perempuan :</label>
                                                 <input type="number" name="perempuan" class="form-control">

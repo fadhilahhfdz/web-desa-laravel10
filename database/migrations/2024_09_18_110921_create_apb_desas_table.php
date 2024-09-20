@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('apb_desas', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('konten');
+            $table->enum('jenis', ['Pendapatan', 'Belanja']);
+            $table->string('kategori');
+            $table->bigInteger('nominal');
             $table->timestamps();
         });
     }

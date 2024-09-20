@@ -10,7 +10,11 @@ class ApbDesa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul',
-        'konten',
+        'jenis',
+        'kategori',
+        'nominal'
     ];
+
+    protected $table = 'apb_desas';
+
 }

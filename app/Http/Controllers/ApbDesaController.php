@@ -22,7 +22,7 @@ class ApbDesaController extends Controller
      */
     public function create()
     {
-        return view('admin.konten.apb-desa.create');
+        // return view('admin.konten.apb-desa.create');
     }
 
     /**
@@ -32,8 +32,9 @@ class ApbDesaController extends Controller
     {
         try {
             $request->validate([
-                'judul' => 'required|string|max:255',
-                'konten' => 'required',
+                'jenis' => 'required|in:Pendapatan,Belanja',
+                'kategori' => 'required|string',
+                'nominal' => 'required|numeric|min:0',
             ]);
 
             ApbDesa::create($request->all());
@@ -71,8 +72,9 @@ class ApbDesaController extends Controller
     {
         try {
             $request->validate([
-                'judul' => 'required|string|max:255',
-                'konten' => 'required',
+                'jenis' => 'required|in:Pendapatan,Belanja',
+                'kategori' => 'required|string',
+                'nominal' => 'required|numeric|min:0',
             ]);
 
             $apbDesa = ApbDesa::findOrFail($id);

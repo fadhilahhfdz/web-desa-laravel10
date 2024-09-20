@@ -43,20 +43,6 @@
                                                     value="{{ $dukuh->nama_dukuh }}" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="rt">RT :</label>
-                                                <input type="text" name="rt" class="form-control"
-                                                    value="{{ $dukuh->rt }}" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="rw">RW :</label>
-                                                <input type="text" name="rw" class="form-control"
-                                                    value="{{ $dukuh->rw }}" required>
-                                            </div>
-                                        </div>
                                     </div>
                                     <a href="/admin/penduduk/dukuh" class="btn btn-sm btn-outline-secondary"><i
                                             class="fas fa-caret-left"></i> Kembali</a>

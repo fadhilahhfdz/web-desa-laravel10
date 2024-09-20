@@ -36,30 +36,46 @@
                                     @method('PUT')
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="nama_dukuh">Nama Dukuh :</label>
-                                                <div class="input-group">
-                                                    <select class="custom-select" name="id_dukuh">
-                                                        <option >--Pilih Dukuh--</option>
-                                                        @foreach ($dukuh as $item)
-                                                            <option value="{{ $item->id }}" {{ $penduduk->id_dukuh == $item->id ? 'selected' : '' }}>{{ $item->nama_dukuh }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                                <select class="form-control" name="id_dukuh">
+                                                    <option>--Pilih Dukuh--</option>
+                                                    @foreach ($dukuh as $item)
+                                                        <option value="{{ $item->id }}"
+                                                            {{ $penduduk->id_dukuh == $item->id ? 'selected' : '' }}>
+                                                            {{ $item->nama_dukuh }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="rt">RT :</label>
+                                                <input type="number" name="rt" class="form-control"
+                                                    value="{{ $penduduk->rt }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="rw">RW :</label>
+                                                <input type="number" name="rw" class="form-control"
+                                                    value="{{ $penduduk->rw }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="laki_laki">Jumlah Laki-laki :</label>
-                                                <input type="number" name="laki_laki" class="form-control" value="{{ $penduduk->laki_laki}}">
+                                                <input type="number" name="laki_laki" class="form-control"
+                                                    value="{{ $penduduk->laki_laki }}">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="perempuan">Jumlah Perempuan :</label>
-                                                <input type="number" name="perempuan" class="form-control" value="{{ $penduduk->perempuan}}">
+                                                <input type="number" name="perempuan" class="form-control"
+                                                    value="{{ $penduduk->perempuan }}">
                                             </div>
                                         </div>
                                     </div>
