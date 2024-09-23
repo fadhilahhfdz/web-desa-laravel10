@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card card-outline card-primary">
+                        <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
                                     Edit Kategori Berita
@@ -47,8 +47,7 @@
                                     @method('PUT')
                                     <div class="row">
                                         <div class="form-group col-md-12">
-                                            <label for="nama">Nama Kategori</label>
-                                            <input type="text" id="nama" name="nama" class="form-control" value="{{ $kategori->nama }}">
+                                            <input type="text" id="nama" name="nama" class="form-control" value="{{ $kategori->nama }}" placeholder="Cth: Pengumuman" required>
                                         </div>
                                         <div class="d-flex justify-content-start">
                                             <a href="/admin/berita/kategori" class="btn btn-sm btn-outline-secondary mx-2"><i

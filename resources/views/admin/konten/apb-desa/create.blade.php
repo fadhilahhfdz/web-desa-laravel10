@@ -21,13 +21,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="kategori">Kategori :</label>
-                                <input type="text" name="kategori" class="form-control">
+                                <input type="text" name="kategori" class="form-control" placeholder="Cth: Pendapatan Asli Desa" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="nominal">Nominal :</label>
-                                <input type="number" name="nominal" class="form-control">
+                                <input type="number" name="nominal" class="form-control" required>
                             </div>
                         </div>
                     </div>

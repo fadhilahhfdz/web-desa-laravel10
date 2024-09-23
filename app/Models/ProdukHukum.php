@@ -10,7 +10,6 @@ class ProdukHukum extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul',
         'konten',
     ];
 }

@@ -42,11 +42,11 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="judul">Judul :</label>
-                                            <input type="text" id="judul" name="judul" class="form-control" value="{{ $ppid->judul }}">
+                                            <input type="text" id="judul" name="judul" class="form-control" value="{{ $ppid->judul }}" placeholder="Cth: PROFIL PPID" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="konten">Konten :</label>
-                                            <textarea name="konten" class="form-control" id="summernote">{{ $ppid->konten}}</textarea>
+                                            <textarea name="konten" class="form-control" id="summernote" required>{{ $ppid->konten}}</textarea>
                                         </div>
                                     </div>
                                 </form>

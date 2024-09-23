@@ -38,13 +38,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="nama_desa">Nama Desa :</label>
-                                                <input type="text" name="nama_desa" class="form-control" value="{{ $informasiDesa->nama_desa}}" required>
+                                                <input type="text" name="nama_desa" class="form-control" value="{{ $informasiDesa->nama_desa}}" placeholder="Cth: Tangkil" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="hotline_desa">Hotline Desa :</label>
-                                                <input type="number" name="hotline_desa" class="form-control" value="{{ $informasiDesa->hotline_desa}}" required>
+                                                <input type="number" name="hotline_desa" class="form-control" value="{{ $informasiDesa->hotline_desa}}" placeholder="Cth : 62812XXXX" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

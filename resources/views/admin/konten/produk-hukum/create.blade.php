@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Profil Desa</h1>
+                        <h1 class="m-0">Produk Hukum</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Profil Desa</li>
+                            <li class="breadcrumb-item active">Produk Hukum</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -27,24 +27,20 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Tambah Data Profil Desa
+                                    Tambah Data Produk Hukum
                                 </h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="/admin/profil-desa/create" method="POST">
+                                <form action="/admin/produk-hukum/create" method="POST">
                                     @csrf
                                     <div class="d-flex justify-content-end">
-                                        <a href="/admin/profil-desa" class="btn btn-sm btn-outline-secondary mx-2"><i
+                                        <a href="/admin/produk-hukum" class="btn btn-sm btn-outline-secondary mx-2"><i
                                                 class="fas fa-caret-left"></i> Kembali</a>
                                         <button type="submit" class="btn btn-sm btn-primary"><i
                                                 class="fab fa-telegram-plane"></i> Submit</button>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <label for="judul">Judul :</label>
-                                            <input type="text" id="judul" name="judul" class="form-control" placeholder="Cth: VISI MISI" required>
-                                        </div>
                                         <div class="form-group col-md-12">
                                             <label for="konten">Konten :</label>
                                             <textarea name="konten" class="form-control" id="summernote" required></textarea>

@@ -13,8 +13,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="nama">Nama :</label>
-                                <input type="text" name="nama" class="form-control">
+                                <input type="text" name="nama" class="form-control" placeholder="Cth: Pengumuman" required>
                             </div>
                         </div>
                     </div>

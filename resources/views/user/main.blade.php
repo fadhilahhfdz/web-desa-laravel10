@@ -81,7 +81,7 @@
                                     class="fa fa-phone"></i>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}
                             </li>
                             <li><i class="fa fa-envelope"></i><a
-                                    href="mailto:XXX">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}</a>
+                                    href="mailto:{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}">{{ isset($informasiDesa[0]) ? $informasiDesa[0]->email_desa : 'Email desa belum ada' }}</a>
                             </li>
                         </ul>
                         <!-- End Top Contact -->
@@ -171,7 +171,7 @@
                             <ul class="time-sidual">
                                 <li>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}
                                 </li>
-                                <li><a href="#" class="btn">Hubungi Kami</a></li>
+                                <li><a href="https://wa.me/{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}" class="btn">Hubungi Kami</a></li>
                             </ul>
                         </div>
                     </div>
@@ -254,6 +254,7 @@
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('template-user/js/scroll.js') }}"></script>
 
     @stack('script')
 </body>

@@ -50,14 +50,14 @@
                                             <div class="form-group">
                                                 <label for="kategori">Kategori :</label>
                                                 <input type="text" name="kategori" class="form-control"
-                                                    value="{{ $apbDesa->kategori }}">
+                                                    value="{{ $apbDesa->kategori }}" placeholder="Cth: Pendapatan Asli Desa" required>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label for="nominal">Nominal :</label>
                                                 <input type="number" name="nominal" class="form-control"
-                                                    value="{{ $apbDesa->nominal }}">
+                                                    value="{{ $apbDesa->nominal }}" required>
                                             </div>
                                         </div>
                                     </div>

@@ -40,7 +40,7 @@
                                             <div class="form-group">
                                                 <label for="nama_dukuh">Nama Dukuh :</label>
                                                 <input type="text" name="nama_dukuh" class="form-control"
-                                                    value="{{ $dukuh->nama_dukuh }}" required>
+                                                    value="{{ $dukuh->nama_dukuh }}" placeholder="Cth: Tangkil" required>
                                             </div>
                                         </div>
                                     </div>

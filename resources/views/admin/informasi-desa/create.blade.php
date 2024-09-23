@@ -14,13 +14,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="nama_desa">Nama Desa :</label>
-                                <input type="text" name="nama_desa" class="form-control" required>
+                                <input type="text" name="nama_desa" class="form-control" placeholder="Cth: Tangkil" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="hotline_desa">Hotline Desa :</label>
-                                <input type="number" name="hotline_desa" class="form-control" required>
+                                <input type="number" name="hotline_desa" class="form-control" placeholder="Cth: 62812XXXX" required>
                             </div>
                         </div>
                         <div class="col-md-6">

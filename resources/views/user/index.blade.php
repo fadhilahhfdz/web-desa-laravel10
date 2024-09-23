@@ -16,7 +16,7 @@
                                 <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
                                 </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Selengkapnya</a>
+                                    <a href="#tentang" class="btn">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
                                 </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Selengkapnya</a>
+                                    <a href="#tentang" class="btn">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                 <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 250) : 'Deskripsi desa belum ada' }}
                                 </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Selengkapnya</a>
+                                    <a href="#tentang" class="btn">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>
@@ -122,16 +122,18 @@
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Left -->
                     <div class="choose-left">
-                        <h3 class="text-white">Pendapatan Desa Rp.{{ number_format($totalApbPendapatan, 0, ',', '.') }}</h3>
+                        <h3 class="text-white">Pendapatan Desa Rp{{ number_format($totalApbPendapatan, 0, ',', '.') }}
+                        </h3>
                         @foreach ($apbPendapatan as $item)
                             @php
-                                 $percentage = ($totalApbPendapatan > 0) ? ($item->nominal / $totalApbPendapatan) * 100 : 0;
+                                $percentage =
+                                    $totalApbPendapatan > 0 ? ($item->nominal / $totalApbPendapatan) * 100 : 0;
                             @endphp
-                            <p class="text-white fs-2">{{ $item->kategori }} Rp.{{ $item->formatRupiah('nominal') }}</p>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
-                                    aria-valuemax="100" style="width: {{ $percentage }}%;">
-                                    {{ round($percentage, 2) }}%
+                            <p class="text-white fs-2">{{ $item->kategori }} Rp{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3" style="height: 30px;">
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentage }}%;">
+                                    {{ round($percentage, 1) }}%
                                 </div>
                             </div>
                         @endforeach
@@ -141,16 +143,16 @@
                 <div class="col-lg-6 col-12">
                     <!-- Start Choose Rights -->
                     <div class="choose-left">
-                        <h3 class="text-white">Belanja Desa Rp.{{ number_format($totalApbBelanja, 0, ',', '.') }}</h3>
+                        <h3 class="text-white">Belanja Desa Rp{{ number_format($totalApbBelanja, 0, ',', '.') }}</h3>
                         @foreach ($apbBelanja as $item)
                             @php
-                                 $percentage = ($totalApbBelanja > 0) ? ($item->nominal / $totalApbBelanja) * 100 : 0;
+                                $percentage = $totalApbBelanja > 0 ? ($item->nominal / $totalApbBelanja) * 100 : 0;
                             @endphp
-                            <p class="text-white fs-2">{{ $item->kategori }} Rp.{{ $item->formatRupiah('nominal') }}</p>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
-                                    aria-valuemax="100" style="width: {{ $percentage }}%;">
-                                    {{ round($percentage, 2) }}%
+                            <p class="text-white fs-2">{{ $item->kategori }} Rp{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3" style="height: 30px;">
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentage }}%;">
+                                    {{ round($percentage, 1) }}%
                                 </div>
                             </div>
                         @endforeach
@@ -210,7 +212,7 @@
     <!-- End Single Fun -->
 
     <!-- Start Why choose -->
-    <section class="why-choose section overlay">
+    <section class="why-choose section overlay" id="tentang">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
@@ -286,7 +288,8 @@
                         <h2>Layanan Hotline Desa</h2>
                         <p>Jika ada pertanyaan dan informasi silahkan hubungi kami</p>
                         <div class="button">
-                            <a href="#" class="btn">Hubungi Kami</a>
+                            <a href="https://wa.me/{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}"
+                                target="blank" class="btn">Hubungi Kami</a>
                         </div>
                     </div>
                 </div>

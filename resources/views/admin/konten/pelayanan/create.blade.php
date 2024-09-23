@@ -43,11 +43,11 @@
                                     <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="judul">Judul :</label>
-                                            <input type="text" id="judul" name="judul" class="form-control">
+                                            <input type="text" id="judul" name="judul" class="form-control" placeholder="Cth: LAYANAN PENGADUAN" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="konten">Konten :</label>
-                                            <textarea name="konten" class="form-control" id="summernote"></textarea>
+                                            <textarea name="konten" class="form-control" id="summernote" required></textarea>
                                         </div>
                                     </div>
                                 </form>

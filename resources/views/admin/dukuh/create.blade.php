@@ -14,7 +14,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="nama_dukuh">Nama Dukuh :</label>
-                                <input type="text" name="nama_dukuh" class="form-control" required>
+                                <input type="text" name="nama_dukuh" class="form-control" placeholder="Cth: Tangkil" required>
                             </div>
                         </div>
                     </div>
