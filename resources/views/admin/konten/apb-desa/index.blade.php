@@ -55,7 +55,7 @@
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
                                                 <td>{{ $item->jenis }}</td>
                                                 <td>{{ $item->kategori }}</td>
-                                                <td>{{ $item->nominal }}</td>
+                                                <td>Rp.{{ $item->formatRupiah('nominal') }}</td>
                                                 <td>
                                                     <a href="/admin/apb-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i

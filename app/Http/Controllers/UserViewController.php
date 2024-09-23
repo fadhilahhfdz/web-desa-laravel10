@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbDesa;
 use App\Models\Berita;
 use App\Models\FotoDesa;
 use App\Models\InformasiDesa;
@@ -28,10 +29,19 @@ class UserViewController extends Controller
         $informasiDesa = InformasiDesa::all();
         $fotoDesa = FotoDesa::all();
         $waktuLayanan = WaktuLayanan::all();
+
+        // Dropdown
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        // APB DESA
+        $apbDesa = ApbDesa::all();
+        $apbPendapatan = $apbDesa->where('jenis', 'Pendapatan');
+        $apbBelanja = $apbDesa->where('jenis', 'Belanja');
+        $totalApbPendapatan = $apbDesa->where('jenis', 'Pendapatan')->sum('nominal');
+        $totalApbBelanja = $apbDesa->where('jenis', 'Belanja')->sum('nominal');
+
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbBelanja', 'apbPendapatan', 'apbBelanja'));
     }
 }

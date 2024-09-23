@@ -97,4 +97,10 @@ class ApbDesaController extends Controller
 
         return redirect('/admin/apb-desa')->with('sukses', 'Data berhasil dihapus');
     }
+
+    public function view() {
+        $apbDesa = ApbDesa::all();
+
+        return view('admin.konten.abp', compact('apbDesa'));
+    }
 }

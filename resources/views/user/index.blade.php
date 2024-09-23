@@ -115,6 +115,52 @@
     </section>
     <!--/End Start schedule Area -->
 
+    <section class="why-choose section">
+        <div class="container">
+            <h2 class="text-white text-center text-bold">Info Grafis APB Desa</h2>
+            <div class="row mt-5">
+                <div class="col-lg-6 col-12">
+                    <!-- Start Choose Left -->
+                    <div class="choose-left">
+                        <h3 class="text-white">Pendapatan Desa Rp.{{ number_format($totalApbPendapatan, 0, ',', '.') }}</h3>
+                        @foreach ($apbPendapatan as $item)
+                            @php
+                                 $percentage = ($totalApbPendapatan > 0) ? ($item->nominal / $totalApbPendapatan) * 100 : 0;
+                            @endphp
+                            <p class="text-white fs-2">{{ $item->kategori }} Rp.{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
+                                    aria-valuemax="100" style="width: {{ $percentage }}%;">
+                                    {{ round($percentage, 2) }}%
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- End Choose Left -->
+                </div>
+                <div class="col-lg-6 col-12">
+                    <!-- Start Choose Rights -->
+                    <div class="choose-left">
+                        <h3 class="text-white">Belanja Desa Rp.{{ number_format($totalApbBelanja, 0, ',', '.') }}</h3>
+                        @foreach ($apbBelanja as $item)
+                            @php
+                                 $percentage = ($totalApbBelanja > 0) ? ($item->nominal / $totalApbBelanja) * 100 : 0;
+                            @endphp
+                            <p class="text-white fs-2">{{ $item->kategori }} Rp.{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
+                                    aria-valuemax="100" style="width: {{ $percentage }}%;">
+                                    {{ round($percentage, 2) }}%
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- End Choose Rights -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Start Fun-facts -->
     <div id="fun-facts" class="fun-facts section mb-5">
         <div class="container">
