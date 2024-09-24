@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DesaAntikorupsi extends Model
+class Perpustakaan extends Model
 {
     use HasFactory;
 

@@ -44,4 +44,16 @@ class UserViewController extends Controller
 
         return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbBelanja', 'apbPendapatan', 'apbBelanja'));
     }
+
+    public function fallback() {
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+
+        // Dropdown
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+
+        return view('user.404', compact('informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+    }
 }

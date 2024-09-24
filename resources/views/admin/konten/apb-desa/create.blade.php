@@ -30,6 +30,10 @@
                                 <input type="number" name="nominal" class="form-control" required>
                             </div>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="konten">Konten :</label>
+                            <textarea name="konten" class="form-control" id="summernote"></textarea>
+                        </div>
                     </div>
             </div>
             <div class="modal-footer justify-content-end">

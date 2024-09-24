@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApbDesaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DesaAntikorupsiController;
 use App\Http\Controllers\DukuhController;
 use App\Http\Controllers\FotoDesaController;
 use App\Http\Controllers\InformasiDesaController;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// View Index
 Route::get('/', [UserViewController::class, 'index']);
 
 // Auth
@@ -157,19 +159,32 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/produk-hukum/edit/{id}', [ProdukHukumController::class, 'edit']);
     Route::put('/admin/produk-hukum/edit/{id}', [ProdukHukumController::class, 'update']);
     Route::get('/admin/produk-hukum/delete/{id}', [ProdukHukumController::class, 'destroy']);
+
+    // Desa Antikorupsi
+    Route::get('/admin/desa-antikorupsi', [DesaAntikorupsiController::class, 'index']);
+    Route::get('/admin/desa-antikorupsi/create', [DesaAntikorupsiController::class, 'create']);
+    Route::post('/admin/desa-antikorupsi/create', [DesaAntikorupsiController::class, 'store']);
+    Route::get('/admin/desa-antikorupsi/edit/{id}', [DesaAntikorupsiController::class, 'edit']);
+    Route::put('/admin/desa-antikorupsi/edit/{id}', [DesaAntikorupsiController::class, 'update']);
+    Route::get('/admin/desa-antikorupsi/delete/{id}', [DesaAntikorupsiController::class, 'destroy']);
 });
 
+// View User Berita
 Route::get('/berita', [BeritaController::class, 'berita_all']);
 Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
 Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
-
+// Komen Berita
 Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->name('komentar.store');
 
-// konten
+// Konten
 Route::get('/profil-desa/{id}', [ProfilDesaController::class, 'show']);
 Route::get('/pelayanan/{id}', [PelayananController::class, 'show']);
 Route::get('/ppid/{id}', [PpidController::class, 'show']);
 Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
+Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
+
+// Fallback
+Route::fallback([UserViewController::class, 'fallback']);
 
 Route::get('/struktur', function () {
     return view('user.profil.struktur');
@@ -260,8 +275,4 @@ Route::get('/anti', function () {
 
 Route::get('/katalog', function () {
     return view('user.katalog');
-});
-
-Route::fallback(function () {
-    return view('user.404');
 });

@@ -41,7 +41,7 @@ class ProdukHukumController extends Controller
             ]);
 
             if (ProdukHukum::count() >= 1) {
-                return redirect('/admin/produk-hukum')->with('error', 'Anda hanya dapat menambahkan 1 data, atau anda bisa mengeditnya');
+                return redirect('/admin/produk-hukum')->with('error', 'Anda hanya dapat menambahkan 1 data, tetapi anda dapat mengeditnya');
             }
 
             ProdukHukum::create($request->all());

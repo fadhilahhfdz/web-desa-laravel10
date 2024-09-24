@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('desa_antikorupsis', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('konten');
+            $table->longText('konten');
             $table->timestamps();
         });
     }

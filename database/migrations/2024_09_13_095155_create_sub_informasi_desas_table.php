@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sub_informasi_desas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->text('deskripsi');
+            $table->longText('deskripsi');
             $table->timestamps();
         });
     }

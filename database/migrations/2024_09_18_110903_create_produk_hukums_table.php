@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('produk_hukums', function (Blueprint $table) {
             $table->id();
-            $table->text('konten');
+            $table->longText('konten');
             $table->timestamps();
         });
     }

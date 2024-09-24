@@ -12,7 +12,7 @@
             </div>
         </div>
     </div> --}}
-    <h2 class="text-black text-center mt-5">Berita</h2>
+    <h2 class="text-black text-center mt-3">BERITA</h2>
     <!-- End Breadcrumbs -->
     <section class="news-single section">
         <div class="container">
