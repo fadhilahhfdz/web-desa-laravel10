@@ -6,12 +6,14 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DesaAntikorupsiController;
 use App\Http\Controllers\DukuhController;
 use App\Http\Controllers\FotoDesaController;
+use App\Http\Controllers\GenreBukuController;
 use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\PerpustakaanController;
 use App\Http\Controllers\PpidController;
 use App\Http\Controllers\ProdukHukumController;
 use App\Http\Controllers\ProfilDesaController;
@@ -167,6 +169,21 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/desa-antikorupsi/edit/{id}', [DesaAntikorupsiController::class, 'edit']);
     Route::put('/admin/desa-antikorupsi/edit/{id}', [DesaAntikorupsiController::class, 'update']);
     Route::get('/admin/desa-antikorupsi/delete/{id}', [DesaAntikorupsiController::class, 'destroy']);
+
+    // Genre Buku
+    Route::get('/admin/perpustakaan/genre', [GenreBukuController::class, 'index']);
+    Route::post('/admin/perpustakaan/genre/create', [GenreBukuController::class, 'store']);
+    Route::get('/admin/perpustakaan/genre/edit/{id}', [GenreBukuController::class, 'edit']);
+    Route::put('/admin/perpustakaan/genre/edit/{id}', [GenreBukuController::class, 'update']);
+    Route::get('/admin/perpustakaan/genre/delete/{id}', [GenreBukuController::class, 'destroy']);
+
+    // Buku
+    Route::get('/admin/perpustakaan/buku', [PerpustakaanController::class, 'index']);
+    Route::get('/admin/perpustakaan/buku/create', [PerpustakaanController::class, 'create']);
+    Route::post('/admin/perpustakaan/buku/create', [PerpustakaanController::class, 'store']);
+    Route::get('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'edit']);
+    Route::put('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'update']);
+    Route::get('/admin/perpustakaan/buku/delete/{id}', [PerpustakaanController::class, 'destroy']);
 });
 
 // View User Berita

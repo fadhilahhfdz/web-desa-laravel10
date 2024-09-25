@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('perpustakaans', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('publisher');
+            $table->string('cover');
+            $table->integer('id_genre');
+            $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
             $table->longText('konten');
             $table->timestamps();
         });

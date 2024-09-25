@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galeri;
+use App\Models\KomentarBuku;
 use Illuminate\Http\Request;
 
-class GaleriController extends Controller
+class KomentarBukuController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $galeri = Galeri::all();
-
-        return view('admin.konten.galeri.index', compact('galeri'));
+        //
     }
 
     /**
@@ -30,17 +28,13 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $request->validate([
-                
-            ]);
-        }
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Galeri $galeri)
+    public function show(KomentarBuku $komentarBuku)
     {
         //
     }
@@ -48,7 +42,7 @@ class GaleriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Galeri $galeri)
+    public function edit(KomentarBuku $komentarBuku)
     {
         //
     }
@@ -56,7 +50,7 @@ class GaleriController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Galeri $galeri)
+    public function update(Request $request, KomentarBuku $komentarBuku)
     {
         //
     }
@@ -64,7 +58,7 @@ class GaleriController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Galeri $galeri)
+    public function destroy(KomentarBuku $komentarBuku)
     {
         //
     }

@@ -10,6 +10,19 @@ class Perpustakaan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'judul',
+        'publisher',
+        'cover',
+        'id_genre',
+        'status',
         'konten',
     ];
+
+    public function genre() {
+        return $this->belongsTo(GenreBuku::class, 'id_genre', 'id');
+    }
+
+    public function komentar() {
+        return $this->hasMany(KomentarBuku::class, 'id_buku', 'id');
+    }
 }

@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Galeri extends Model
+class GenreBuku extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'gambar',
-        'deskripsi'
+        'nama',
     ];
+
+    public function buku() {
+        return $this->hasMany(Perpustakaan::class);
+    }
 }
