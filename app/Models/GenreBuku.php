@@ -14,6 +14,6 @@ class GenreBuku extends Model
     ];
 
     public function buku() {
-        return $this->hasMany(Perpustakaan::class);
+        return $this->hasMany(Perpustakaan::class, 'id_genre');
     }
 }

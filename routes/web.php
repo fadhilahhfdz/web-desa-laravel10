@@ -203,5 +203,9 @@ Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
 Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
 Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->name('komentar.store');
 
+// Buku Perpustakaan
+Route::get('/perpustakaan/buku', [PerpustakaanController::class, 'buku_all']);
+Route::get('/perpustakaan/buku/detail/{id}', [PerpustakaanController::class, 'show']);
+
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);

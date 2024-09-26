@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('judul');
             $table->string('publisher');
             $table->string('cover');
-            $table->integer('id_genre');
+            $table->unsignedBigInteger('id_genre');
             $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
-            $table->longText('konten');
+            $table->longText('konten')->nullable();
             $table->timestamps();
         });
     }

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\GenreBuku;
+use App\Models\InformasiDesa;
+use App\Models\Pelayanan;
 use App\Models\Perpustakaan;
+use App\Models\Ppid;
+use App\Models\ProfilDesa;
+use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
 class PerpustakaanController extends Controller
@@ -13,7 +18,7 @@ class PerpustakaanController extends Controller
      */
     public function index()
     {
-        $perpustakaan = Perpustakaan::all();
+        $perpustakaan = Perpustakaan::latest()->paginate(5);
 
         return view('admin.konten.perpustakaan.buku.index', compact('perpustakaan'));
     }
@@ -38,6 +43,7 @@ class PerpustakaanController extends Controller
                 'judul' => 'required|string|max:255',
                 'publisher' => 'required|string|max:255',
                 'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'id_genre' => 'required',
                 'status' => 'required|in:Tersedia,Tidak Tersedia',
                 'konten' => 'required'
             ]);
@@ -50,6 +56,7 @@ class PerpustakaanController extends Controller
                 'judul' => $request->judul,
                 'publisher' => $request->publisher,
                 'cover' => $pathCover,
+                'id_genre' => $request->id_genre,
                 'status' => $request->status,
                 'konten' => $request->konten,
             ]);
@@ -63,9 +70,20 @@ class PerpustakaanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Perpustakaan $perpustakaan)
+    public function show($id)
     {
-        //
+        $perpustakaan = Perpustakaan::findOrFail($id);
+        $genreBuku = GenreBuku::all();
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+
+        // Dropdown
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+
+        return view('user.konten.perpustakaan.buku_detail', compact('perpustakaan', 'genreBuku', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
     /**
@@ -88,7 +106,7 @@ class PerpustakaanController extends Controller
             $request->validate([
                 'judul' => 'required|string|max:255',
                 'publisher' => 'required|string|max:255',
-                'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'cover' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'status' => 'required|in:Tersedia,Tidak Tersedia',
                 'konten' => 'required'
             ]);
@@ -116,7 +134,7 @@ class PerpustakaanController extends Controller
 
             return redirect('/admin/perpustakaan/buku')->with('sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/perpustakaan/buku/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect("/admin/perpustakaan/buku/edit/$id")->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 
@@ -129,5 +147,24 @@ class PerpustakaanController extends Controller
         $perpustakaan->delete();
 
         return redirect('/admin/perpustakaan/buku')->with('sukses', 'Data berhasil dihapus');
+    }
+
+    public function buku_all() {
+        $genreBuku = GenreBuku::all();
+        $perpustakaan = Perpustakaan::latest()->paginate(6);
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+
+        // Dropdown
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+
+        return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+    }
+
+    public function buku_by_genre() {
+
     }
 }
