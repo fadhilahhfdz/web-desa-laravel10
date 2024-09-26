@@ -211,6 +211,29 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-minus"></i>
+                                        <p>
+                                            Perpustakaan
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/admin/perpustakaan/genre" class="nav-link">
+                                                <i class="fas fa-th nav-icon"></i>
+                                                <p>Genre Buku</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/admin/perpustakaan/buku" class="nav-link">
+                                                <i class="fas fa-book nav-icon"></i>
+                                                <p>Buku</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/admin/galeri" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>Galeri</p>

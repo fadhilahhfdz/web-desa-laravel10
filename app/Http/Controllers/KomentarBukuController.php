@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KomentarBuku;
+use App\Models\Perpustakaan;
 use Illuminate\Http\Request;
 
 class KomentarBukuController extends Controller
@@ -26,9 +27,31 @@ class KomentarBukuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id_buku)
     {
-        //
+        try {
+            $request->validate([
+                'id_buku' => 'required',
+                'first_name' => 'required|string|max:100',
+                'last_name' => 'required|string|max:100',
+                'email' => 'required|string|max:100',
+                'komentar' => 'required'
+            ]);
+
+            $perpustakaan = Perpustakaan::findOrFail($id_buku);
+
+            $perpustakaan->komentar()->create([
+                'id_buku' => $id_buku,
+                'first_name' => $request->input('first_name'),
+                'last_name' => $request->input('last_name'),
+                'email' => $request->input('email'),
+                'komentar' => $request->input('komentar'),
+            ]);
+
+            return redirect('/perpustakaan/buku/detail/{$id}')->with('sukses', 'Berhasil menambahkan komentar');
+        } catch (\Exception $e) {
+            return redirect('/perpustakaan/buku/detail/{$id}')->with('gagal', 'Gagal menambahkan komentar ' . $e->getMessage());
+        }
     }
 
     /**

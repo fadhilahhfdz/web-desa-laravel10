@@ -134,7 +134,7 @@
                                         <li><a href="/berita">BERITA</a></li>
                                         <li><a href="#">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="/katalog">KATALOG BUKU</a></li>
+                                                <li><a href="/perpustakaan/buku">KATALOG BUKU</a></li>
                                             </ul>
                                         </li>
                                     </ul>

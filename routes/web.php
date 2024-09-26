@@ -186,19 +186,22 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/perpustakaan/buku/delete/{id}', [PerpustakaanController::class, 'destroy']);
 });
 
-// View User Berita
+/* -- KONTEN -- */
+// Profil Desa
+Route::get('/profil-desa/{id}', [ProfilDesaController::class, 'show']);
+// Pelayanan
+Route::get('/pelayanan/{id}', [PelayananController::class, 'show']);
+// PPID
+Route::get('/ppid/{id}', [PpidController::class, 'show']);
+// Produk Hukum
+Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
+// Desa Antikorupsi
+Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
+// Berita
 Route::get('/berita', [BeritaController::class, 'berita_all']);
 Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
 Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
-// Komen Berita
 Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->name('komentar.store');
-
-// Konten
-Route::get('/profil-desa/{id}', [ProfilDesaController::class, 'show']);
-Route::get('/pelayanan/{id}', [PelayananController::class, 'show']);
-Route::get('/ppid/{id}', [PpidController::class, 'show']);
-Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
-Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
 
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);
