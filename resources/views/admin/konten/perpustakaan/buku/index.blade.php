@@ -37,7 +37,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-2">
-                                <table class="table table-hover text-nowrap" id="table">
+                                <table class="table table-hover text-wrap" id="table">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -54,7 +54,7 @@
                                         @foreach ($perpustakaan as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 20%">{{ $item->judul }}</td>
+                                                <td style="width: 17%">{{ $item->judul }}</td>
                                                 <td style="width: 15%">{{ $item->publisher }}</td>
                                                 <td style="width: 10%">{{ $item->genre->nama }}</td>
                                                 @if ($item->status == 'Tersedia')
@@ -67,7 +67,7 @@
                                                     </td>
                                                 @endif
                                                 <td><img src="{{ asset($item->cover )}}" alt="{{ $item->judul }}" width="100"></td>
-                                                <td>{!! Str::limit($item->konten, 100) !!}</td>
+                                                <td style="width: 20%">{!! Str::limit($item->konten, 100) !!}</td>
                                                 <td>
                                                     <a href="/admin/perpustakaan/buku/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i

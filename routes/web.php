@@ -10,6 +10,7 @@ use App\Http\Controllers\GenreBukuController;
 use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
+use App\Http\Controllers\KomentarBukuController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PerangkatDesaController;
@@ -206,6 +207,8 @@ Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->
 // Buku Perpustakaan
 Route::get('/perpustakaan/buku', [PerpustakaanController::class, 'buku_all']);
 Route::get('/perpustakaan/buku/detail/{id}', [PerpustakaanController::class, 'show']);
+Route::post('/perpustakaan/buku/detail/{id}', [KomentarBukuController::class, 'store']);
+Route::get('/perpustakaan/buku/buku_by_genre/{id}', [PerpustakaanController::class, 'buku_by_genre']);
 
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);

@@ -1,26 +1,5 @@
 @extends('user.main')
 @section('content')
-    {{-- <div class="breadcrumbs overlay">
-        <div class="container">
-            <div class="bread-inner">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Berita</h2>
-                        <ul class="bread-list">
-                            <li><a href="/">Beranda</a></li>
-                            <li><i class="icofont-simple-right"></i></li>
-                            <li><a href="/berita">Berita</a></li>
-                            <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Kategori</li>
-                            <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">{{ $kategori->nama }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- End Breadcrumbs -->
     <section class="news-single section">
         <div class="container">
             <div class="row">

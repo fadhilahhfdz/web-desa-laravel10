@@ -53,11 +53,11 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label for="judul">Judul Buku</label>
-                                            <input type="text" id="judul" name="judul" class="form-control">
+                                            <input type="text" id="judul" name="judul" class="form-control" required>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="publisher">Publisher</label>
-                                            <input type="text" id="publisher" name="publisher" class="form-control">
+                                            <input type="text" id="publisher" name="publisher" class="form-control" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="id_genre">Genre Buku</label>
@@ -80,7 +80,7 @@
                                         <div class="form-group col-md-6">
                                             <label for="cover">Cover Buku</label>
                                             <input type="file" class="form-control" name="cover" accept="image/*">
-                                            <small class="text-danger">*potrait, max:2mb</small>
+                                            <small class="text-danger">*potrait 3x4, max:2mb</small>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="konten">Konten</label>

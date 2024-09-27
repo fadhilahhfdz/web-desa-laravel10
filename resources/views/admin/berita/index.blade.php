@@ -36,7 +36,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-2">
-                                <table class="table table-hover text-nowrap" id="table">
+                                <table class="table table-hover text-wrap" id="table">
                                     <thead>
                                         <tr>
                                             <th>No.</th>

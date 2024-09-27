@@ -10,7 +10,7 @@
                         @forelse ($perpustakaan as $item)
                             <div class="col-6 col-sm-4 image-gallery">
                                 <a href="/perpustakaan/buku/detail/{{ $item->id }}">
-                                    <div class="single-main">
+                                    <div class="single">
                                         <div class="single-image">
                                             <img src="{{ asset($item->cover) }}" alt="{{ $item->judul }}" width="250">
                                         </div>

@@ -1,5 +1,6 @@
 @extends('user.main')
 @section('content')
+    <h2 class="text-black text-center mt-3">DETAIL BUKU</h2>
     <section class="news-single section">
         <div class="container">
             <div class="row">
@@ -16,14 +17,14 @@
                                     </div>
                                     <div class="meta-right">
                                         <span class="date ml-5"><i
-                                                class="fa fa-calendar"></i>{{ $perpustakaan->updated_at->format('d F Y') }}</span>
-                                        <span class="date"><i
-                                                class="fa fa-clock-o"></i>{{ $perpustakaan->updated_at->format('H:i') }}</span>
+                                                class="fa fa-comments"></i>{{ $perpustakaan->komentar->count() }}
+                                            Komentar</span>
                                     </div>
                                 </div>
                                 <!-- image -->
                                 <div class="row justify-content-center">
-                                    <img src="{{ asset( $perpustakaan->cover )}}" alt="{{ $perpustakaan->judul }}" width="250">
+                                    <img src="{{ asset($perpustakaan->cover) }}" alt="{{ $perpustakaan->judul }}"
+                                        width="250">
                                 </div>
                                 <!-- image -->
                                 <!-- News Text -->
@@ -31,19 +32,25 @@
                                     {!! $perpustakaan->konten !!}
                                 </div>
                                 <div class="blog-bottom">
-                                    <h5 class="fw-bold">Editions:</h5>
-                                    <p class="fw-bold">Publisher: <span>{{ $perpustakaan->publisher }}</span></p>
-                                    <p class="fw-bold">Genre: <span>{{ $perpustakaan->genre->nama }}</span></p>
-                                    <p class="fw-bold">Status Buku: <span>{{ $perpustakaan->status }}</span></p>
+                                    <h5 class="fw-bold mb-2">Editions:</h5>
+                                    <p class="edition fw-bold">Publisher: <span>{{ $perpustakaan->publisher }}</span></p>
+                                    <p class="edition fw-bold">Genre: <span>{{ $perpustakaan->genre->nama }}</span></p>
+                                    <p class="edition fw-bold">Status Buku:
+                                        @if ($perpustakaan->status == 'Tersedia')
+                                            <span class="badge badge-success text-white">Tersedia</span>
+                                        @elseif ($perpustakaan->status == 'Tidak Tersedia')
+                                            <span class="badge badge-danger text-white">Tidak Tersedia</span>
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-12">
+                        <div class="col-12">
                             <div class="blog-comments">
                                 <h2>Komentar</h2>
                                 <hr>
                                 <div class="comments-body">
-                                    @forelse ($berita->komentar()->orderBy('updated_at', 'desc')->get() as $komen)
+                                    @forelse ($perpustakaan->komentar()->orderBy('updated_at', 'desc')->get() as $komen)
                                         <!-- Single Comments -->
                                         <div class="single-comments">
                                             <div class="main">
@@ -67,18 +74,19 @@
                                     @endforelse
                                 </div>
                             </div>
-                        </div> --}}
-                        {{-- <div class="col-12">
+                        </div>
+                        <div class="col-12">
                             <div class="comments-form">
                                 <h2>Tinggalkan Komentar</h2>
                                 <!-- Contact Form -->
-                                <form class="form" method="post" action="/detail-berita/{{ $berita->id }}">
+                                <form class="form" method="post"
+                                    action="/perpustakaan/buku/detail/{{ $perpustakaan->id }}">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <i class="fa fa-user"></i>
-                                                <input type="hidden" name="id_berita" value="{{ $berita }}">
+                                                <input type="hidden" name="id_buku" value="{{ $perpustakaan }}">
                                                 <i class="fa fa-user"></i>
                                                 <input type="text" name="first_name" placeholder="First Name"
                                                     required="required">
@@ -114,7 +122,7 @@
                                 </form>
                                 <!--/ End Contact Form -->
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
@@ -123,7 +131,9 @@
                             <h3 class="title">Genre Buku</h3>
                             @foreach ($genreBuku as $item)
                                 <ul class="categor-list">
-                                    <li><a href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a></li>
+                                    <li><a
+                                            href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
+                                    </li>
                                 </ul>
                             @endforeach
                         </div>

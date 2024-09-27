@@ -18,7 +18,7 @@ class PerpustakaanController extends Controller
      */
     public function index()
     {
-        $perpustakaan = Perpustakaan::latest()->paginate(5);
+        $perpustakaan = Perpustakaan::orderBy('updated_at', 'desc')->get();
 
         return view('admin.konten.perpustakaan.buku.index', compact('perpustakaan'));
     }
@@ -164,7 +164,17 @@ class PerpustakaanController extends Controller
         return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
-    public function buku_by_genre() {
+    public function buku_by_genre($id) {
+        $genre = GenreBuku::findOrFail($id);
+        $perpustakaan = Perpustakaan::where('id_genre', $id)->latest()->paginate(6);
+        $genreAll = GenreBuku::all();
 
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+
+        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 }

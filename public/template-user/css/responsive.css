@@ -769,6 +769,9 @@ Version:	1.1
     .news-single .single-main {
         padding: 15px;
     }
+    .news-single .single {
+        padding: 10px;
+    }
     .news-single .news-title {
         font-size: 20px;
         font-weight: 500;
