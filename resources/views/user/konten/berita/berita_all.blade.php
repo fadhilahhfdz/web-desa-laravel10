@@ -1,19 +1,6 @@
 @extends('user.main')
 @section('content')
-    <!-- Breadcrumbs -->
-    {{-- <div class="breadcrumbs">
-        <div class="container">
-            <div class="bread-inner">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-black">Berita</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <h2 class="text-black text-center mt-3">BERITA</h2>
-    <!-- End Breadcrumbs -->
     <section class="news-single section">
         <div class="container">
             <div class="row">
@@ -83,6 +70,14 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="main-sidebar">
+                        <div class="single-widget search">
+                            <div class="form">
+                                <form action="/berita/cari" method="GET">
+                                    <input type="text" name="s" placeholder="Cari Disini...">
+                                    <button type="submit" class="button"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
                             @forelse ($kategori as $kategori)

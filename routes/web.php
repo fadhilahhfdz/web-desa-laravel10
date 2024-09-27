@@ -203,6 +203,7 @@ Route::get('/berita', [BeritaController::class, 'berita_all']);
 Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
 Route::get('/berita-by-kategori/{id}', [BeritaController::class, 'berita_by_kategori']);
 Route::post('/detail-berita/{id}', [KomentarBeritaController::class, 'store'])->name('komentar.store');
+Route::get('/berita/cari', [BeritaController::class, 'search']);
 
 // Buku Perpustakaan
 Route::get('/perpustakaan/buku', [PerpustakaanController::class, 'buku_all']);

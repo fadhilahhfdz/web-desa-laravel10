@@ -68,7 +68,7 @@ class BeritaController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         
-        return view('user.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
     /**
@@ -114,17 +114,6 @@ class BeritaController extends Controller
         return redirect('/admin/berita')->with('sukses', 'Berhasil menghapus data');
     }
 
-    // public function berita()
-    // {
-    //     $berita = Berita::all();
-    //     $totalLakiLaki = Penduduk::all()->where('jenis_kelamin', 'Laki-laki')->count();
-    //     $totalPerempuan = Penduduk::all()->where('jenis_kelamin', 'Perempuan')->count();
-    //     $penduduk = Penduduk::all();
-    //     $perangkatDesa = PerangkatDesa::all();
-
-    //     return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa'));
-    // }
-
     public function berita_all() {
         $berita = Berita::latest()->paginate(5);
         $kategori = KategoriBerita::all();
@@ -134,7 +123,7 @@ class BeritaController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
 
-        return view('user.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 
     public function berita_by_kategori($id) {
@@ -147,6 +136,26 @@ class BeritaController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
 
-        return view('user.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+    }
+
+    public function search(Request $request) {
+        $searchQuery = $request->input('s');
+        $hasil = Berita::where('judul', 'LIKE', "%{$searchQuery}%")
+                            ->orWhere('author', 'LIKE', "%{$searchQuery}%")
+                            ->orWhere('konten', 'LIKE', "%{$searchQuery}%")
+                            ->orWhereHas('kategori', function($query) use ($searchQuery) {
+                                $query->where('nama', 'LIKE', "%{$searchQuery}%");
+                            })
+                            ->latest()->paginate(5);
+
+        $kategoriAll = KategoriBerita::all();
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+        
+        return view('user.konten.berita.cari_berita', compact('hasil', 'kategoriAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
 }
