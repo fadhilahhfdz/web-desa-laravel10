@@ -1,6 +1,5 @@
 @extends('user.main')
 @section('content')
-    @if ($hasil->isNotEmpty())
         <h2 class="text-black text-center mt-3">HASIL PENCARIAN:</h2>
         <!-- End Breadcrumbs -->
         <section class="news-single section">
@@ -23,7 +22,7 @@
                                 <div class="col-12">
                                     <div class="single-main">
                                         <div class="alert alert-danger">
-                                            <p class="text-center">Buku belum tersedia</p>
+                                            <p class="text-center">Tidak ada hasil yang ditemukan.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -63,13 +62,4 @@
                 </div>
             </div>
         </section>
-    @else
-        <div class="col-12">
-            <div class="single-main">
-                <div class="alert alert-danger">
-                    <p class="text-center">Tidak ada hasil yang ditemukan</p>
-                </div>
-            </div>
-        </div>
-    @endif
 @endsection

@@ -21,7 +21,7 @@
                             <div class="col-12">
                                 <div class="single-main">
                                     <div class="alert alert-danger">
-                                        <p class="text-center">Buku belum tersedia</p>
+                                        <p class="text-center">Belum ada buku dari genre {{ $genre->nama }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,8 @@
                             <h3 class="title">Genre Buku</h3>
                             @forelse ($genreAll as $item)
                                 <ul class="categor-list">
-                                    <li><a href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
+                                    <li><a
+                                            href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
                                     </li>
                                 </ul>
                             @empty

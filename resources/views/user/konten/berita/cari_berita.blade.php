@@ -1,6 +1,5 @@
 @extends('user.main')
 @section('content')
-    @if ($hasil->isNotEmpty())
         <h2 class="text-black text-center mt-3">HASIL PENCARIAN:</h2>
         <section class="news-single section">
             <div class="container">
@@ -63,7 +62,7 @@
                                 <div class="col-12">
                                     <div class="single-main">
                                         <div class="alert alert-danger">
-                                            <p class="text-center">Berita belum tersedia</p>
+                                            <p class="text-center">Tidak ada hasil yang ditemukan.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -101,13 +100,4 @@
                 </div>
             </div>
         </section>
-    @else
-        <div class="col-12">
-            <div class="single-main">
-                <div class="alert alert-danger">
-                    <p class="text-center">Tidak ada hasil yang ditemukan.</p>
-                </div>
-            </div>
-        </div>
-    @endif
 @endsection
