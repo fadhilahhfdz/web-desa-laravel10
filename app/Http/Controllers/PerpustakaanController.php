@@ -177,4 +177,26 @@ class PerpustakaanController extends Controller
 
         return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
     }
+
+    public function search(Request $request) {
+        $searchQuery = $request->input('s');
+        $hasil = Perpustakaan::where('judul', 'LIKE', "%{$searchQuery}%")
+                                    ->orWhere('publisher', 'LIKE', "%{$searchQuery}%")
+                                    ->orWhereHas('genre', function($query) use ($searchQuery) {
+                                        $query->where('nama', 'LIKE', "%{$searchQuery}%");
+                                    })
+                                    ->orWhere('status', 'LIKE', "%{$searchQuery}%")
+                                    ->orWhere('konten', 'LIKE', "%{$searchQuery}%")
+                                    ->latest()->paginate(6);
+
+        $genreAll = GenreBuku::all();
+
+        $waktuLayanan = WaktuLayanan::all();
+        $informasiDesa = InformasiDesa::all();
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
+
+        return view('user.konten.perpustakaan.cari_buku', compact('hasil', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+    }
 }

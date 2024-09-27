@@ -33,11 +33,20 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="main-sidebar">
+                        <div class="single-widget search">
+                            <div class="form">
+                                <form action="/perpustakaan/buku/cari" method="GET">
+                                    <input type="text" name="s" placeholder="Cari Disini...">
+                                    <button type="submit" class="button"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
                         <div class="single-widget category">
                             <h3 class="title">Genre Buku</h3>
                             @forelse ($genreBuku as $item)
                                 <ul class="categor-list">
-                                    <li><a href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
+                                    <li><a
+                                            href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
                                     </li>
                                 </ul>
                             @empty

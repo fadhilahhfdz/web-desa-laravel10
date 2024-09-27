@@ -209,6 +209,7 @@ Route::get('/perpustakaan/buku', [PerpustakaanController::class, 'buku_all']);
 Route::get('/perpustakaan/buku/detail/{id}', [PerpustakaanController::class, 'show']);
 Route::post('/perpustakaan/buku/detail/{id}', [KomentarBukuController::class, 'store']);
 Route::get('/perpustakaan/buku/buku_by_genre/{id}', [PerpustakaanController::class, 'buku_by_genre']);
+Route::get('/perpustakaan/buku/cari', [PerpustakaanController::class, 'search']);
 
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);
