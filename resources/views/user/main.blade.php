@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.css') }}">
     <link rel="stylesheet" href="{{ asset('template-admin/plugins/chart.js/Chart.min.css') }}">
 
+
 </head>
 
 <body>
@@ -110,21 +111,26 @@
                                         <li><a href="#">PROFIL </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 @foreach ($dropdownProfil as $item)
-                                                    <li><a href="/profil-desa/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                    <li><a
+                                                            href="/profil-desa/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="#">PELAYANAN </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 @foreach ($dropdownPelayanan as $item)
-                                                    <li><a href="/pelayanan/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                    <li><a
+                                                            href="/pelayanan/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 @foreach ($dropdownPpid as $item)
-                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a></li>
+                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -135,6 +141,7 @@
                                         <li><a href="#">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="/perpustakaan/buku">KATALOG BUKU</a></li>
+                                                <li><a href="/galeri">GALERI</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -171,7 +178,8 @@
                             <ul class="time-sidual">
                                 <li>{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}
                                 </li>
-                                <li><a href="https://wa.me/{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}" class="btn">Hubungi Kami</a></li>
+                                <li><a href="https://wa.me/{{ isset($informasiDesa[0]) ? $informasiDesa[0]->hotline_desa : 'Hotline desa belum ada' }}"
+                                        class="btn">Hubungi Kami</a></li>
                             </ul>
                         </div>
                     </div>
@@ -255,6 +263,8 @@
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('template-user/js/scroll.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     @stack('script')
 </body>

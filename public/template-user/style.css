@@ -2394,6 +2394,14 @@ body {
     -moz-transform: scale(1.2);
     transform: scale(1.2);
 }
+.image-gallery .single-image {
+    overflow: hidden;
+}
+.image-gallery .single-image:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+}
 /* Blockqoute */
 .news-single blockquote {
     background-image: url("img/blockqoute-bg.jpg");

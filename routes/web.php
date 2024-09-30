@@ -6,6 +6,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DesaAntikorupsiController;
 use App\Http\Controllers\DukuhController;
 use App\Http\Controllers\FotoDesaController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GenreBukuController;
 use App\Http\Controllers\InformasiDesaController;
 use App\Http\Controllers\KategoriBeritaController;
@@ -186,6 +187,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'edit']);
     Route::put('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'update']);
     Route::get('/admin/perpustakaan/buku/delete/{id}', [PerpustakaanController::class, 'destroy']);
+
+    // Galeri
+    Route::get('/admin/galeri', [GaleriController::class, 'index']);
+    Route::post('/admin/galeri/create', [GaleriController::class, 'store']);
+    Route::get('/admin/galeri/edit/{id}', [GaleriController::class, 'edit']);
+    Route::put('/admin/galeri/edit/{id}', [GaleriController::class, 'update']);
+    Route::get('/admin/galeri/delete/{id}', [GaleriController::class, 'destroy']);
 });
 
 /* -- KONTEN -- */
@@ -201,6 +209,8 @@ Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
 Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
 // APB Dsa
 Route::get('/apb-desa', [ApbDesaController::class, 'show']);
+// Galeri
+Route::get('/galeri', [GaleriController::class, 'show']);
 // Berita
 Route::get('/berita', [BeritaController::class, 'berita_all']);
 Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);
