@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InformasiDesa;
 use App\Models\InformasiPpid;
+use App\Models\Pelayanan;
+use App\Models\Ppid;
+use App\Models\ProfilDesa;
+use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
 class InformasiPpidController extends Controller
@@ -92,5 +97,57 @@ class InformasiPpidController extends Controller
         $informasiPpid->delete();
 
         return redirect('/admin/ppid/informasi-ppid')->with('sukses', 'Data berhasil dihapus');
+    }
+
+    public function informasi_berkala() {
+        $informasiBerkala = InformasiPpid::where('daftar_informasi', 'Informasi Berkala')->get();
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+        
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPpid = Ppid::all();
+        $dropdownPelayanan = Pelayanan::all();
+
+        return view('user.konten.informasi-ppid.informasi-berkala', compact('informasiBerkala', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+    }
+
+    public function informasi_setiap_saat() {
+        $informasiSetiapSaat = InformasiPpid::where('daftar_informasi', 'Informasi Setiap Saat')->get();
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+        
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPpid = Ppid::all();
+        $dropdownPelayanan = Pelayanan::all();
+
+        return view('user.konten.informasi-ppid.informasi-setiap-saat', compact('informasiSetiapSaat', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+    }
+
+    public function informasi_serta_merta() {
+        $informasiSertaMerta = InformasiPpid::where('daftar_informasi', 'Informasi Serta Merta')->get();
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+        
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPpid = Ppid::all();
+        $dropdownPelayanan = Pelayanan::all();
+
+        return view('user.konten.informasi-ppid.informasi-serta-merta', compact('informasiSertaMerta', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+    }
+
+    public function informasi_dikecualikan() {
+        $informasiDikecualikan = InformasiPpid::where('daftar_informasi', 'Informasi Dikecualikan')->get();
+
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+        
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPpid = Ppid::all();
+        $dropdownPelayanan = Pelayanan::all();
+
+        return view('user.konten.informasi-ppid.informasi-dikecualikan', compact('informasiDikecualikan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
     }
 }

@@ -137,16 +137,16 @@
                                                             class="icofont-rounded-right"></i></a>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item"
-                                                                href="/ppid/informasi-berkala">INFORMASI BERKALA</a>
+                                                                href="/ppid/informasi-ppid/informasi-berkala">INFORMASI BERKALA</a>
                                                         </li>
                                                         <li><a class="dropdown-item"
-                                                                href="/ppid/informasi-setiap-saat">INFORMASI SETIAP
+                                                                href="/ppid/informasi-ppid/informasi-setiap-saat">INFORMASI SETIAP
                                                                 SAAT</a></li>
                                                         <li><a class="dropdown-item"
-                                                                href="/ppid/informasi-serta-merta">INFORMASI SERTA
+                                                                href="/ppid/informasi-ppid/informasi-serta-merta">INFORMASI SERTA
                                                                 MERTA</a></li>
                                                         <li><a class="dropdown-item"
-                                                                href="/ppid/informasi-dikecualikan">INFORMASI
+                                                                href="/ppid/informasi-ppid/informasi-dikecualikan">INFORMASI
                                                                 DIKECUALIKAN</a></li>
                                                     </ul>
                                                 </li>

@@ -234,5 +234,12 @@ Route::post('/perpustakaan/buku/detail/{id}', [KomentarBukuController::class, 's
 Route::get('/perpustakaan/buku/buku_by_genre/{id}', [PerpustakaanController::class, 'buku_by_genre']);
 Route::get('/perpustakaan/buku/cari', [PerpustakaanController::class, 'search']);
 
+/* Informasi PPID */
+// Informasi Berkala
+Route::get('/ppid/informasi-ppid/informasi-berkala', [InformasiPpidController::class, 'informasi_berkala']);
+Route::get('/ppid/informasi-ppid/informasi-setiap-saat', [InformasiPpidController::class, 'informasi_setiap_saat']);
+Route::get('/ppid/informasi-ppid/informasi-serta-merta', [InformasiPpidController::class, 'informasi_serta_merta']);
+Route::get('/ppid/informasi-ppid/informasi-dikecualikan', [InformasiPpidController::class, 'informasi_dikecualikan']);
+
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);
