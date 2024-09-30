@@ -30,10 +30,8 @@
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
-                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#tambah-apb">
-                                            <i class="fas fa-plus"></i> Tambah
-                                        </button>
+                                        <a href="/admin/apb-desa/create" class="btn btn-sm btn-primary"><i
+                                            class="fas fa-plus"></i> Tambah</a>
                                     </div>
                                 </div>
                             </div>
@@ -46,6 +44,7 @@
                                             <th>Jenis</th>
                                             <th>Kategori</th>
                                             <th>Nominal</th>
+                                            <th>konten</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -55,7 +54,8 @@
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
                                                 <td>{{ $item->jenis }}</td>
                                                 <td>{{ $item->kategori }}</td>
-                                                <td>Rp.{{ $item->formatRupiah('nominal') }}</td>
+                                                <td>Rp{{ $item->formatRupiah('nominal') }}</td>
+                                                <td>{!! $item->konten !!}</td>
                                                 <td>
                                                     <a href="/admin/apb-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i
@@ -77,7 +77,6 @@
         </section>
         <!-- /.content -->
     </div>
-@include('admin.konten.apb-desa.create')
 @endsection
 @push('script')
     <script>

@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\ApbDesa;
+use App\Models\InformasiDesa;
+use App\Models\Pelayanan;
+use App\Models\Ppid;
+use App\Models\ProdukHukum;
+use App\Models\ProfilDesa;
+use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
 class ApbDesaController extends Controller
@@ -22,7 +28,7 @@ class ApbDesaController extends Controller
      */
     public function create()
     {
-        // return view('admin.konten.apb-desa.create');
+        return view('admin.konten.apb-desa.create');
     }
 
     /**
@@ -35,6 +41,7 @@ class ApbDesaController extends Controller
                 'jenis' => 'required|in:Pendapatan,Belanja',
                 'kategori' => 'required|string',
                 'nominal' => 'required|numeric|min:0',
+                'konten' => 'required',
             ]);
 
             ApbDesa::create($request->all());
@@ -48,11 +55,17 @@ class ApbDesaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show()
     {
-        $apbDesa = ApbDesa::findOrFail($id);
+        $apbDesa = ApbDesa::all();
+        $informasiDesa = InformasiDesa::all();
+        $waktuLayanan = WaktuLayanan::all();
+        
+        $dropdownProfil = ProfilDesa::all();
+        $dropdownPpid = Ppid::all();
+        $dropdownPelayanan = Pelayanan::all();
 
-        return view('user.konten.apb-desa', compact('apbDesa'));
+        return view('user.konten.apb-desa', compact('informasiDesa','waktuLayanan','dropdownProfil','dropdownPelayanan','dropdownPpid', 'apbDesa'));
     }
 
     /**
@@ -75,15 +88,16 @@ class ApbDesaController extends Controller
                 'jenis' => 'required|in:Pendapatan,Belanja',
                 'kategori' => 'required|string',
                 'nominal' => 'required|numeric|min:0',
+                'konten' => 'required',
             ]);
 
             $apbDesa = ApbDesa::findOrFail($id);
 
             $apbDesa->update($request->all());
 
-            return redirect('/admin/apb-desa')->with('sukses', 'Data berhasil disimpan');
+            return redirect('/admin/apb-desa')->with('sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/apb-desa/edit/{$id}')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
+            return redirect('/admin/apb-desa/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 
@@ -96,11 +110,5 @@ class ApbDesaController extends Controller
         $apbDesa->delete();
 
         return redirect('/admin/apb-desa')->with('sukses', 'Data berhasil dihapus');
-    }
-
-    public function view() {
-        $apbDesa = ApbDesa::all();
-
-        return view('admin.konten.abp', compact('apbDesa'));
     }
 }

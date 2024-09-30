@@ -126,6 +126,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     // APB Desa
     Route::get('/admin/apb-desa', [ApbDesaController::class, 'index']);
+    Route::get('/admin/apb-desa/create', [ApbDesaController::class, 'create']);
     Route::post('/admin/apb-desa/create', [ApbDesaController::class, 'store']);
     Route::get('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'edit']);
     Route::put('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'update']);
@@ -198,6 +199,8 @@ Route::get('/ppid/{id}', [PpidController::class, 'show']);
 Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
 // Desa Antikorupsi
 Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
+// APB Dsa
+Route::get('/apb-desa', [ApbDesaController::class, 'show']);
 // Berita
 Route::get('/berita', [BeritaController::class, 'berita_all']);
 Route::get('/detail-berita/{id}', [BeritaController::class, 'show']);

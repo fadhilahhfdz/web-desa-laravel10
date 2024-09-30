@@ -16,6 +16,7 @@ return new class extends Migration
             $table->enum('jenis', ['Pendapatan', 'Belanja']);
             $table->string('kategori');
             $table->bigInteger('nominal');
+            $table->longText('konten');
             $table->timestamps();
         });
     }

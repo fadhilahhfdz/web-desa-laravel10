@@ -38,7 +38,7 @@
                                     <div class="row">
                                         <div class="col-md-2">
                                             <label for="jenis">Jenis APB :</label>
-                                            <select name="jenis" id="jenis" class="form-control" required>
+                                            <select name="jenis" id="jenis" class="form-control">
                                                 <option
                                                     value="Pendapatan"{{ $apbDesa->jenis == 'Pendapatan' ? 'selected' : '' }}>
                                                     Pendapatan</option>
@@ -50,14 +50,20 @@
                                             <div class="form-group">
                                                 <label for="kategori">Kategori :</label>
                                                 <input type="text" name="kategori" class="form-control"
-                                                    value="{{ $apbDesa->kategori }}" placeholder="Cth: Pendapatan Asli Desa" required>
+                                                    value="{{ $apbDesa->kategori }}" placeholder="Cth: Pendapatan Asli Desa">
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label for="nominal">Nominal :</label>
                                                 <input type="number" name="nominal" class="form-control"
-                                                    value="{{ $apbDesa->nominal }}" required>
+                                                    value="{{ $apbDesa->nominal }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="konten">konten :</label>
+                                                <textarea name="konten" class="form-control" id="summernote">{{ $apbDesa->konten}}</textarea>
                                             </div>
                                         </div>
                                     </div>

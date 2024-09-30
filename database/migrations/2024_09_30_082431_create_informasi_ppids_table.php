@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galeris', function (Blueprint $table) {
+        Schema::create('informasi_ppids', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('caption');
+            $table->enum('daftar_informasi', ['Informasi Berkala', 'Informasi Setiap Saat', 'Informasi Serta Merta', 'Informasi Dikecualikan']);
+            $table->longText('konten');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galeris');
+        Schema::dropIfExists('informasi_ppids');
     }
 };
