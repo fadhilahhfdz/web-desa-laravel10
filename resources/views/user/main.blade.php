@@ -128,7 +128,29 @@
                                         </li>
                                         <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                @foreach ($dropdownPpid as $item)
+                                                @foreach ($dropdownPpid->slice(0, 5) as $item)
+                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
+                                                @endforeach
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item" href="#">DAFTAR INFORMASI <i
+                                                            class="icofont-rounded-right"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="/ppid/informasi-berkala">INFORMASI BERKALA</a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                                href="/ppid/informasi-setiap-saat">INFORMASI SETIAP
+                                                                SAAT</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="/ppid/informasi-serta-merta">INFORMASI SERTA
+                                                                MERTA</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                href="/ppid/informasi-dikecualikan">INFORMASI
+                                                                DIKECUALIKAN</a></li>
+                                                    </ul>
+                                                </li>
+                                                @foreach ($dropdownPpid->slice(5) as $item)
                                                     <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
@@ -264,7 +286,9 @@
     <script src="{{ asset('template-admin/plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('template-user/js/scroll.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     @stack('script')
 </body>

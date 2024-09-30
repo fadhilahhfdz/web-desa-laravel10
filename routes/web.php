@@ -9,6 +9,7 @@ use App\Http\Controllers\FotoDesaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GenreBukuController;
 use App\Http\Controllers\InformasiDesaController;
+use App\Http\Controllers\InformasiPpidController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KomentarBeritaController;
 use App\Http\Controllers\KomentarBukuController;
@@ -156,6 +157,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/ppid/edit/{id}', [PpidController::class, 'edit']);
     Route::put('/admin/ppid/edit/{id}', [PpidController::class, 'update']);
     Route::get('/admin/ppid/delete/{id}', [PpidController::class, 'destroy']);
+
+    // Informasi PPID
+    Route::get('/admin/ppid/informasi-ppid', [InformasiPpidController::class, 'index']);
+    Route::get('/admin/ppid/informasi-ppid/create', [InformasiPpidController::class, 'create']);
+    Route::post('/admin/ppid/informasi-ppid/create', [InformasiPpidController::class, 'store']);
+    Route::get('/admin/ppid/informasi-ppid/edit/{id}', [InformasiPpidController::class, 'edit']);
+    Route::put('/admin/ppid/informasi-ppid/edit/{id}', [InformasiPpidController::class, 'update']);
+    Route::get('/admin/ppid/informasi-ppid/delete/{id}', [InformasiPpidController::class, 'destroy']);
 
     // Produk Hukum
     Route::get('/admin/produk-hukum', [ProdukHukumController::class, 'index']);

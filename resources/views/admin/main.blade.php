@@ -187,10 +187,27 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/ppid" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
-                                        <p>PPID</p>
+                                        <p>
+                                            PPID
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/admin/ppid" class="nav-link">
+                                                <i class="fas fa-minus nav-icon"></i>
+                                                <p>PPID</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/admin/ppid/informasi-ppid" class="nav-link">
+                                                <i class="fas fa-minus nav-icon"></i>
+                                                <p> Daftar Informasi PPID</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/produk-hukum" class="nav-link">
