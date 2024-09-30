@@ -61,7 +61,7 @@ class GaleriController extends Controller
      */
     public function show()
     {
-        $galeri = Galeri::all();
+        $galeri = Galeri::latest()->paginate(9);
         $informasiDesa = InformasiDesa::all();
         $waktuLayanan = WaktuLayanan::all();
         

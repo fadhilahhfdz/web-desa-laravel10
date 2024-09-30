@@ -27,6 +27,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="col-md-12 d-flex justify-content-center mb-4">
+                {{ $galeri->links('vendor.pagination.custom') }}
+            </div>
         </div>
     </div>
 @endsection
