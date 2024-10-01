@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\InformasiDesa;
 use App\Models\InformasiPpid;
 use App\Models\Pelayanan;
@@ -108,8 +109,9 @@ class InformasiPpidController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownPelayanan = Pelayanan::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.informasi-ppid.informasi-berkala', compact('informasiBerkala', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+        return view('user.konten.informasi-ppid.informasi-berkala', compact('informasiBerkala', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten'));
     }
 
     public function informasi_setiap_saat() {
@@ -121,8 +123,9 @@ class InformasiPpidController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownPelayanan = Pelayanan::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.informasi-ppid.informasi-setiap-saat', compact('informasiSetiapSaat', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+        return view('user.konten.informasi-ppid.informasi-setiap-saat', compact('informasiSetiapSaat', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten'));
     }
 
     public function informasi_serta_merta() {
@@ -134,8 +137,9 @@ class InformasiPpidController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownPelayanan = Pelayanan::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.informasi-ppid.informasi-serta-merta', compact('informasiSertaMerta', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+        return view('user.konten.informasi-ppid.informasi-serta-merta', compact('informasiSertaMerta', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten'));
     }
 
     public function informasi_dikecualikan() {
@@ -147,7 +151,8 @@ class InformasiPpidController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownPelayanan = Pelayanan::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.informasi-ppid.informasi-dikecualikan', compact('informasiDikecualikan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan'));
+        return view('user.konten.informasi-ppid.informasi-dikecualikan', compact('informasiDikecualikan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten'));
     }
 }

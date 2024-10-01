@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ApbDesa;
+use App\Models\ApbKonten;
 use App\Models\Berita;
 use App\Models\FotoDesa;
 use App\Models\InformasiDesa;
@@ -34,6 +35,7 @@ class UserViewController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
         // APB DESA
         $apbDesa = ApbDesa::all();
@@ -44,7 +46,7 @@ class UserViewController extends Controller
         $totalApbPendapatan = $apbDesa->where('jenis', 'Pendapatan')->sum('nominal');
         $totalApbPembelanjaan = $apbDesa->where('jenis', 'Pembelanjaan')->sum('nominal');
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbPembelanjaan', 'apbPendapatan', 'apbPembelanjaan', 'apbPelaksanaan', 'totalApbPelaksanaan'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbPembelanjaan', 'apbPendapatan', 'apbPembelanjaan', 'apbPelaksanaan', 'totalApbPelaksanaan', 'dropdownApbKonten'));
     }
 
     public function fallback() {
@@ -55,7 +57,8 @@ class UserViewController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.404', compact('informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.404', compact('informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\DesaAntikorupsi;
 use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
@@ -65,8 +66,9 @@ class DesaAntikorupsiController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.desa-antikorupsi', compact('desaAntikorupsi', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.desa-antikorupsi', compact('desaAntikorupsi', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     /**

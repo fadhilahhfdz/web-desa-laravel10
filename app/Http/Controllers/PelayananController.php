@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
 use App\Models\Ppid;
@@ -59,8 +60,9 @@ class PelayananController extends Controller
         $informasiDesa = InformasiDesa::all();
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.pelayanan', compact('pelayanan', 'dropdownPelayanan', 'dropdownProfil', 'waktuLayanan', 'informasiDesa', 'dropdownPpid'));
+        return view('user.konten.pelayanan', compact('pelayanan', 'dropdownPelayanan', 'dropdownProfil', 'waktuLayanan', 'informasiDesa', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     /**

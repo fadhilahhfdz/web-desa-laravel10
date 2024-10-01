@@ -10,16 +10,16 @@ use App\Models\ProfilDesa;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
-class PpidController extends Controller
+class ApbKontenController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $ppid = Ppid::all();
-        
-        return view('admin.konten.ppid.index', compact('ppid'));
+        $apbKonten = ApbKonten::all();
+
+        return view('admin.konten.apb-desa.apb-konten.index', compact('apbKonten'));
     }
 
     /**
@@ -27,7 +27,7 @@ class PpidController extends Controller
      */
     public function create()
     {
-        return view('admin.konten.ppid.create');
+        return view('admin.konten.apb-desa.apb-konten.create');
     }
 
     /**
@@ -41,11 +41,11 @@ class PpidController extends Controller
                 'konten' => 'required',
             ]);
 
-            Ppid::create($request->all());
+            ApbKonten::create($request->all());
 
-            return redirect('/admin/ppid')->with('sukses', 'Data berhasil disimpan');
+            return redirect('/admin/apb-desa/apb-konten')->with('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/ppid/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
+            return redirect('/admin/apb-desa/apb-konten/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
         }
     }
 
@@ -54,15 +54,15 @@ class PpidController extends Controller
      */
     public function show($id)
     {
-        $ppid = Ppid::findOrFail($id);
-        $dropdownPpid = Ppid::all();
+        $apbKonten = ApbKonten::findOrFail($id);
+        $dropdownApbKonten = ApbKonten::all();
         $dropdownProfil = ProfilDesa::all();
-        $dropdownPelayanan = Pelayanan::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
-        $dropdownApbKonten = ApbKonten::all();
+        $dropdownPelayanan = Pelayanan::all();
+        $dropdownPpid = Ppid::all();
 
-        return view('user.konten.ppid', compact('ppid', 'dropdownPpid', 'dropdownProfil', 'dropdownPelayanan', 'waktuLayanan', 'informasiDesa', 'dropdownApbKonten'));
+        return view('user.konten.apb-konten', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'apbKonten', 'dropdownApbKonten'));
     }
 
     /**
@@ -70,9 +70,9 @@ class PpidController extends Controller
      */
     public function edit($id)
     {
-        $ppid = Ppid::findOrFail($id);
+        $apbKonten = ApbKonten::findOrFail($id);
 
-        return view('admin.konten.ppid.edit', compact('ppid'));
+        return view('admin.konten.apb-desa.apb-konten.edit', compact('apbKonten'));
     }
 
     /**
@@ -86,13 +86,13 @@ class PpidController extends Controller
                 'konten' => 'required',
             ]);
 
-            $ppid = Ppid::findOrFail($id);
+            $apbKonten = ApbKonten::find($id);
 
-            $ppid->update($request->all());
+            $apbKonten->update($request->all());
 
-            return redirect('/admin/ppid')->with('sukses', 'Data berhasil diupdate');
+            return redirect('/admin/apb-desa/apb-konten')->with('sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/ppid/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect('/admin/apb-desa/apb-konten/edit/($id)')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 
@@ -101,9 +101,9 @@ class PpidController extends Controller
      */
     public function destroy($id)
     {
-        $ppid = Ppid::findOrFail($id);
-        $ppid->delete();
+        $apbKonten = ApbKonten::findOrFail($id);
+        $apbKonten->delete();
 
-        return redirect('/admin/ppid')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admin/apb-desa/apb-konten')->with('sukses', 'Data berhasil dihapus');
     }
 }

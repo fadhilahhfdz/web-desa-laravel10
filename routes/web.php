@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApbDesaController;
+use App\Http\Controllers\ApbKontenController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DesaAntikorupsiController;
@@ -135,6 +136,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/apb-desa/delete/{id}', [ApbDesaController::class, 'destroy']);
     Route::get('/admin/apb-desa/get-nama-apb/{jenis}', [ApbDesaController::class, 'getNamaApb']);
 
+    // Konten APB Desa
+    Route::get('/admin/apb-desa/apb-konten', [ApbKontenController::class, 'index']);
+    Route::get('/admin/apb-desa/apb-konten/create', [ApbKontenController::class, 'create']);
+    Route::post('/admin/apb-desa/apb-konten/create', [ApbKontenController::class, 'store']);
+    Route::get('/admin/apb-desa/apb-konten/edit/{id}', [ApbKontenController::class, 'edit']);
+    Route::put('/admin/apb-desa/apb-konten/edit/{id}', [ApbKontenController::class, 'update']);
+    Route::get('/admin/apb-desa/apb-konten/delete/{id}', [ApbKontenController::class, 'destroy']);
+
     // Profil Desa
     Route::get('/admin/profil-desa', [ProfilDesaController::class, 'index']);
     Route::get('/admin/profil-desa/create', [ProfilDesaController::class, 'create']);
@@ -217,8 +226,8 @@ Route::get('/ppid/{id}', [PpidController::class, 'show']);
 Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
 // Desa Antikorupsi
 Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
-// APB Dsa
-Route::get('/apb-desa', [ApbDesaController::class, 'show']);
+// Konten APB Desa
+Route::get('/apb-desa/apb-konten/{id}', [ApbKontenController::class, 'show']);
 // Galeri
 Route::get('/galeri', [GaleriController::class, 'show']);
 // Berita

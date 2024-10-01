@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
 use App\Models\Ppid;
@@ -66,8 +67,9 @@ class ProdukHukumController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.produk-hukum', compact('produkHukum', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.produk-hukum', compact('produkHukum', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     /**

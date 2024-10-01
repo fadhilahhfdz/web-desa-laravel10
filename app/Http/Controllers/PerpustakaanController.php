@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\GenreBuku;
 use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
@@ -82,8 +83,9 @@ class PerpustakaanController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.perpustakaan.buku_detail', compact('perpustakaan', 'genreBuku', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.perpustakaan.buku_detail', compact('perpustakaan', 'genreBuku', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     /**
@@ -160,8 +162,9 @@ class PerpustakaanController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     public function buku_by_genre($id) {
@@ -174,8 +177,9 @@ class PerpustakaanController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbkonten'));
     }
 
     public function search(Request $request) {
@@ -196,7 +200,8 @@ class PerpustakaanController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.perpustakaan.cari_buku', compact('hasil', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.perpustakaan.cari_buku', compact('hasil', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 }

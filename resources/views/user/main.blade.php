@@ -157,7 +157,15 @@
                                             </ul>
                                         </li>
                                         <li><a href="/produk-hukum">PRODUK HUKUM</a></li>
-                                        <li><a href="/apb-desa">APB DESA</a></li>
+                                        <li><a href="#">APB </a><i class="icofont-rounded-down"></i></a>
+                                            <ul class="dropdown">
+                                                @foreach ($dropdownApbKonten as $item)
+                                                    <li><a
+                                                            href="/apb-desa/apb-konten/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
                                         <li><a href="/desa-antikorupsi">DESA ANTIKORUPSI</a></li>
                                         <li><a href="/berita">BERITA</a></li>
                                         <li><a href="#">PERPUSTAKAAN <i class="icofont-rounded-down"></i></a>

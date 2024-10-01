@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\Berita;
 use App\Models\InformasiDesa;
 use App\Models\KategoriBerita;
@@ -67,8 +68,9 @@ class BeritaController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
         
-        return view('user.konten.berita.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.berita', compact('berita', 'kategori', 'recent', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     /**
@@ -122,8 +124,9 @@ class BeritaController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.berita.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.berita_all', compact('berita', 'kategori', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     public function berita_by_kategori($id) {
@@ -135,8 +138,9 @@ class BeritaController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.berita.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.by-kategori', compact('berita', 'kategori', 'all', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 
     public function search(Request $request) {
@@ -155,7 +159,8 @@ class BeritaController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownApbKonten = ApbKonten::all();
         
-        return view('user.konten.berita.cari_berita', compact('hasil', 'kategoriAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid'));
+        return view('user.konten.berita.cari_berita', compact('hasil', 'kategoriAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
     }
 }

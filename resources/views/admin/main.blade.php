@@ -77,7 +77,8 @@
             <p class="brand-link">
                 <img src="{{ asset('assets/img/home.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">Desa {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span>
+                <span class="brand-text font-weight-light">Desa
+                    {{ isset($informasiDesa[0]) ? $informasiDesa[0]->nama_desa : 'Nama desa belum ada' }}</span>
             </p>
 
             <!-- Sidebar -->
@@ -109,7 +110,7 @@
                             <a href="/admin/perangkat-desa" class="nav-link">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>
-                                    Perangkat Desa
+                                    Perangkat
                                 </p>
                             </a>
                         </li>
@@ -177,7 +178,7 @@
                                 <li class="nav-item">
                                     <a href="/admin/profil-desa" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
-                                        <p>Profil Desa</p>
+                                        <p>Profil</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -216,10 +217,27 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/apb-desa" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
-                                        <p>APB Desa</p>
+                                        <p>
+                                            APB
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/admin/apb-desa" class="nav-link">
+                                                <i class="fas fa-minus nav-icon"></i>
+                                                <p>APB</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/admin/apb-desa/apb-konten" class="nav-link">
+                                                <i class="fas fa-minus nav-icon"></i>
+                                                <p> Konten APB</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/desa-antikorupsi" class="nav-link">
@@ -270,25 +288,25 @@
                                 <li class="nav-item">
                                     <a href="/admin/informasi-desa" class="nav-link">
                                         <i class="fas fa-pencil-alt nav-icon"></i>
-                                        <p>Informasi Desa</p>
+                                        <p>Informasi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/sub-informasi-desa" class="nav-link">
                                         <i class="fas fa-info-circle nav-icon"></i>
-                                        <p>Sub Informasi Desa</p>
+                                        <p>Sub Informasi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/informasi-desa/foto" class="nav-link">
                                         <i class="fas fa-image nav-icon"></i>
-                                        <p>Upload Foto Desa</p>
+                                        <p>Upload Foto</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/waktu-layanan-desa" class="nav-link">
                                         <i class="fas fa-tasks nav-icon"></i>
-                                        <p>Waktu Layanan Desa</p>
+                                        <p>Waktu Layanan</p>
                                     </a>
                                 </li>
                             </ul>

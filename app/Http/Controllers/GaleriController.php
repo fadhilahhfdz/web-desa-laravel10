@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ApbKonten;
 use App\Models\Galeri;
 use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
@@ -68,8 +69,9 @@ class GaleriController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownPelayanan = Pelayanan::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.galeri', compact('informasiDesa','waktuLayanan','dropdownProfil','dropdownPelayanan','dropdownPpid', 'galeri'));
+        return view('user.konten.galeri', compact('informasiDesa','waktuLayanan','dropdownProfil','dropdownPelayanan','dropdownPpid', 'galeri', 'dropdownApbKonten'));
     }
 
     /**
