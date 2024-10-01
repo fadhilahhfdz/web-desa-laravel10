@@ -119,18 +119,19 @@
         <div class="container">
             <h2 class="text-white text-center text-bold">Info Grafis APB Desa</h2>
             <div class="row mt-5">
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-4 col-12">
                     <!-- Start Choose Left -->
                     <div class="choose-left">
-                        <h3 class="text-white">Pendapatan Desa Rp{{ number_format($totalApbPendapatan, 0, ',', '.') }}
-                        </h3>
-                        @foreach ($apbPendapatan as $item)
+                        <h5 class="text-white">APBDesa Pelaksanaan</h5>
+                        <p class="text-white mb-3">Total: Rp{{ number_format($totalApbPelaksanaan, 0, ',', '.') }}</p>
+                        @foreach ($apbPelaksanaan as $item)
                             @php
                                 $percentage =
-                                    $totalApbPendapatan > 0 ? ($item->nominal / $totalApbPendapatan) * 100 : 0;
+                                    $totalApbPelaksanaan > 0 ? ($item->nominal / $totalApbPelaksanaan) * 100 : 0;
                             @endphp
-                            <p class="text-white fs-2">{{ $item->kategori }} Rp{{ $item->formatRupiah('nominal') }}</p>
-                            <div class="progress mb-3" style="height: 30px;">
+                            <p class="text-white nama">{{ $item->nama }}</p>
+                            <p class="text-white">Rp{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3" style="height: 20px;">
                                 <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}"
                                     aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentage }}%;">
                                     {{ round($percentage, 1) }}%
@@ -140,16 +141,40 @@
                     </div>
                     <!-- End Choose Left -->
                 </div>
-                <div class="col-lg-6 col-12">
+                <div class="col-lg-4 col-12">
+                    <!-- Start Choose Left -->
+                    <div class="choose-left">
+                        <h5 class="text-white">APBDesa Pendapatan</h5>
+                        <p class="text-white mb-3">Total: Rp{{ number_format($totalApbPendapatan, 0, ',', '.') }}</p>
+                        @foreach ($apbPendapatan as $item)
+                            @php
+                                $percentage =
+                                    $totalApbPendapatan > 0 ? ($item->nominal / $totalApbPendapatan) * 100 : 0;
+                            @endphp
+                            <p class="text-white nama">{{ $item->nama }}</p>
+                            <p class="text-white">Rp{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3" style="height: 20px;">
+                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentage }}%;">
+                                    {{ round($percentage, 1) }}%
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- End Choose Left -->
+                </div>
+                <div class="col-lg-4 col-12">
                     <!-- Start Choose Rights -->
                     <div class="choose-left">
-                        <h3 class="text-white">Belanja Desa Rp{{ number_format($totalApbBelanja, 0, ',', '.') }}</h3>
-                        @foreach ($apbBelanja as $item)
+                        <h5 class="text-white">APBDesa Pembelanjaan</h5>
+                        <p class="text-white mb-3">Total: Rp{{ number_format($totalApbPembelanjaan, 0, ',', '.') }}</p>
+                        @foreach ($apbPembelanjaan as $item)
                             @php
-                                $percentage = $totalApbBelanja > 0 ? ($item->nominal / $totalApbBelanja) * 100 : 0;
+                                $percentage = $totalApbPembelanjaan > 0 ? ($item->nominal / $totalApbPembelanjaan) * 100 : 0;
                             @endphp
-                            <p class="text-white fs-2">{{ $item->kategori }} Rp{{ $item->formatRupiah('nominal') }}</p>
-                            <div class="progress mb-3" style="height: 30px;">
+                            <p class="text-white nama">{{ $item->nama }}</p>
+                            <p class="text-white">Rp{{ $item->formatRupiah('nominal') }}</p>
+                            <div class="progress mb-3" style="height: 20px;">
                                 <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ $percentage }}"
                                     aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentage }}%;">
                                     {{ round($percentage, 1) }}%

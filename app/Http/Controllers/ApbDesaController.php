@@ -38,10 +38,9 @@ class ApbDesaController extends Controller
     {
         try {
             $request->validate([
-                'jenis' => 'required|in:Pendapatan,Belanja',
-                'kategori' => 'required|string',
+                'jenis' => 'required|in:Pelaksanaan,Pendapatan,Pembelanjaan',
+                'nama' => 'required|in:Pendapatan Desa,Belanja Desa,Pembiayaan Desa,Hasil Usaha Desa,Hasil Aset Desa,Lain-lain Pendapatan Asli Desa,Dana Desa,Bagi Hasil Pajak Dan Retribusi,Alokasi Dana Desa,Bantuan Keuangan Provinsi,Bantuan Keuangan Kabupaten/Kota,Bunga Bank,Bidang Penyelenggaraan Pemerintah Desa,Bidang Pelaksanaan Pembangunan Desa,Bidang Pembinaan Kemasyarakatan Desa,Bidang Penanggulangan Bencana Darurat Dan Mendesak Desa',
                 'nominal' => 'required|numeric|min:0',
-                'konten' => 'required',
             ]);
 
             ApbDesa::create($request->all());
@@ -50,7 +49,8 @@ class ApbDesaController extends Controller
         } catch (\Exception $e) {
             return redirect('/admin/apb-desa/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
         }
-    }
+}
+
 
     /**
      * Display the specified resource.
@@ -75,7 +75,14 @@ class ApbDesaController extends Controller
     {
         $apbDesa = ApbDesa::findOrFail($id);
 
-        return view('admin.konten.apb-desa.edit', compact('apbDesa'));
+        $jenis = ['Pelaksanaan', 'Pendapatan', 'Pembelanjaan'];
+        $apbByJenis = [
+            'Pelaksanaan' => ['Pendapatan Desa', 'Belanja Desa', 'Pembiayaan Desa'],
+            'Pendapatan' => ['Hasil Usaha Desa', 'Hasil Aset Desa', 'Lain-lain Pendapatan Asli Desa', 'Dana Desa', 'Bagi Hasil Pajak Dan Retribusi', 'Alokasi Dana Desa', 'Bantuan Keuangan Provinsi', 'Bantuan Keuangan Kabupaten/Kota', 'Bunga Bank'],
+            'Pembelanjaan' => ['Bidang Penyelenggaraan Pemerintah Desa', 'Bidang Pelaksanaan Pembangunan Desa', 'Bidang Pembinaan Kemasyarakatan Desa', 'Bidang Penanggulangan Bencana Darurat Dan Mendesak Desa'],
+        ];
+
+        return view('admin.konten.apb-desa.edit', compact('apbDesa', 'jenis', 'apbByJenis'));
     }
 
     /**
@@ -85,10 +92,9 @@ class ApbDesaController extends Controller
     {
         try {
             $request->validate([
-                'jenis' => 'required|in:Pendapatan,Belanja',
-                'kategori' => 'required|string',
+                'jenis' => 'required|in:Pelaksanaan,Pendapatan,Pembelanjaan',
+                'nama' => 'required|in:Pendapatan Desa,Belanja Desa,Pembiayaan Desa,Hasil Usaha Desa,Hasil Aset Desa,Lain-lain Pendapatan Asli Desa,Dana Desa,Bagi Hasil Pajak Dan Retribusi,Alokasi Dana Desa,Bantuan Keuangan Provinsi,Bantuan Keuangan Kabupaten/Kota,Bunga Bank,Bidang Penyelenggaraan Pemerintah Desa,Bidang Pelaksanaan Pembangunan Desa,Bidang Pembinaan Kemasyarakatan Desa,Bidang Penanggulangan Bencana Darurat Dan Mendesak Desa',
                 'nominal' => 'required|numeric|min:0',
-                'konten' => 'required',
             ]);
 
             $apbDesa = ApbDesa::findOrFail($id);
@@ -110,5 +116,22 @@ class ApbDesaController extends Controller
         $apbDesa->delete();
 
         return redirect('/admin/apb-desa')->with('sukses', 'Data berhasil dihapus');
+    }
+
+    public function getNamaApb($jenis) {
+
+        // daftar data apb
+        $apbByJenis = [
+            'Pelaksanaan' => ['Pendapatan Desa', 'Belanja Desa', 'Pembiayaan Desa'],
+            'Pendapatan' => ['Hasil Usaha Desa', 'Hasil Aset Desa', 'Lain-lain Pendapatan Asli Desa', 'Dana Desa', 'Bagi Hasil Pajak Dan Retribusi', 'Alokasi Dana Desa', 'Bantuan Keuangan Provinsi', 'Bantuan Keuangan Kabupaten/Kota', 'Bunga Bank'],
+            'Pembelanjaan' => ['Bidang Penyelenggaraan Pemerintah Desa', 'Bidang Pelaksanaan Pembangunan Desa', 'Bidang Pembinaan Kemasyarakatan Desa', 'Bidang Penanggulangan Bencana Darurat Dan Mendesak Desa'],
+        ];
+
+        // memastikan jenis apb kedalam array
+        if(array_key_exists($jenis, $apbByJenis)) {
+            return response()->json($apbByJenis[$jenis]);
+        } else {
+            return response()->json([]);
+        }
     }
 }

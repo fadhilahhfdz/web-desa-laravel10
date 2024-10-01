@@ -39,18 +39,25 @@
                                         <div class="col-md-2">
                                             <label for="jenis">Jenis APB :</label>
                                             <select name="jenis" id="jenis" class="form-control">
-                                                <option
-                                                    value="Pendapatan"{{ $apbDesa->jenis == 'Pendapatan' ? 'selected' : '' }}>
-                                                    Pendapatan</option>
-                                                <option value="Belanja"{{ $apbDesa->jenis == 'Belanja' ? 'selected' : '' }}>
-                                                    Belanja</option>
+                                                <option>-- Pilih Jenis Apb --</option>
+                                                @foreach ($jenis as $item)
+                                                    <option value="{{ $item }}"
+                                                        {{ $apbDesa->jenis == $item ? 'selected' : '' }}>{{ $item }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="kategori">Kategori :</label>
-                                                <input type="text" name="kategori" class="form-control"
-                                                    value="{{ $apbDesa->kategori }}" placeholder="Cth: Pendapatan Asli Desa">
+                                                <label for="nama">Nama :</label>
+                                                <select name="nama" id="nama" class="form-control">
+                                                    <option>-- Pilih Nama Apb --</option>
+                                                    @foreach ($apbByJenis[$apbDesa->jenis] as $item)
+                                                        <option value="{{ $item }}"
+                                                            {{ $apbDesa->nama == $item ? 'selected' : '' }}>
+                                                            {{ $item }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -60,17 +67,11 @@
                                                     value="{{ $apbDesa->nominal }}">
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="konten">konten :</label>
-                                                <textarea name="konten" class="form-control" id="summernote">{{ $apbDesa->konten}}</textarea>
-                                            </div>
-                                        </div>
                                     </div>
                                     <a href="/admin/apb-desa" class="btn btn-sm btn-outline-secondary"><i
                                             class="fas fa-caret-left"></i> Kembali</a>
                                     <button type="submit" class="btn btn-sm btn-primary"><i
-                                            class="fab fa-telegram-plane"></i> Submit</button>
+                                            class="fab fa-telegram-plane"></i> Simpan</button>
                                 </form>
                             </div>
                         </div>
@@ -90,5 +91,31 @@
                 height: 300
             });
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#jenis').on('change', function() {
+                var jenis = $(this).val();
+                if (jenis) {
+                    $.ajax({
+                        url: '/admin/apb-desa/get-nama-apb/' + jenis,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('#nama').empty();
+                            $('#nama').append('<option>-- Pilih Nama APB --</option>');
+                            $.each(data, function(key, value) {
+                                $('#nama').append('<option value="' + value + '">' +
+                                    value + '</option>')
+                            });
+                        }
+                    });
+                } else {
+                    $('#nama').empty();
+                    $('#nama').append('<option>-- Pilih Nama APB --</option>');
+                }
+            });
+        });
     </script>
 @endpush

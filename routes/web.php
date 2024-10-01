@@ -133,6 +133,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'edit']);
     Route::put('/admin/apb-desa/edit/{id}', [ApbDesaController::class, 'update']);
     Route::get('/admin/apb-desa/delete/{id}', [ApbDesaController::class, 'destroy']);
+    Route::get('/admin/apb-desa/get-nama-apb/{jenis}', [ApbDesaController::class, 'getNamaApb']);
 
     // Profil Desa
     Route::get('/admin/profil-desa', [ProfilDesaController::class, 'index']);

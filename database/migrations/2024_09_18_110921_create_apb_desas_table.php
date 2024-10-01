@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('apb_desas', function (Blueprint $table) {
             $table->id();
-            $table->enum('jenis', ['Pendapatan', 'Belanja']);
-            $table->string('kategori');
+            $table->enum('jenis', ['Pelaksanaan', 'Pendapatan', 'Pembelanjaan']);
+            $table->enum('nama', ['Pendapatan Desa', 'Belanja Desa', 'Pembiayaan Desa', 'Hasil Usaha Desa', 'Hasil Aset Desa', 'Lain-lain Pendapatan Asli Desa', 'Dana Desa', 'Bagi Hasil Pajak Dan Retribusi', 'Alokasi Dana Desa', 'Bantuan Keuangan Provinsi', 'Bantuan Keuangan Kabupaten/Kota', 'Bunga Bank', 'Bidang Penyelenggaraan Pemerintah Desa', 'Bidang Pelaksanaan Pembangunan Desa', 'Bidang Pembinaan Kemasyarakatan Desa', 'Bidang Penanggulangan Bencana Darurat Dan Mendesak Desa']);
             $table->bigInteger('nominal');
-            $table->longText('konten');
             $table->timestamps();
         });
     }

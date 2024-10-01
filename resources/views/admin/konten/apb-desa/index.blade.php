@@ -42,9 +42,8 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Jenis</th>
-                                            <th>Kategori</th>
+                                            <th>Nama</th>
                                             <th>Nominal</th>
-                                            <th>konten</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -53,9 +52,8 @@
                                             <tr>
                                                 <td style="width: 3%">{{ $loop->iteration }}</td>
                                                 <td>{{ $item->jenis }}</td>
-                                                <td>{{ $item->kategori }}</td>
+                                                <td>{{ $item->nama }}</td>
                                                 <td>Rp{{ $item->formatRupiah('nominal') }}</td>
-                                                <td>{!! $item->konten !!}</td>
                                                 <td>
                                                     <a href="/admin/apb-desa/edit/{{ $item->id }}"
                                                         class="btn btn-sm btn-warning text-white"><i

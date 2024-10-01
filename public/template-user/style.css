@@ -990,9 +990,8 @@ body {
     width: 50px;
     background: #1a76d1;
 }
-.why-choose .choose-left p {
-    margin-bottom: 10px;
-    font-size: large;
+.why-choose .choose-left .nama {
+    font-weight: 600;
 }
 .why-choose .choose-left .list {
 }

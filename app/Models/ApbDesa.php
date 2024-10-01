@@ -13,9 +13,8 @@ class ApbDesa extends Model
     
     protected $fillable = [
         'jenis',
-        'kategori',
+        'nama',
         'nominal',
-        'konten',
     ];
 
     protected $table = 'apb_desas';

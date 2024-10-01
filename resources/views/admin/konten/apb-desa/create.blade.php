@@ -34,34 +34,31 @@
                             <div class="card-body">
                                 <form action="/admin/apb-desa/create" method="POST">
                                     @csrf
-                                    <div class="d-flex justify-content-end">
-                                        <a href="/admin/apb-desa" class="btn btn-sm btn-outline-secondary mx-2"><i
-                                                class="fas fa-caret-left"></i> Kembali</a>
-                                        <button type="submit" class="btn btn-sm btn-primary"><i
-                                                class="fab fa-telegram-plane"></i> Submit</button>
-                                    </div>
                                     <div class="row">
                                         <div class="form-group col-md-2">
                                             <label for="jenis">Jenis APB :</label>
                                             <select name="jenis" id="jenis" class="form-control">
+                                                <option>-- Pilih Jenis APB --</option>
+                                                <option value="Pelaksanaan">Pelaksanaan</option>
                                                 <option value="Pendapatan">Pendapatan</option>
-                                                <option value="Belanja">Belanja</option>
+                                                <option value="Pembelanjaan">Pembelanjaan</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="kategori">Kategori :</label>
-                                            <input type="text" id="judul" name="kategori" class="form-control"
-                                                placeholder="Cth: Pendapatan Asli Desa">
+                                            <label for="nama">Nama :</label>
+                                            <select name="nama" id="nama" class="form-control">
+                                                <option>-- Pilih Nama APB --</option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <label for="konten">nominal :</label>
+                                            <label for="nominal">nominal :</label>
                                             <input type="number" name="nominal" class="form-control">
                                         </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="konten">Konten :</label>
-                                            <textarea name="konten" class="form-control" id="summernote"></textarea>
-                                        </div>
                                     </div>
+                                    <a href="/admin/apb-desa" class="btn btn-sm btn-outline-secondary"><i
+                                            class="fas fa-caret-left"></i> Kembali</a>
+                                    <button type="submit" class="btn btn-sm btn-primary"><i
+                                            class="fab fa-telegram-plane"></i> Simpan</button>
                                 </form>
                             </div>
                         </div>
@@ -75,11 +72,28 @@
 
 @push('script')
     <script>
-        $(function() {
-            // Summernote
-            $('#summernote').summernote({
-                height: 300
+        $(document).ready(function() {
+            $('#jenis').on('change', function() {
+                var jenis = $(this).val();
+                if (jenis) {
+                    $.ajax({
+                        url: '/admin/apb-desa/get-nama-apb/' + jenis,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('#nama').empty();
+                            $('#nama').append('<option>-- Pilih Nama APB --</option>');
+                            $.each(data, function(key, value) {
+                                $('#nama').append('<option value="' + value + '">' +
+                                    value + '</option>')
+                            });
+                        }
+                    });
+                } else {
+                    $('#nama').empty();
+                    $('#nama').append('<option>-- Pilih Nama APB --</option>');
+                }
             });
-        })
+        });
     </script>
 @endpush

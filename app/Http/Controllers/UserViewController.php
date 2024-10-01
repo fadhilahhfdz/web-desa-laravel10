@@ -37,12 +37,14 @@ class UserViewController extends Controller
 
         // APB DESA
         $apbDesa = ApbDesa::all();
+        $apbPelaksanaan = $apbDesa->where('jenis', 'Pelaksanaan');
         $apbPendapatan = $apbDesa->where('jenis', 'Pendapatan');
-        $apbBelanja = $apbDesa->where('jenis', 'Belanja');
+        $apbPembelanjaan = $apbDesa->where('jenis', 'Pembelanjaan');
+        $totalApbPelaksanaan = $apbDesa->where('jenis', 'Pelaksanaan')->sum('nominal');
         $totalApbPendapatan = $apbDesa->where('jenis', 'Pendapatan')->sum('nominal');
-        $totalApbBelanja = $apbDesa->where('jenis', 'Belanja')->sum('nominal');
+        $totalApbPembelanjaan = $apbDesa->where('jenis', 'Pembelanjaan')->sum('nominal');
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbBelanja', 'apbPendapatan', 'apbBelanja'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbPembelanjaan', 'apbPendapatan', 'apbPembelanjaan', 'apbPelaksanaan', 'totalApbPelaksanaan'));
     }
 
     public function fallback() {
