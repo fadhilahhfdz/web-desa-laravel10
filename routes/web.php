@@ -21,6 +21,8 @@ use App\Http\Controllers\PerpustakaanController;
 use App\Http\Controllers\PpidController;
 use App\Http\Controllers\ProdukHukumController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\RkpDesController;
+use App\Http\Controllers\RpjmDesController;
 use App\Http\Controllers\SubInformasiDesaController;
 use App\Http\Controllers\UserViewController;
 use App\Http\Controllers\WaktuLayananController;
@@ -206,13 +208,29 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'edit']);
     Route::put('/admin/perpustakaan/buku/edit/{id}', [PerpustakaanController::class, 'update']);
     Route::get('/admin/perpustakaan/buku/delete/{id}', [PerpustakaanController::class, 'destroy']);
-
+    
     // Galeri
     Route::get('/admin/galeri', [GaleriController::class, 'index']);
     Route::post('/admin/galeri/create', [GaleriController::class, 'store']);
     Route::get('/admin/galeri/edit/{id}', [GaleriController::class, 'edit']);
     Route::put('/admin/galeri/edit/{id}', [GaleriController::class, 'update']);
     Route::get('/admin/galeri/delete/{id}', [GaleriController::class, 'destroy']);
+
+    // RPJM Des
+    Route::get('/admin/rpjmdes', [RpjmDesController::class, 'index']);
+    Route::get('/admin/rpjmdes/create', [RpjmDesController::class, 'create']);
+    Route::post('/admin/rpjmdes/create', [RpjmDesController::class, 'store']);
+    Route::get('/admin/rpjmdes/edit/{id}', [RpjmDesController::class, 'edit']);
+    Route::put('/admin/rpjmdes/edit/{id}', [RpjmDesController::class, 'update']);
+    Route::get('/admin/rpjmdes/delete/{id}', [RpjmDesController::class, 'destroy']);
+
+    // RKP Des
+    Route::get('/admin/rkpdes', [RkpDesController::class, 'index']);
+    Route::get('/admin/rkpdes/create', [RkpDesController::class, 'create']);
+    Route::post('/admin/rkpdes/create', [RkpDesController::class, 'store']);
+    Route::get('/admin/rkpdes/edit/{id}', [RkpDesController::class, 'edit']);
+    Route::put('/admin/rkpdes/edit/{id}', [RkpDesController::class, 'update']);
+    Route::get('/admin/rkpdes/delete/{id}', [RkpDesController::class, 'destroy']);
 });
 
 /* -- KONTEN -- */
@@ -224,6 +242,10 @@ Route::get('/pelayanan/{id}', [PelayananController::class, 'show']);
 Route::get('/ppid/{id}', [PpidController::class, 'show']);
 // Produk Hukum
 Route::get('/produk-hukum', [ProdukHukumController::class, 'show']);
+// RPJM Des
+Route::get('/rpjmdes/{id}', [RpjmDesController::class, 'show']);
+// RKP Des
+Route::get('/rkpdes/{id}', [RkpDesController::class, 'show']);
 // Desa Antikorupsi
 Route::get('/desa-antikorupsi', [DesaAntikorupsiController::class, 'show']);
 // Konten APB Desa

@@ -7,6 +7,8 @@ use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
 use App\Models\Ppid;
 use App\Models\ProfilDesa;
+use App\Models\RkpDes;
+use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -61,8 +63,10 @@ class PelayananController extends Controller
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.pelayanan', compact('pelayanan', 'dropdownPelayanan', 'dropdownProfil', 'waktuLayanan', 'informasiDesa', 'dropdownPpid', 'dropdownApbKonten'));
+        return view('user.konten.pelayanan', compact('pelayanan', 'dropdownPelayanan', 'dropdownProfil', 'waktuLayanan', 'informasiDesa', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     /**

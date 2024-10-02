@@ -12,6 +12,8 @@ use App\Models\Penduduk;
 use App\Models\PerangkatDesa;
 use App\Models\Ppid;
 use App\Models\ProfilDesa;
+use App\Models\RkpDes;
+use App\Models\RpjmDes;
 use App\Models\SubInformasiDesa;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
@@ -36,6 +38,8 @@ class UserViewController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
         // APB DESA
         $apbDesa = ApbDesa::all();
@@ -46,7 +50,7 @@ class UserViewController extends Controller
         $totalApbPendapatan = $apbDesa->where('jenis', 'Pendapatan')->sum('nominal');
         $totalApbPembelanjaan = $apbDesa->where('jenis', 'Pembelanjaan')->sum('nominal');
 
-        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbPembelanjaan', 'apbPendapatan', 'apbPembelanjaan', 'apbPelaksanaan', 'totalApbPelaksanaan', 'dropdownApbKonten'));
+        return view('user.index', compact('berita', 'totalLakiLaki', 'totalPerempuan', 'penduduk', 'perangkatDesa', 'subInformasiDesa', 'informasiDesa', 'fotoDesa', 'waktuLayanan', 'totalJiwa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'apbDesa', 'totalApbPendapatan', 'totalApbPembelanjaan', 'apbPendapatan', 'apbPembelanjaan', 'apbPelaksanaan', 'totalApbPelaksanaan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     public function fallback() {
@@ -58,7 +62,9 @@ class UserViewController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.404', compact('informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
+        return view('user.404', compact('informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 }

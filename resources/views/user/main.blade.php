@@ -157,6 +157,24 @@
                                             </ul>
                                         </li>
                                         <li><a href="/produk-hukum">PRODUK HUKUM</a></li>
+                                        <li><a href="#">RPJMDes </a><i class="icofont-rounded-down"></i></a>
+                                            <ul class="dropdown">
+                                                @foreach ($dropdownRpjmDes as $item)
+                                                    <li><a
+                                                            href="/rpjmdes/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">RKPDes </a><i class="icofont-rounded-down"></i></a>
+                                            <ul class="dropdown">
+                                                @foreach ($dropdownRkpDes as $item)
+                                                    <li><a
+                                                            href="/rkpdes/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
                                         <li><a href="#">APB </a><i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 @foreach ($dropdownApbKonten as $item)

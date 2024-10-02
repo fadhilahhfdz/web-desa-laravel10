@@ -12,16 +12,16 @@ use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
-class ProfilDesaController extends Controller
+class RkpDesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $profilDesa = ProfilDesa::all();
+        $rkpDes = RkpDes::all();
 
-        return view('admin.konten.profil-desa.index', compact('profilDesa'));
+        return view('admin.konten.rkpdes.index', compact('rkpDes'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProfilDesaController extends Controller
      */
     public function create()
     {
-        return view('admin.konten.profil-desa.create');
+        return view('admin.konten.rkpdes.create');
     }
 
     /**
@@ -39,15 +39,15 @@ class ProfilDesaController extends Controller
     {
         try {
             $request->validate([
-                'judul' => 'required|string|max:255',
+                'judul' => 'required|string|max:225',
                 'konten' => 'required',
             ]);
 
-            ProfilDesa::create($request->all());
+            RkpDes::create($request->all());
 
-            return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil disimpan');
+            return redirect('/admin/rkpdes')->with('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/profil-desa/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
+            return redirect('/admin/rkpdes/create')->with('gagal', 'Data gagal disimpan' . $e->getMessage());
         }
     }
 
@@ -56,17 +56,17 @@ class ProfilDesaController extends Controller
      */
     public function show($id)
     {
-        $profilDesa = ProfilDesa::findOrFail($id);
+        $rkpDes = RkpDes::findOrFail($id);
+        $dropdownRkpDes = RkpDes::all();
+        $dropdownProfil = ProfilDesa::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
-        $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
-        $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
-        $dropdownRkpDes = RkpDes::all();
+        $dropdownApbKonten = ApbKonten::all();
 
-        return view('user.konten.profil-desa', compact('profilDesa', 'waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.rkpdes', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'rkpDes', 'dropdownRkpDes', 'dropdownRpjmDes', 'dropdownApbKonten'));
     }
 
     /**
@@ -74,9 +74,9 @@ class ProfilDesaController extends Controller
      */
     public function edit($id)
     {
-        $profilDesa = ProfilDesa::find($id);
+        $rkpDes = RkpDes::findOrFail($id);
 
-        return view('admin.konten.profil-desa.edit', compact('profilDesa'));
+        return view('admin.konten.rkpdes.edit', compact('rkpDes'));
     }
 
     /**
@@ -90,13 +90,13 @@ class ProfilDesaController extends Controller
                 'konten' => 'required',
             ]);
 
-            $profilDesa = ProfilDesa::find($id);
-    
-            $profilDesa->update($request->all());
-    
-            return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil diupdate');
+            $rkpDes = RkpDes::find($id);
+
+            $rkpDes->update($request->all());
+
+            return redirect('/admin/rkpdes')->with('Sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/profil-desa/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect('/admin/rkpdes/edit/{$id}')->with('gagal', 'Data gagal diupdate' . $e->getMessage());
         }
     }
 
@@ -105,9 +105,9 @@ class ProfilDesaController extends Controller
      */
     public function destroy($id)
     {
-        $profilDesa = ProfilDesa::findOrFail($id);
-        $profilDesa->delete();
+        $rkpDes = RkpDes::findOrFail($id);
+        $rkpDes->delete();
 
-        return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admin/rkpdes')->with('Sukses', 'Data berhasil dihapus');
     }
 }

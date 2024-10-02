@@ -12,16 +12,16 @@ use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
-class ProfilDesaController extends Controller
+class RpjmDesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $profilDesa = ProfilDesa::all();
+        $rpjmDes = RpjmDes::all();
 
-        return view('admin.konten.profil-desa.index', compact('profilDesa'));
+        return view('admin.konten.rpjmdes.index', compact('rpjmDes'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProfilDesaController extends Controller
      */
     public function create()
     {
-        return view('admin.konten.profil-desa.create');
+        return view('admin.konten.rpjmdes.create');
     }
 
     /**
@@ -43,11 +43,11 @@ class ProfilDesaController extends Controller
                 'konten' => 'required',
             ]);
 
-            ProfilDesa::create($request->all());
+            RpjmDes::create($request->all());
 
-            return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil disimpan');
+            return redirect('/admin/rpjmdes')->with('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/profil-desa/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
+            return redirect('/admin/rpjmdes/create')->with('gagal', 'Data gagal disimpan ' . $e->getMessage());
         }
     }
 
@@ -56,9 +56,11 @@ class ProfilDesaController extends Controller
      */
     public function show($id)
     {
-        $profilDesa = ProfilDesa::findOrFail($id);
+        $rpjmDes = RpjmDes::findOrFail($id);
+
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();
+
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
@@ -66,7 +68,7 @@ class ProfilDesaController extends Controller
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.profil-desa', compact('profilDesa', 'waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.rpjmdes', compact('rpjmDes', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     /**
@@ -74,9 +76,9 @@ class ProfilDesaController extends Controller
      */
     public function edit($id)
     {
-        $profilDesa = ProfilDesa::find($id);
+        $rpjmDes = RpjmDes::findOrFail($id);
 
-        return view('admin.konten.profil-desa.edit', compact('profilDesa'));
+        return view('admin.konten.rpjmdes.edit', compact('rpjmDes'));
     }
 
     /**
@@ -90,13 +92,13 @@ class ProfilDesaController extends Controller
                 'konten' => 'required',
             ]);
 
-            $profilDesa = ProfilDesa::find($id);
+            $rpjmDes = RpjmDes::findOrFail($id);
     
-            $profilDesa->update($request->all());
+            $rpjmDes->update($request->all());
     
-            return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil diupdate');
+            return redirect('/admin/rpjmdes')->with('sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/profil-desa/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect('/admin/rpjmdes/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 
@@ -105,9 +107,9 @@ class ProfilDesaController extends Controller
      */
     public function destroy($id)
     {
-        $profilDesa = ProfilDesa::findOrFail($id);
-        $profilDesa->delete();
+        $rpjmDes = RpjmDes::findOrFail($id);
+        $rpjmDes->delete();
 
-        return redirect('/admin/profil-desa')->with('sukses', 'Data berhasil dihapus');
+        return redirect('/admin/rpjmdes')->with('sukses', 'Data berhasil dihapus');
     }
 }

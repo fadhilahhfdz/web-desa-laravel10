@@ -7,6 +7,8 @@ use App\Models\InformasiDesa;
 use App\Models\Pelayanan;
 use App\Models\Ppid;
 use App\Models\ProfilDesa;
+use App\Models\RkpDes;
+use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -61,8 +63,10 @@ class ApbKontenController extends Controller
         $informasiDesa = InformasiDesa::all();
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.apb-konten', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'apbKonten', 'dropdownApbKonten'));
+        return view('user.konten.apb-konten', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'apbKonten', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     /**
@@ -86,13 +90,13 @@ class ApbKontenController extends Controller
                 'konten' => 'required',
             ]);
 
-            $apbKonten = ApbKonten::find($id);
+            $apbKonten = ApbKonten::findOrFail($id);
 
             $apbKonten->update($request->all());
 
             return redirect('/admin/apb-desa/apb-konten')->with('sukses', 'Data berhasil diupdate');
         } catch (\Exception $e) {
-            return redirect('/admin/apb-desa/apb-konten/edit/($id)')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+            return redirect('/admin/apb-desa/apb-konten/edit/{$id}')->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
         }
     }
 

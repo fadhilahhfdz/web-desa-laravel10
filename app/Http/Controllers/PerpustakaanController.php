@@ -9,6 +9,8 @@ use App\Models\Pelayanan;
 use App\Models\Perpustakaan;
 use App\Models\Ppid;
 use App\Models\ProfilDesa;
+use App\Models\RkpDes;
+use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -84,8 +86,10 @@ class PerpustakaanController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.perpustakaan.buku_detail', compact('perpustakaan', 'genreBuku', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
+        return view('user.konten.perpustakaan.buku_detail', compact('perpustakaan', 'genreBuku', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     /**
@@ -163,8 +167,10 @@ class PerpustakaanController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
+        return view('user.konten.perpustakaan.buku_all', compact('genreBuku', 'perpustakaan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     public function buku_by_genre($id) {
@@ -178,8 +184,10 @@ class PerpustakaanController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbkonten'));
+        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbkonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     public function search(Request $request) {
@@ -201,7 +209,9 @@ class PerpustakaanController extends Controller
         $dropdownPelayanan = Pelayanan::all();
         $dropdownPpid = Ppid::all();
         $dropdownApbKonten = ApbKonten::all();
+        $dropdownRpjmDes = RpjmDes::all();
+        $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.perpustakaan.cari_buku', compact('hasil', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten'));
+        return view('user.konten.perpustakaan.cari_buku', compact('hasil', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 }

@@ -50,10 +50,7 @@ class InformasiDesaController extends Controller
                 $fotoName = time() . '.' . $request->thumbnail_video->extension();
                 $fotoPath = 'thumbnail_video/' . $fotoName;
                 $request->thumbnail_video->move(public_path('thumbnail_video'), $fotoName);
-            }
-
-
-            
+            }   
 
             InformasiDesa::create([
                 'nama_desa' => $request->nama_desa,

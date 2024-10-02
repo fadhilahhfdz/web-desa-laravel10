@@ -217,6 +217,18 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/admin/rpjmdes" class="nav-link">
+                                        <i class="fas fa-minus nav-icon"></i>
+                                        <p>RPJM Des</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/rkpdes" class="nav-link">
+                                        <i class="fas fa-minus nav-icon"></i>
+                                        <p>RKP Des</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fas fa-minus nav-icon"></i>
                                         <p>
