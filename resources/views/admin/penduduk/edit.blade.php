@@ -79,10 +79,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="/admin/penduduk" class="btn btn-sm btn-outline-secondary"><i
-                                            class="fas fa-caret-left"></i> Kembali</a>
-                                    <button type="submit" class="btn btn-sm btn-primary"><i
-                                            class="fab fa-telegram-plane"></i> Submit</button>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="/admin/penduduk" class="btn btn-sm btn-outline-secondary mr-2"><i
+                                                class="fas fa-caret-left"></i> Kembali</a>
+                                        <button type="submit" class="btn btn-sm btn-primary"><i
+                                                class="fab fa-telegram-plane"></i> Submit</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

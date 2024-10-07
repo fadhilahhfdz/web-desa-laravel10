@@ -158,12 +158,12 @@
                                         <p>Tambah Berita</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="/admin/berita/komentar" class="nav-link">
                                         <i class="fas fa-comments nav-icon"></i>
                                         <p>Komentar Berita</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li class="nav-item">

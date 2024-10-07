@@ -41,13 +41,13 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="nama_dukuh">Nama Dukuh :</label>
-                                                    <select class="form-control" name="id_dukuh">
-                                                        <option >--Pilih Dukuh--</option>
-                                                        @foreach ($dukuh as $item)
-                                                            <option value="{{ $item->id }}">{{ $item->nama_dukuh }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
+                                                <select class="form-control" name="id_dukuh">
+                                                    <option>--Pilih Dukuh--</option>
+                                                    @foreach ($dukuh as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->nama_dukuh }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -75,20 +75,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="/admin/penduduk" class="btn btn-sm btn-outline-secondary mr-2"><i
+                                                class="fas fa-caret-left"></i> Kembali</a>
+                                        <button type="submit" class="btn btn-sm btn-primary"><i
+                                                class="fab fa-telegram-plane"></i>
+                                            Simpan</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="modal-footer justify-content-end">
-                                <a href="/admin/penduduk" class="btn btn-sm btn-outline-secondary"><i class="fas fa-caret-left"></i> Kembali</a>
-                                <button type="submit" class="btn btn-sm btn-primary"><i class="fab fa-telegram-plane"></i> Simpan</button>
-                            </div>
-                            </form>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
                 </div>
-            </div>
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
 @endsection

@@ -345,7 +345,7 @@ body {
     font-size: 14px;
     font-weight: 500;
     text-transform: capitalize;
-    padding: 25px 12px;
+    padding: 25px 10px;
     position: relative;
     display: inline-block;
     position: relative;
@@ -466,7 +466,8 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
-    width: 365px;
+    width: 250px;
+    max-width: 300px;
     /* max-height: 500px;
 	overflow-y: auto; */
 }

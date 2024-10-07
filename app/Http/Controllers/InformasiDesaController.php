@@ -45,12 +45,11 @@ class InformasiDesaController extends Controller
             }
 
             $fotoPath = null;
-
-            if ($fotoPath != null) {
+            if ($request->hasFile('thumbnail_video')) {
                 $fotoName = time() . '.' . $request->thumbnail_video->extension();
                 $fotoPath = 'thumbnail_video/' . $fotoName;
                 $request->thumbnail_video->move(public_path('thumbnail_video'), $fotoName);
-            }   
+            }
 
             InformasiDesa::create([
                 'nama_desa' => $request->nama_desa,

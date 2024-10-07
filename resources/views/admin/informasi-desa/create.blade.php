@@ -21,6 +21,7 @@
                             <div class="form-group">
                                 <label for="hotline_desa">Hotline Desa :</label>
                                 <input type="number" name="hotline_desa" class="form-control" placeholder="Cth: 62812XXXX" required>
+                                <small class="text-danger">*Awali dengan 62xxxx</small>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -45,7 +46,7 @@
                             <div class="form-group">
                                 <label for="thumbnail_video">Thumbnail Profil Video :</label>
                                 <input type="file" name="thumbnail_video" class="form-control" accept="image/*">
-                                <small class="text-danger">*Rasio foto disarankan 16:9.</small>
+                                <small class="text-danger">*Rasio 16:9.</small>
                             </div>
                         </div>
                     </div>

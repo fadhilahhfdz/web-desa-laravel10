@@ -77,7 +77,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/berita/kategori/delete/{id}', [KategoriBeritaController::class, 'destroy']);
 
     // Komentar Berita
-    Route::get('/admin/berita/komentar', [KomentarBeritaController::class, 'index']);
+    // Route::get('/admin/berita/komentar', [KomentarBeritaController::class, 'index']);
 
     // Dukuh
     Route::get('/admin/penduduk/dukuh', [DukuhController::class, 'index']);
