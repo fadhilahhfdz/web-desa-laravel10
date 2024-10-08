@@ -1,5 +1,4 @@
     @extends('admin.main')
-    @section('title', ' - Dashboard')
     @section('content')
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -38,6 +37,24 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="info-box">
+                                <span class="info-box-icon bg-secondary"><i class="fas fa-book"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Jumlah Buku</span>
+                                    <span class="info-box-number">{{ $buku->count() }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-secondary"><i class="fas fa-home"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Dukuh</span>
+                                    <span class="info-box-number">{{ $dukuh->count() }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
                                 <span class="info-box-icon bg-secondary"><i class="fas fa-user"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Total User</span>
@@ -49,7 +66,7 @@
                             <div class="card card-secondary">
                                 <div class="card-header">
                                     <h3 class="card-title">Data Penduduk</h3>
-    
+
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>

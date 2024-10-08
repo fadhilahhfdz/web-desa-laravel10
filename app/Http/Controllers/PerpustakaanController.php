@@ -187,7 +187,7 @@ class PerpustakaanController extends Controller
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbkonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.perpustakaan.buku_by_genre', compact('genre', 'perpustakaan', 'genreAll', 'waktuLayanan', 'informasiDesa', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
     }
 
     public function search(Request $request) {

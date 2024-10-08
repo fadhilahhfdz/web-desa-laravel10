@@ -275,3 +275,9 @@ Route::get('/ppid/informasi-ppid/informasi-dikecualikan', [InformasiPpidControll
 
 // Fallback
 Route::fallback([UserViewController::class, 'fallback']);
+
+// Storage Link
+Route::get('/generate-storage', function() {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'ok';
+});

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Dukuh;
 use App\Models\InformasiDesa;
 use App\Models\Penduduk;
+use App\Models\Perpustakaan;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
@@ -63,7 +65,9 @@ class AuthController extends Controller
         $totalPerempuan = Penduduk::sum('perempuan');
         $totalJiwa = $totalLakiLaki + $totalPerempuan;
         $informasiDesa = InformasiDesa::all();
-        
-        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa', 'totalJiwa'));
+        $buku = Perpustakaan::all();
+        $dukuh = Dukuh::all();
+
+        return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa', 'totalJiwa', 'buku', 'dukuh'));
     }
 }
