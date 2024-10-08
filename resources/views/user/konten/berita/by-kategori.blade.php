@@ -1,5 +1,6 @@
 @extends('user.main')
 @section('content')
+    <h2 class="text-black text-center mt-3">BERITA BY KATEGORI</h2>
     <section class="news-single section">
         <div class="container">
             <div class="row">
@@ -38,9 +39,9 @@
                                         </div>
                                         <div class="meta-right">
                                             <span class="date"><i
-                                                class="fa fa-calendar"></i>{{ $item->updated_at->format('d F Y') }}</span>
+                                                    class="fa fa-calendar"></i>{{ $item->updated_at->format('d F Y') }}</span>
                                             <span class="date"><i
-                                                class="fa fa-clock-o"></i>{{ $item->updated_at->format('H:i') }}</span>
+                                                    class="fa fa-clock-o"></i>{{ $item->updated_at->format('H:i') }}</span>
                                         </div>
                                     </div>
                                     <!-- News Text -->
@@ -48,7 +49,8 @@
                                         {!! $teks !!}
                                     </div>
                                     <div class="blog-bottom">
-                                        <a href="/detail-berita/{{ $item->id }}" class="btn btn-sm text-white">Baca
+                                        <a href="/detail-berita/{{ Crypt::encryptString($item->id) }}"
+                                            class="btn btn-sm text-white">Baca
                                             Selengkapnya</a>
                                     </div>
                                 </div>
@@ -81,7 +83,9 @@
                             <h3 class="title">Kategori</h3>
                             @foreach ($all as $all)
                                 <ul class="categor-list">
-                                    <li><a href="/berita-by-kategori/{{ $all->id }}">{{ $all->nama }}</a></li>
+                                    <li><a
+                                            href="/berita-by-kategori/{{ Crypt::encryptString($all->id) }}">{{ $all->nama }}</a>
+                                    </li>
                                 </ul>
                             @endforeach
                         </div>

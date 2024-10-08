@@ -53,7 +53,7 @@
                                             {!! $teks !!}
                                         </div>
                                         <div class="blog-bottom">
-                                            <a href="/detail-berita/{{ $item->id }}" class="btn btn-sm text-white">Baca
+                                            <a href="/detail-berita/{{ Crypt::encryptString($item->id) }}" class="btn btn-sm text-white">Baca
                                                 Selengkapnya</a>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                 <h3 class="title">Kategori</h3>
                                 @forelse ($kategoriAll as $item)
                                     <ul class="categor-list">
-                                        <li><a href="/berita-by-kategori/{{ $item->id }}">{{ $item->nama }}</a></li>
+                                        <li><a href="/berita-by-kategori/{{ Crypt::encryptString($item->id) }}">{{ $item->nama }}</a></li>
                                     </ul>
                                 @empty
                                     <div class="alert alert-danger">

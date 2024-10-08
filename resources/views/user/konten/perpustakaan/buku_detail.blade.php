@@ -140,7 +140,7 @@
                             @foreach ($genreBuku as $item)
                                 <ul class="categor-list">
                                     <li><a
-                                            href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
+                                            href="/perpustakaan/buku/buku_by_genre/{{ Crypt::encryptString($item->id) }}">{{ $item->nama }}</a>
                                     </li>
                                 </ul>
                             @endforeach

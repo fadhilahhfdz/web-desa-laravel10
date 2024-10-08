@@ -11,6 +11,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class PpidController extends Controller
 {
@@ -56,7 +57,13 @@ class PpidController extends Controller
      */
     public function show($id)
     {
-        $ppid = Ppid::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $ppid = Ppid::findOrFail($decryptId);
         $dropdownPpid = Ppid::all();
         $dropdownProfil = ProfilDesa::all();
         $dropdownPelayanan = Pelayanan::all();

@@ -9,7 +9,7 @@
                     <div class="row">
                         @forelse ($perpustakaan as $item)
                             <div class="col-6 col-sm-4 image-gallery">
-                                <a href="/perpustakaan/buku/detail/{{ $item->id }}">
+                                <a href="/perpustakaan/buku/detail/{{ Crypt::encryptString($item->id) }}">
                                     <div class="single">
                                         <div class="single-image">
                                             <img src="{{ asset($item->cover) }}" alt="{{ $item->judul }}" width="250">
@@ -46,7 +46,7 @@
                             @forelse ($genreBuku as $item)
                                 <ul class="categor-list">
                                     <li><a
-                                            href="/perpustakaan/buku/buku_by_genre/{{ $item->id }}">{{ $item->nama }}</a>
+                                            href="/perpustakaan/buku/buku_by_genre/{{ Crypt::encryptString($item->id) }}">{{ $item->nama }}</a>
                                     </li>
                                 </ul>
                             @empty

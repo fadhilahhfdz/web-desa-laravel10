@@ -11,6 +11,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class RpjmDesController extends Controller
 {
@@ -56,7 +57,13 @@ class RpjmDesController extends Controller
      */
     public function show($id)
     {
-        $rpjmDes = RpjmDes::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $rpjmDes = RpjmDes::findOrFail($decryptId);
 
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();

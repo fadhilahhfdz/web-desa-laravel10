@@ -11,6 +11,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class RkpDesController extends Controller
 {
@@ -56,7 +57,13 @@ class RkpDesController extends Controller
      */
     public function show($id)
     {
-        $rkpDes = RkpDes::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $rkpDes = RkpDes::findOrFail($decryptId);
         $dropdownRkpDes = RkpDes::all();
         $dropdownProfil = ProfilDesa::all();
         $waktuLayanan = WaktuLayanan::all();

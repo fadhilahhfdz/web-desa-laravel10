@@ -15,6 +15,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class BeritaController extends Controller
 {
@@ -62,7 +63,13 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        $berita = Berita::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $berita = Berita::findOrFail($decryptId);
         $kategori = KategoriBerita::all();
         $recent = Berita::latest()->paginate(5);
         $waktuLayanan = WaktuLayanan::all();
@@ -136,8 +143,14 @@ class BeritaController extends Controller
     }
 
     public function berita_by_kategori($id) {
-        $kategori = KategoriBerita::find($id);
-        $berita = Berita::where('id_kategori', $id)->latest()->paginate(5);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $kategori = KategoriBerita::findOrFail($decryptId);
+        $berita = Berita::where('id_kategori', $decryptId)->latest()->paginate(5);
         $all = KategoriBerita::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();

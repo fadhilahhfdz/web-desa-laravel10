@@ -49,7 +49,7 @@
                                         {!! $teks !!}
                                     </div>
                                     <div class="blog-bottom">
-                                        <a href="/detail-berita/{{ $item->id }}" class="btn btn-sm text-white">Baca
+                                        <a href="/detail-berita/{{ Crypt::encryptString($item->id) }}" class="btn btn-sm text-white">Baca
                                             Selengkapnya</a>
                                     </div>
                                 </div>
@@ -80,9 +80,9 @@
                         </div>
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
-                            @forelse ($kategori as $kategori)
+                            @forelse ($kategori as $item)
                                 <ul class="categor-list">
-                                    <li><a href="/berita-by-kategori/{{ $kategori->id }}">{{ $kategori->nama }}</a></li>
+                                    <li><a href="/berita-by-kategori/{{ Crypt::encryptString($item->id) }}">{{ $item->nama }}</a></li>
                                 </ul>
                             @empty
                                 <div class="alert alert-danger">

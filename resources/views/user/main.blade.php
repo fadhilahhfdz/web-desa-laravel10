@@ -112,7 +112,7 @@
                                             <ul class="dropdown">
                                                 @foreach ($dropdownProfil as $item)
                                                     <li><a
-                                                            href="/profil-desa/{{ $item->id }}">{{ $item->judul }}</a>
+                                                            href="/profil-desa/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -121,7 +121,7 @@
                                             <ul class="dropdown">
                                                 @foreach ($dropdownPelayanan as $item)
                                                     <li><a
-                                                            href="/pelayanan/{{ $item->id }}">{{ $item->judul }}</a>
+                                                            href="/pelayanan/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -129,7 +129,7 @@
                                         <li><a href="#">PPID <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 @foreach ($dropdownPpid->slice(0, 5) as $item)
-                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    <li><a href="/ppid/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                                 <li class="dropdown-submenu">
@@ -151,7 +151,7 @@
                                                     </ul>
                                                 </li>
                                                 @foreach ($dropdownPpid->slice(5) as $item)
-                                                    <li><a href="/ppid/{{ $item->id }}">{{ $item->judul }}</a>
+                                                    <li><a href="/ppid/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -161,7 +161,7 @@
                                             <ul class="dropdown">
                                                 @foreach ($dropdownRpjmDes as $item)
                                                     <li><a
-                                                            href="/rpjmdes/{{ $item->id }}">{{ $item->judul }}</a>
+                                                            href="/rpjmdes/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -170,7 +170,7 @@
                                             <ul class="dropdown">
                                                 @foreach ($dropdownRkpDes as $item)
                                                     <li><a
-                                                            href="/rkpdes/{{ $item->id }}">{{ $item->judul }}</a>
+                                                            href="/rkpdes/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -179,7 +179,7 @@
                                             <ul class="dropdown">
                                                 @foreach ($dropdownApbKonten as $item)
                                                     <li><a
-                                                            href="/apb-desa/apb-konten/{{ $item->id }}">{{ $item->judul }}</a>
+                                                            href="/apb-desa/apb-konten/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>

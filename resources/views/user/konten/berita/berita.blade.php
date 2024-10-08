@@ -158,9 +158,9 @@
                         </div>
                         <div class="single-widget category">
                             <h3 class="title">Kategori</h3>
-                            @foreach ($kategori as $kategori)
+                            @foreach ($kategori as $item)
                                 <ul class="categor-list">
-                                    <li><a href="/berita-by-kategori/{{ $kategori->id }}">{{ $kategori->nama }}</a></li>
+                                    <li><a href="/berita-by-kategori/{{ Crypt::encryptString($item->id) }}">{{ $item->nama }}</a></li>
                                 </ul>
                             @endforeach
                         </div>
@@ -179,7 +179,7 @@
                                         <img src="{{ $item->img }}" alt="">
                                     </div>
                                     <div class="content">
-                                        <h5><a href="/detail-berita/{{ $item->id }}">{{ $item->judul }}</a></h5>
+                                        <h5><a href="/detail-berita/{{ Crypt::encryptString($item->id) }}">{{ $item->judul }}</a></h5>
                                         <ul class="comment">
                                             <li><i class="fa fa-calendar"
                                                     aria-hidden="true"></i>{{ $item->updated_at->format('d F Y') }}</li>

@@ -11,6 +11,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class PelayananController extends Controller
 {
@@ -56,7 +57,13 @@ class PelayananController extends Controller
      */
     public function show($id)
     {
-        $pelayanan = Pelayanan::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $pelayanan = Pelayanan::findOrFail($decryptId);
         $dropdownPelayanan = Pelayanan::all();
         $waktuLayanan = WaktuLayanan::all();
         $informasiDesa = InformasiDesa::all();

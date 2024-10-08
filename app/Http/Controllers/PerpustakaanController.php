@@ -13,6 +13,7 @@ use App\Models\RkpDes;
 use App\Models\RpjmDes;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class PerpustakaanController extends Controller
 {
@@ -75,7 +76,13 @@ class PerpustakaanController extends Controller
      */
     public function show($id)
     {
-        $perpustakaan = Perpustakaan::findOrFail($id);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $perpustakaan = Perpustakaan::findOrFail($decryptId);
         $genreBuku = GenreBuku::all();
 
         $informasiDesa = InformasiDesa::all();
@@ -174,8 +181,14 @@ class PerpustakaanController extends Controller
     }
 
     public function buku_by_genre($id) {
-        $genre = GenreBuku::findOrFail($id);
-        $perpustakaan = Perpustakaan::where('id_genre', $id)->latest()->paginate(6);
+        try {
+            $decryptId = Crypt::decryptString($id);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            abort(404, 'Id tidak valid');
+        }
+
+        $genre = GenreBuku::findOrFail($decryptId);
+        $perpustakaan = Perpustakaan::where('id_genre', $decryptId)->latest()->paginate(6);
         $genreAll = GenreBuku::all();
 
         $waktuLayanan = WaktuLayanan::all();
