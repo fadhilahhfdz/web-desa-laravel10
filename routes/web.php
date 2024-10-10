@@ -44,8 +44,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [UserViewController::class, 'index']);
 
 // Auth
-Route::get('/register', [AuthController::class, 'index']);
-Route::post('/register', [AuthController::class, 'store']);
+// Route::get('/register', [AuthController::class, 'index']);
+// Route::post('/register', [AuthController::class, 'store']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/login', function() {
@@ -60,6 +60,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     // Dashboard
     Route::get('/admin/dashboard', [AuthController::class, 'dashboard']);
+    // Profile
+    Route::get('/admin/profile/{id}', [AuthController::class, 'profile']);
+    Route::put('/admin/profile/{id}', [AuthController::class, 'edit_profile']);
 
     // Berita
     Route::get('/admin/berita', [BeritaController::class, 'index']);

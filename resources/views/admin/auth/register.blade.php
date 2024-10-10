@@ -35,7 +35,7 @@
                 <form action="/register" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nama" name="nama">
+                        <input type="text" class="form-control" placeholder="Username" name="username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -43,22 +43,15 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" name="email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="Password"
+                            name="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                         <div id="warning-message" style="color: red; display: none;">
-                          Password minimal 8 karakter dan 1 huruf kapital
+                            Password minimal 8 karakter dan 1 huruf kapital
                         </div>
                     </div>
                     <!-- /.col -->
@@ -104,34 +97,34 @@
     @endif
 
     <script>
-      function validasiInput(inputElement) {
-        // Membuang karakter angka dari nilai input
-        inputElement.value = inputElement.value.replace(/[^a-zA-Z]/g, '');
-      }
-  
-      // Ambil referensi ke elemen input password
-      const passwordInput = document.getElementById('password');
-  
-      // Tambahkan event listener untuk memeriksa input setiap kali pengguna mengetik
-      passwordInput.addEventListener('input', function() {
-          // Ambil nilai password dari input
-          const password = passwordInput.value;
-  
-          // Periksa panjang password
-          const isLengthValid = password.length >= 8;
-  
-          // Periksa apakah setidaknya satu huruf kapital ada di dalam password
-          const hasCapitalLetter = /[A-Z]/.test(password);
-  
-          // Jika panjang password tidak mencukupi atau tidak memiliki huruf kapital
-          if (!isLengthValid || !hasCapitalLetter) {
-              // Tampilkan pesan kesalahan
-              document.getElementById('warning-message').style.display = 'block';
-          } else {
-              // Hapus pesan kesalahan jika password valid
-              document.getElementById('warning-message').style.display = 'none';
-          }
-      });
+        function validasiInput(inputElement) {
+            // Membuang karakter angka dari nilai input
+            inputElement.value = inputElement.value.replace(/[^a-zA-Z]/g, '');
+        }
+
+        // Ambil referensi ke elemen input password
+        const passwordInput = document.getElementById('password');
+
+        // Tambahkan event listener untuk memeriksa input setiap kali pengguna mengetik
+        passwordInput.addEventListener('input', function() {
+            // Ambil nilai password dari input
+            const password = passwordInput.value;
+
+            // Periksa panjang password
+            const isLengthValid = password.length >= 8;
+
+            // Periksa apakah setidaknya satu huruf kapital ada di dalam password
+            const hasCapitalLetter = /[A-Z]/.test(password);
+
+            // Jika panjang password tidak mencukupi atau tidak memiliki huruf kapital
+            if (!isLengthValid || !hasCapitalLetter) {
+                // Tampilkan pesan kesalahan
+                document.getElementById('warning-message').style.display = 'block';
+            } else {
+                // Hapus pesan kesalahan jika password valid
+                document.getElementById('warning-message').style.display = 'none';
+            }
+        });
     </script>
 </body>
 

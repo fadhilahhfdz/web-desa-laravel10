@@ -34,7 +34,7 @@ class InformasiDesaController extends Controller
             $request->validate([
                 'nama_desa' => 'required|string|max:255',
                 'hotline_desa' => 'required|string',
-                'email_desa' => 'required|email|unique:users,email',
+                'email_desa' => 'required|email|unique:informasi_desas,email_desa',
                 'deskripsi_desa' => 'required',
                 'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'link_video' => 'nullable|string',
@@ -93,7 +93,7 @@ class InformasiDesaController extends Controller
             $request->validate([
                 'nama_desa' => 'required|string|max:255',
                 'hotline_desa' => 'required|string',
-                'email_desa' => 'required|email|unique:users,email',
+                'email_desa' => 'required|email|unique:informasi_desas,email_desa',
                 'deskripsi_desa' => 'required',
                 'thumbnail_video' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'link_video' => 'nullable|string',

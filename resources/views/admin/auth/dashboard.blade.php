@@ -23,7 +23,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="alert alert-success d-flex justify-content-between" role="alert">
-                        <p class="m-0">Hallo <strong>{{ auth()->user()->nama }}</strong>, Selamat Datang</p>
+                        <p class="m-0">Hallo <strong>{{ auth()->user()->username }}</strong>, Selamat Datang</p>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12">

@@ -26,14 +26,12 @@ class AuthController extends Controller
     {
         try {
             $request->validate([
-                'nama' => 'required|string|max:255',
-                'email' => 'required|email|unique:users,email',
+                'username' => 'required|string|max:100|unique:users,username',
                 'password' => 'required|string|min:8|regex:/[A-Z]/',
             ]);
     
             $user = new User;
-            $user->nama = $request->nama;
-            $user->email = $request->email;
+            $user->username = $request->username;
             $user->password = Hash::make($request->password);
             $user->save();
     
@@ -45,10 +43,10 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if(Auth::attempt($request->only('email', 'password'))) {
+        if(Auth::attempt($request->only('username', 'password'))) {
             return redirect('admin/dashboard');
         } else {
-            return back()->with('gagal', 'Email atau password salah');
+            return back()->with('gagal', 'Username atau password salah');
         }
     }
 
@@ -69,5 +67,30 @@ class AuthController extends Controller
         $dukuh = Dukuh::all();
 
         return view('admin.auth.dashboard', compact('berita', 'user', 'penduduk', 'totalLakiLaki', 'totalPerempuan', 'informasiDesa', 'totalJiwa', 'buku', 'dukuh'));
+    }
+
+    public function profile($id) {
+        $user = User::findOrFail($id);
+
+        return view('admin.auth.profile', compact('user'));
+    }
+
+    public function edit_profile(Request $request, $id) {
+        try {
+            $user = User::findOrFail($id);
+
+            if ($request->password === null) {
+                $user->username = $request->username;
+                $user->update();
+            } else {
+                $user->username = $request->username;
+                $user->password = Hash::make($request->password);
+                $user->update();
+            }
+
+            return redirect("/admin/profile/{$id}")->with('sukses', 'Data berhasil diupdate');
+        } catch (\Exception $e) {
+            return redirect("/admin/profile{$id}")->with('gagal', 'Data gagal diupdate ' . $e->getMessage());
+        }
     }
 }

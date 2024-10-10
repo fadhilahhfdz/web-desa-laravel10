@@ -90,7 +90,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->nama }}</a>
+                        <a href="/admin/profile/{{ auth()->user()->id }}" class="d-block">{{ auth()->user()->username }}</a>
                     </div>
                 </div>
 
