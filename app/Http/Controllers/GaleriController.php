@@ -95,7 +95,7 @@ class GaleriController extends Controller
     {
         try {
             $request->validate([
-                'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
                 'caption' => 'required|string|max:255',
             ]);
 
