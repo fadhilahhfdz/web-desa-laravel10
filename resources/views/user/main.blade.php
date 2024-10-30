@@ -216,8 +216,14 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Tentang Kami</h2>
-                            <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 300) : 'Deskripsi desa belum ada' }}
+                            <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 100) : 'Deskripsi desa belum ada' }}
                             </p>
+                            <ul class="social">
+                                <li><a href="#"><i class="icofont-instagram"></i></a></li>
+                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                                <li><a href="#"><i class="icofont-youtube"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
