@@ -9,6 +9,7 @@ use App\Models\Ppid;
 use App\Models\ProfilDesa;
 use App\Models\RkpDes;
 use App\Models\RpjmDes;
+use App\Models\Sosmed;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -72,8 +73,9 @@ class RkpDesController extends Controller
         $dropdownPpid = Ppid::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownApbKonten = ApbKonten::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.rkpdes', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'rkpDes', 'dropdownRkpDes', 'dropdownRpjmDes', 'dropdownApbKonten'));
+        return view('user.konten.rkpdes', compact('waktuLayanan', 'dropdownProfil', 'informasiDesa', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'rkpDes', 'dropdownRkpDes', 'dropdownRpjmDes', 'dropdownApbKonten', 'sosmed'));
     }
 
     /**

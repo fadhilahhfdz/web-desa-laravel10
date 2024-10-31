@@ -90,7 +90,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/admin/profile/{{ auth()->user()->id }}" class="d-block">{{ auth()->user()->username }}</a>
+                        <a href="/admin/profile/{{ auth()->user()->id }}"
+                            class="d-block">{{ auth()->user()->username }}</a>
                     </div>
                 </div>
 
@@ -307,6 +308,12 @@
                                     <a href="/admin/sub-informasi-desa" class="nav-link">
                                         <i class="fas fa-info-circle nav-icon"></i>
                                         <p>Sub Informasi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/sosmed" class="nav-link">
+                                        <i class="fas fa-icons nav-icon"></i>
+                                        <p>Sosmed</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

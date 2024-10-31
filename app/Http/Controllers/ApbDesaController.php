@@ -11,6 +11,7 @@ use App\Models\ProdukHukum;
 use App\Models\ProfilDesa;
 use App\Models\RkpDes;
 use App\Models\RpjmDes;
+use App\Models\Sosmed;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -63,6 +64,7 @@ class ApbDesaController extends Controller
         $apbDesa = ApbDesa::all();
         $informasiDesa = InformasiDesa::all();
         $waktuLayanan = WaktuLayanan::all();
+        $sosmed = Sosmed::all();
         
         $dropdownProfil = ProfilDesa::all();
         $dropdownPpid = Ppid::all();
@@ -71,7 +73,7 @@ class ApbDesaController extends Controller
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
 
-        return view('user.konten.apb-desa', compact('informasiDesa','waktuLayanan','dropdownProfil','dropdownPelayanan','dropdownPpid', 'apbDesa', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.apb-desa', compact('informasiDesa','waktuLayanan','dropdownProfil','dropdownPelayanan','dropdownPpid', 'apbDesa', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 
     /**

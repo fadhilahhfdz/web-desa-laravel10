@@ -10,6 +10,7 @@ use App\Models\ProdukHukum;
 use App\Models\ProfilDesa;
 use App\Models\RkpDes;
 use App\Models\RpjmDes;
+use App\Models\Sosmed;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -72,8 +73,9 @@ class ProdukHukumController extends Controller
         $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.produk-hukum', compact('produkHukum', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.produk-hukum', compact('produkHukum', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPelayanan', 'dropdownPpid', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 
     /**

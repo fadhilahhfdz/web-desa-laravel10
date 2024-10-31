@@ -23,6 +23,7 @@ use App\Http\Controllers\ProdukHukumController;
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\RkpDesController;
 use App\Http\Controllers\RpjmDesController;
+use App\Http\Controllers\SosmedController;
 use App\Http\Controllers\SubInformasiDesaController;
 use App\Http\Controllers\UserViewController;
 use App\Http\Controllers\WaktuLayananController;
@@ -234,6 +235,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/rkpdes/edit/{id}', [RkpDesController::class, 'edit']);
     Route::put('/admin/rkpdes/edit/{id}', [RkpDesController::class, 'update']);
     Route::get('/admin/rkpdes/delete/{id}', [RkpDesController::class, 'destroy']);
+
+    // Sosial Media
+    Route::get('/admin/sosmed', [SosmedController::class, 'index']);
+    Route::post('/admin/sosmed/create', [SosmedController::class, 'store']);
+    Route::get('/admin/sosmed/edit/{id}', [SosmedController::class, 'edit']);
+    Route::put('/admin/sosmed/edit/{id}', [SosmedController::class, 'update']);
+    Route::get('/admin/sosmed/delete/{id}', [SosmedController::class, 'destroy']);
 });
 
 /* -- KONTEN -- */

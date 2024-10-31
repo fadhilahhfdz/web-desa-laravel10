@@ -219,10 +219,10 @@
                             <p>{{ isset($informasiDesa[0]) ? Str::limit($informasiDesa[0]->deskripsi_desa, 100) : 'Deskripsi desa belum ada' }}
                             </p>
                             <ul class="social">
-                                <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont-youtube"></i></a></li>
+                                <li><a href="{{ isset($sosmed[0]) ? $sosmed[0]->instagram : '' }}" target="_blank"><i class="icofont-instagram"></i></a></li>
+                                <li><a href="{{ isset($sosmed[0]) ? $sosmed[0]->facebook : '' }}" target="_blank"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="{{ isset($sosmed[0]) ? $sosmed[0]->x : '' }}" target="_blank"><i class="icofont-twitter"></i></a></li>
+                                <li><a href="{{ isset($sosmed[0]) ? $sosmed[0]->youtube : '' }}" target="_blank"><i class="icofont-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>

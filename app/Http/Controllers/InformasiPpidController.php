@@ -10,6 +10,7 @@ use App\Models\Ppid;
 use App\Models\ProfilDesa;
 use App\Models\RkpDes;
 use App\Models\RpjmDes;
+use App\Models\Sosmed;
 use App\Models\WaktuLayanan;
 use Illuminate\Http\Request;
 
@@ -114,8 +115,9 @@ class InformasiPpidController extends Controller
         $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.informasi-ppid.informasi-berkala', compact('informasiBerkala', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.informasi-ppid.informasi-berkala', compact('informasiBerkala', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 
     public function informasi_setiap_saat() {
@@ -130,8 +132,9 @@ class InformasiPpidController extends Controller
         $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.informasi-ppid.informasi-setiap-saat', compact('informasiSetiapSaat', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.informasi-ppid.informasi-setiap-saat', compact('informasiSetiapSaat', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 
     public function informasi_serta_merta() {
@@ -146,8 +149,9 @@ class InformasiPpidController extends Controller
         $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.informasi-ppid.informasi-serta-merta', compact('informasiSertaMerta', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.informasi-ppid.informasi-serta-merta', compact('informasiSertaMerta', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 
     public function informasi_dikecualikan() {
@@ -162,7 +166,8 @@ class InformasiPpidController extends Controller
         $dropdownApbKonten = ApbKonten::all();
         $dropdownRpjmDes = RpjmDes::all();
         $dropdownRkpDes = RkpDes::all();
+        $sosmed = Sosmed::all();
 
-        return view('user.konten.informasi-ppid.informasi-dikecualikan', compact('informasiDikecualikan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes'));
+        return view('user.konten.informasi-ppid.informasi-dikecualikan', compact('informasiDikecualikan', 'informasiDesa', 'waktuLayanan', 'dropdownProfil', 'dropdownPpid', 'dropdownPelayanan', 'dropdownApbKonten', 'dropdownRpjmDes', 'dropdownRkpDes', 'sosmed'));
     }
 }
